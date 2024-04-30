@@ -1,0 +1,30 @@
+---
+date: 09/11/2023
+categories: ['2023-2024', 'Fase di Transizione']
+params:
+  squadra: 'U13F'
+  palestra: 'Ubertini'
+  date: '11/09/2023'
+  allenamento: '1'
+  assenti: ['Celeste', 'Deluca']
+  vincitori: ['NA']
+  impegno: 0.8
+  obiettivo: 0.7
+  allenatore: 0.8
+  miglioramenti: 0.7
+  voto: 0.9
+  url: NA
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Battuta e Ricezione
+
+fds;jfsd
+f 
+df sdfsdfkhsdl;kfhlsad f
+sfsdhflkh
+
+{{< meta params.squadra >}}

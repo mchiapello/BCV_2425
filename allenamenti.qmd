@@ -8,10 +8,11 @@ listing:
   categories: true
   sort-ui: false
   filter-ui: false
-  fields: [date, title]
+  fields: [date, title, params.squadra]
   field-display-names:
     title: "Obiettivi"
     date: "Data"
+    params.squadra: "Squadra"
 page-layout: full
 title-block-banner: true
 ---
