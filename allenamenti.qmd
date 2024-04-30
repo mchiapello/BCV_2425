@@ -1,0 +1,16 @@
+---
+title: "Allenamenti"
+listing:
+  contents: allenamenti
+  sort: "date desc"
+  type: table
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title]
+  field-display-names:
+    title: "Obiettivi"
+    date: "Data"
+page-layout: full
+title-block-banner: true
+---
