@@ -11,5 +11,12 @@
     "items": [
       "/allenamenti/20230911.html"
     ]
+  },
+  {
+    "listing": "/progAnnuale.html",
+    "items": [
+      "/progAnnuale/test1.html",
+      "/progAnnuale/test2.jira"
+    ]
   }
 ]
