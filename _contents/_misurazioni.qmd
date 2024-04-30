@@ -1,0 +1,49 @@
+```{r setup_all}
+#| echo: false
+#| message: false
+#| warning: false
+# Load libraries
+suppressPackageStartupMessages(library(tidyverse))
+library(gt)
+library(gtExtras)
+library(fs)
+mm <- tibble(mese = c("Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
+                      "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"),
+             n = 1:12)
+tit2 <- paste0("Le misurazioni del mese di ", mm[mm$n == lubridate::month(params$date), 1])
+```
+
+## `r tit2`
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+# Create data
+x <- read_csv(paste0(here::here(), "/data/misurazioni.csv")) 
+
+x |> 
+  drop_na() |> 
+  dplyr::mutate(mese = lubridate::month(date)) |>
+  dplyr::filter(mese == lubridate::month(params$date)) |> 
+  mutate(atleta = str_replace(atleta, "-", " ")) |> 
+  arrange(desc(saltoMovimento)) |> 
+  select(-mese) |> 
+    gt()  |>  
+    # HIGHLIGHT massima altezza 
+     tab_style(style = cell_fill(color = "#04BF8A"),
+            locations = cells_body(columns = "Rincorsa", 
+                                   rows = (Rincorsa > 215)))  |>  
+    tab_style(style = cell_fill(color = "#03A64A"),
+            locations = cells_body(columns = "Muro", 
+                                   rows = (Muro > 215))) |> 
+  tab_style(style = cell_fill(color = "#BDE038"),
+            locations = cells_body(columns = "saltoFerma", 
+                                   rows = (saltoFerma == max(saltoFerma))))  |>  
+    tab_style(style = cell_fill(color = "#DAFDBA"),
+            locations = cells_body(columns = "saltoMovimento", 
+                                   rows = (saltoMovimento == max(saltoMovimento)))) |> 
+    gt_theme_538()
+```
+
