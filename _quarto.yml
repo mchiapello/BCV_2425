@@ -1,8 +1,10 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "QuartoWebsite"
+  title: "Basso Canavese Volley 2024/2025"
+  favicon: images/foxvolleyball3.png
   navbar:
     left:
       - href: index.qmd
