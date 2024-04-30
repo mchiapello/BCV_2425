@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/partite.html",
+    "items": [
+      "/partite/fogliogara.html",
+      "/partite/partita1.html"
+    ]
+  },
+  {
     "listing": "/allenamenti.html",
     "items": [
       "/allenamenti/20230911.html"

@@ -1,0 +1,36 @@
+---
+title: "Post-match"
+date: 09/11/2023
+categories: ['2023-2024', 'Partita', 'UISP']
+params:
+  loro: 'Vela'
+  noi: 'BVC'
+  campionato: 'UISP'
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(datavolley)
+library(gt)
+library(gtExtras)
+library(patchwork)
+source(paste0(here::here(), "/_scripts/999_utils.R"))
+file <- fs::dir_ls(paste0(here::here(), "/scout/2024-01-20_Vela"), 
+                   regexp = "dvw$")
+x <- dv_read(file)
+noi <- "BCV Caluso"
+loro <- teams(x)[teams(x) != noi]
+```
+
+
+## `r paste0(home_team(x), " contro ", visiting_team(x))`
+
+fds;jfsd
+f 
+df sdfsdfkhsdl;kfhlsad f
+sfsdhflkh

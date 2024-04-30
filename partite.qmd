@@ -1,0 +1,24 @@
+---
+title: "Partite"
+listing:
+  id: partite
+  contents: partite
+  sort: "date desc"
+  type: table
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, params.loro, params.campionato, title]
+  field-display-names:
+    title: "Documento"
+    date: "Data"
+    params.loro: "Avversari"
+    params.campionato: "campionato"
+page-layout: full
+title-block-banner: true
+---
+
+Questa pagina contiene la lista di tutti gli scout delle partite (Post-match), i video e i fogli gara di preparazione alle partite (Pre-match).
+
+::: {#partite}
+:::

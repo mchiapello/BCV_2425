@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "QuartoWebsite",
+    "objectID": "partite.html",
+    "href": "partite.html",
+    "title": "Partite",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Questa pagina contiene la lista di tutti gli scout delle partite (Post-match), i video e i fogli gara di preparazione alle partite (Pre-match).\n\n\n\n\n\nData\n\n\nAvversari\n\n\ncampionato\n\n\nDocumento\n\n\n\n\n\n\nSep 11, 2023\n\n\nVela\n\n\nUISP\n\n\nPre-match\n\n\n\n\nSep 11, 2023\n\n\nVela\n\n\nUISP\n\n\nPost-match\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "partite/partita1.html",
+    "href": "partite/partita1.html",
+    "title": "Post-match",
+    "section": "",
+    "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh"
+  },
+  {
+    "objectID": "partite/partita1.html#battuta-e-ricezione",
+    "href": "partite/partita1.html#battuta-e-ricezione",
+    "title": "Basso Canavese Volley 2024/2025",
+    "section": "",
+    "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh\nU13F"
   },
   {
     "objectID": "allenamenti.html",
@@ -28,17 +42,45 @@
     "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh\nU13F"
   },
   {
-    "objectID": "allenamenti/20230911.html#obiettivi-battuta-ricezione",
-    "href": "allenamenti/20230911.html#obiettivi-battuta-ricezione",
-    "title": "Basso Canavese Volley 2024/2025",
-    "section": "",
-    "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh\nU13F"
-  },
-  {
     "objectID": "allenamenti/20230911.html#battuta-e-ricezione",
     "href": "allenamenti/20230911.html#battuta-e-ricezione",
     "title": "Basso Canavese Volley 2024/2025",
     "section": "",
     "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh\nU13F"
+  },
+  {
+    "objectID": "partite/partita1.html#vela-contro-bcv-caluso",
+    "href": "partite/partita1.html#vela-contro-bcv-caluso",
+    "title": "Post-match",
+    "section": "",
+    "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh"
+  },
+  {
+    "objectID": "partite/partita1.html#contro",
+    "href": "partite/partita1.html#contro",
+    "title": "Partita",
+    "section": "",
+    "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh"
+  },
+  {
+    "objectID": "partite/fogliogara.html",
+    "href": "partite/fogliogara.html",
+    "title": "Pre-match",
+    "section": "",
+    "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh"
+  },
+  {
+    "objectID": "partite/fogliogara.html#contro",
+    "href": "partite/fogliogara.html#contro",
+    "title": "Foglio Gara",
+    "section": "",
+    "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh"
+  },
+  {
+    "objectID": "partite/fogliogara.html#vela-contro-bcv-caluso",
+    "href": "partite/fogliogara.html#vela-contro-bcv-caluso",
+    "title": "Pre-match",
+    "section": "",
+    "text": "fds;jfsd f df sdfsdfkhsdl;kfhlsad f sfsdhflkh"
   }
 ]
