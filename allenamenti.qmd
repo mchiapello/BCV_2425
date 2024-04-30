@@ -1,6 +1,7 @@
 ---
 title: "Allenamenti"
 listing:
+  id: allenamenti
   contents: allenamenti
   sort: "date desc"
   type: table
@@ -14,3 +15,8 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
+
+Questa pagina contiene la lista di tutti gli allenamaneti per monitorare la presenza delle ragazze e rivedere i filtati degli allenamenti.
+
+::: {#allenamenti}
+:::
