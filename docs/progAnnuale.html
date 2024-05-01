@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-date','listing-date-modified','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -186,7 +186,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Atlete">Atlete <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Squadre">Squadre <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -199,7 +199,10 @@ window.Quarto = {
 <thead>
 <tr>
 <th>
-Data
+Creazione
+</th>
+<th>
+Aggiornamento
 </th>
 <th>
 Obiettivi
@@ -207,28 +210,70 @@ Obiettivi
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1714510106000" data-listing-reading-time-sort="2" data-listing-word-count-sort="286" data-listing-title-sort="Adele Cireddu" data-listing-filename-sort="ade-cir.qmd">
+<tr data-index="0" data-categories="Atlete" data-listing-date-sort="1714514400000" data-listing-file-modified-sort="1714546592000" data-listing-date-modified-sort="1725141600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="286" data-listing-title-sort="Adele Cireddu" data-listing-filename-sort="ade-cir.qmd">
 <td>
-<span class="listing-date">&nbsp;</span>
+<span class="listing-date">May 1, 2024</span>
+</td>
+<td>
+<span class="listing-date-modified">Sep 1, 2024</span>
 </td>
 <td>
 <a href="./progAnnuale/ade-cir.html" class="title listing-title">Adele Cireddu</a>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1714510117000" data-listing-reading-time-sort="2" data-listing-word-count-sort="269" data-listing-title-sort="Isabella Boni" data-listing-filename-sort="isa-bon.qmd">
+<tr data-index="1" data-listing-date-sort="1714514400000" data-listing-file-modified-sort="1714546613000" data-listing-date-modified-sort="1725141600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="7" data-listing-title-sort="Dashboard" data-listing-filename-sort="dashboard.qmd">
 <td>
-<span class="listing-date">&nbsp;</span>
+<span class="listing-date">May 1, 2024</span>
+</td>
+<td>
+<span class="listing-date-modified">Sep 1, 2024</span>
+</td>
+<td>
+<a href="./progAnnuale/dashboard.html" class="title listing-title">Dashboard</a>
+</td>
+</tr>
+<tr data-index="2" data-categories="Atlete" data-listing-date-sort="1714514400000" data-listing-file-modified-sort="1714546605000" data-listing-date-modified-sort="1725141600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="269" data-listing-title-sort="Isabella Boni" data-listing-filename-sort="isa-bon.qmd">
+<td>
+<span class="listing-date">May 1, 2024</span>
+</td>
+<td>
+<span class="listing-date-modified">Sep 1, 2024</span>
 </td>
 <td>
 <a href="./progAnnuale/isa-bon.html" class="title listing-title">Isabella Boni</a>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1731106800000" data-listing-file-modified-sort="1714496529000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7" data-listing-title-sort="Dashboard" data-listing-filename-sort="test1.qmd">
+<tr data-index="3" data-categories="Squadre" data-listing-date-sort="1714514400000" data-listing-file-modified-sort="1714546704000" data-listing-date-modified-sort="1725141600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="269" data-listing-title-sort="U12 UISP" data-listing-filename-sort="u12u.qmd">
 <td>
-<span class="listing-date">Nov 9, 2024</span>
+<span class="listing-date">May 1, 2024</span>
 </td>
 <td>
-<a href="./progAnnuale/test1.html" class="title listing-title">Dashboard</a>
+<span class="listing-date-modified">Sep 1, 2024</span>
+</td>
+<td>
+<a href="./progAnnuale/u12u.html" class="title listing-title">U12 UISP</a>
+</td>
+</tr>
+<tr data-index="4" data-categories="Squadre" data-listing-date-sort="1714514400000" data-listing-file-modified-sort="1714546597000" data-listing-date-modified-sort="1725141600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="269" data-listing-title-sort="U13 Fipav" data-listing-filename-sort="u13f.qmd">
+<td>
+<span class="listing-date">May 1, 2024</span>
+</td>
+<td>
+<span class="listing-date-modified">Sep 1, 2024</span>
+</td>
+<td>
+<a href="./progAnnuale/u13f.html" class="title listing-title">U13 Fipav</a>
+</td>
+</tr>
+<tr data-index="5" data-categories="Squadre" data-listing-date-sort="1714514400000" data-listing-file-modified-sort="1714546682000" data-listing-date-modified-sort="1725141600000" data-listing-reading-time-sort="2" data-listing-word-count-sort="269" data-listing-title-sort="U13 UISP" data-listing-filename-sort="u13u.qmd">
+<td>
+<span class="listing-date">May 1, 2024</span>
+</td>
+<td>
+<span class="listing-date-modified">Sep 1, 2024</span>
+</td>
+<td>
+<a href="./progAnnuale/u13u.html" class="title listing-title">U13 UISP</a>
 </td>
 </tr>
 </tbody>

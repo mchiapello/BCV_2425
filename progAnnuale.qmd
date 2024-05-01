@@ -8,10 +8,11 @@ listing:
   categories: true
   sort-ui: false
   filter-ui: false
-  fields: [date, title]
+  fields: [date, date-modified, title]
   field-display-names:
     title: "Obiettivi"
-    date: "Data"
+    date: "Creazione"
+    date-modified: "Aggiornamento"
 page-layout: full
 title-block-banner: true
 ---

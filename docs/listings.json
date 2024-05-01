@@ -16,8 +16,11 @@
     "listing": "/progAnnuale.html",
     "items": [
       "/progAnnuale/ade-cir.html",
+      "/progAnnuale/dashboard.html",
       "/progAnnuale/isa-bon.html",
-      "/progAnnuale/test1.html"
+      "/progAnnuale/u12u.html",
+      "/progAnnuale/u13f.html",
+      "/progAnnuale/u13u.html"
     ]
   }
 ]
