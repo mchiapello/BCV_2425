@@ -1,0 +1,22 @@
+---
+title: "Commenti tecnico-tattici"
+listing:
+  id: commenti
+  contents: commentiTT
+  sort: "date desc"
+  type: table
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title]
+  field-display-names:
+    title: "Titolo"
+    date: "Data"
+page-layout: full
+title-block-banner: true
+---
+
+Questa pagina contiene la lista di tutti i commenti tecnici.
+
+::: {#commenti}
+:::

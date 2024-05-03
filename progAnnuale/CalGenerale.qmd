@@ -1,0 +1,52 @@
+---
+title: "Calendario generale"
+date: 05/01/2024
+date-modified: 09/01/2024
+categories: ['Squadre', 'Programmazione']
+params:
+  atleta: 'Tutte'
+format:
+  html: 
+    toc: false
+page-layout: full
+---
+
+## Calendario annuale generale
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+library(calendR)
+library(tidyverse)
+library(ggtext)
+
+# Vector of NA of the same length of the number of days of the year
+events <- rep(NA, 303)
+
+# Set the corresponding events
+events[seq(2,303, by = 7)] <- "All"
+events[seq(3,303, by = 7)] <- "U13F"
+events[seq(5,303, by = 7)] <- "U13F - U13U"
+events[seq(6,303, by = 7)] <- "U12"
+events[c(62, 114:118, 182:185, 229:234, 237, 243:245, 275)] <- "Festa"
+events[c(128, 129)] <- "Torneo BF"
+events[c(seq(42,112, by = 7),
+         seq(133, 255, by = 7))] <- "Partite"
+
+p1 <- calendR(from = "2024-09-01",
+        to = "2025-06-30",
+        start = "M",
+        special.days = events,
+        special.col = c('#8dd3c7','#fb8072','#80b1d3','#ffffb3',
+                        '#bebada','#fdb462','#b3de69'),
+        legend.pos = "bottom",
+        title = "BCV (Under 13/Under 12) 2024/2025",
+        title.size = 30)
+
+ggsave(p1, filename = "../progAnnuale/calgen.png", units = "mm", width = 297, height = 210, scale = 1)
+# ggsave(p1, filename = "../progAnnuale/calgen.pdf", units = "mm", width = 297, height = 210, scale = 1)
+```
+
+![](calgen.png)

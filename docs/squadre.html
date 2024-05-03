@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-05-01">
 
-<title>Basso Canavese Volley 2024/2025 - Adele Cireddu</title>
+<title>Basso Canavese Volley 2024/2025 - Squadre</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,23 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../images/foxvolleyball3.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/foxvolleyball3.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,19 +69,77 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-squadre .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../styles.css">
+    const options = {
+      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-squadre'] = new List('listing-squadre', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Basso Canavese Volley 2024/2025</span>
     </a>
   </div>
@@ -91,13 +150,51 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./allenamenti.html"> 
+<span class="menu-text">Allenamenti</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./partite.html"> 
+<span class="menu-text">Partite</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./progAnnuale.html"> 
+<span class="menu-text">Programmazione</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./commentiTT.html"> 
+<span class="menu-text">Commenti tecnici/tattici</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://studio.youtube.com/playlist/PLuLJwY97FamexM2F6711BmqySUYCotgZ0/videos"> <i class="bi bi-youtube" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-calendari" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Calendari</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-calendari">    
+        <li>
+    <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1FYoLm8xXQP6Q8xbBYOuhOg_Xc8TOdEPT/edit#gid=658309003">
+ <span class="dropdown-text">U13F - Prima fase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1FYoLm8xXQP6Q8xbBYOuhOg_Xc8TOdEPT/edit#gid=658309003">
+ <span class="dropdown-text">U13U - Prima fase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1FYoLm8xXQP6Q8xbBYOuhOg_Xc8TOdEPT/edit#gid=658309003">
+ <span class="dropdown-text">U12U - Prima fase</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -106,68 +203,66 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Squadre</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Squadre">Squadre <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Adele Cireddu</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Atlete</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta column-page">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 1, 2024</p>
-    </div>
-  </div>
-  
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 1, 2024</p>
-    </div>
-  </div>
-    
-  </div>
-  
 
 
-</header>
+<p>Questa pagina contiene la lista di tutte le squadre</p>
+<div id="listing-squadre" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Data
+</th>
+<th>
+Titolo
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="Squadre" data-listing-date-sort="1714514400000" data-listing-file-modified-sort="1714765599000" data-listing-date-modified-sort="1725141600000" data-listing-reading-time-sort="1" data-listing-word-count-sort="142" data-listing-title-sort="U12 UISP" data-listing-filename-sort="u12u.qmd">
+<td>
+<span class="listing-date">May 1, 2024</span>
+</td>
+<td>
+<a href="./squadre/u12u.html" class="title listing-title">U12 UISP</a>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 
 
-<p>## Project Status</p>
-<p>Fusce tristique, elit vel tincidunt vehicula, est tortor laoreet sem, nec sagittis ipsum nisl eget ipsum. Ut fringilla facilisis tincidunt:</p>
-<ol type="1">
-<li>Cras fermentum sagittis tincidunt. Vestibulum nunc nisi, consequat sed nunc vitae, mollis sodales urna.</li>
-<li>Curabitur venenatis, sem sed sodales fermentum, ante mauris posuere nisl, eu pretium velit magna a ex. Duis malesuada vitae nisl sit amet aliquam.</li>
-<li>Nullam scelerisque condimentum leo in convallis. Phasellus eu mauris enim.</li>
-</ol>
-<p>Sed volutpat orci eu ligula gravida, et congue lacus efficitur. Vivamus eget mi nisl. Nam tristique eros nec elit commodo, at vehicula purus venenatis. Donec imperdiet interdum erat at dignissim. Nullam odio ante, pellentesque id commodo et, sodales eget diam.</p>
-<section id="challenges-and-opportunities" class="level2">
-<h2 class="anchored" data-anchor-id="challenges-and-opportunities">Challenges and Opportunities</h2>
-<p>In scelerisque non dolor at congue. Donec neque lorem, consectetur sed consectetur ut, pulvinar sit amet justo. Donec at mi erat. Maecenas luctus sem orci, eu ullamcorper arcu porta sed. Nam dapibus risus ligula, non tempor leo convallis vel. Mauris pretium, arcu ut bibendum egestas, nisi tellus cursus tortor, vel interdum turpis ipsum in nisi.</p>
-<p>Aliquam ac egestas mi. Nulla ut porttitor justo. Proin id fermentum nunc:</p>
-<ol type="1">
-<li>In odio justo, scelerisque at augue at, blandit rhoncus nibh.</li>
-<li>Mauris ut tristique elit. Suspendisse pretium tempor mauris non luctus.</li>
-<li>Mauris posuere nulla purus, quis dapibus urna suscipit ac.</li>
-</ol>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at risus blandit, aliquet leo sed, pretium lectus. Vivamus in tortor in velit consequat sodales. Integer eleifend dictum vestibulum. Nullam ac augue ultrices, consectetur velit pretium, tincidunt elit. Aliquam mollis nulla erat, vitae scelerisque ante ultrices eu. Fusce maximus libero eget viverra ornare. Proin eu augue placerat, sodales nibh et, laoreet ex.</p>
 
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

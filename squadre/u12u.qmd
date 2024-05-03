@@ -1,0 +1,46 @@
+---
+title: "U12 UISP"
+date: 05/01/2024
+date-modified: 09/01/2024
+categories: ['Squadre']
+params:
+  atleta: 'U12 UISP'
+format:
+  html: 
+    toc: false
+page-layout: full
+---
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+library(tidyverse)
+library(gt)
+
+
+ll <- tibble(image = fs::dir_ls("../squadre/images/", regexp = "png"),
+            atleta = c("Adele Cireddu", "Isabella Boni"))
+
+tibble(
+  atleta = c("Adele Cireddu", "Isabella Boni"),
+  Nascita = c("08/12/2012", "20/12/2012"),
+  altezza = c("1.60", "1.65"),
+  image = 250
+) |>
+  gt() |>
+  text_transform(
+    locations = cells_body(columns = image,
+                           rows = (atleta == ll$atleta)),
+    fn = function(x) {
+      local_image(
+        filename = ll$image,
+        height = as.numeric(x)
+      )
+    }
+  )
+
+
+```
+

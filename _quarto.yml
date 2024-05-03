@@ -9,8 +9,26 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-
+      - href: allenamenti.qmd
+        text: Allenamenti
+      - href: partite.qmd
+        text: Partite
+      - href: progAnnuale.qmd
+        text: Programmazione
+      - href: commentiTT.qmd
+        text: Commenti tecnici/tattici
+    right:
+      - icon: youtube
+        href: https://studio.youtube.com/playlist/PLuLJwY97FamexM2F6711BmqySUYCotgZ0/videos
+      - text: Calendari
+        menu: 
+          - text: "U13F - Prima fase"
+            href: https://docs.google.com/spreadsheets/d/1FYoLm8xXQP6Q8xbBYOuhOg_Xc8TOdEPT/edit#gid=658309003
+          - text: "U13U - Prima fase"
+            href: https://docs.google.com/spreadsheets/d/1FYoLm8xXQP6Q8xbBYOuhOg_Xc8TOdEPT/edit#gid=658309003
+          - text: "U12U - Prima fase"
+            href: https://docs.google.com/spreadsheets/d/1FYoLm8xXQP6Q8xbBYOuhOg_Xc8TOdEPT/edit#gid=658309003
+    
 format:
   html:
     theme: litera

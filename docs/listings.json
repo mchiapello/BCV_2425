@@ -16,11 +16,25 @@
     "listing": "/progAnnuale.html",
     "items": [
       "/progAnnuale/ade-cir.html",
+      "/progAnnuale/CalGenerale.html",
       "/progAnnuale/dashboard.html",
       "/progAnnuale/isa-bon.html",
+      "/progAnnuale/september.html",
       "/progAnnuale/u12u.html",
       "/progAnnuale/u13f.html",
       "/progAnnuale/u13u.html"
+    ]
+  },
+  {
+    "listing": "/commentiTT.html",
+    "items": [
+      "/commentiTT/u12u.html"
+    ]
+  },
+  {
+    "listing": "/squadre.html",
+    "items": [
+      "/squadre/u12u.html"
     ]
   }
 ]
