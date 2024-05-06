@@ -1,7 +1,7 @@
 ---
-title: "QuartoWebsite"
+title: ""
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+::: {style="text-align: center; font-size: 30px;"}
+Questo è il sito di riferimanto dell'U12/U13 del BCV 2024/2025
+:::
