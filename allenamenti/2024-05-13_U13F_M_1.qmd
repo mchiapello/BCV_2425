@@ -1,0 +1,21 @@
+---
+date: 05/13/2024
+categories: ['U13F', '2024-2025', 'Pre-season']
+params:
+  palestra: 'Ubertini'
+  date: '13/05/2024'
+  allenamento: '1'
+  convocate: ['Per-Giu', 'Del-Aur', 'Gil-Ari', 'Pan-Mar', 'Neg-Ire', 'Tap-Ann', 'Ber-Sil', 'Cir-Ade', 'Bon-Isa', 'Goy-Bea', 'Ger-Val', 'Tor-Ari']
+  assenti: ['']
+  vincitori: ['']
+  impegno: 0.8
+  obiettivo: 0.8
+  url: NA
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Obiettivi: Clessidra - Attacco
+{{< include ../../_contents/_allenamento.qmd >}}

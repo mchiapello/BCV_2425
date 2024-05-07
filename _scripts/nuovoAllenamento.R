@@ -1,18 +1,18 @@
 # Define variavbles
 ### Folder
-d <- "04/15/2024"
+d <- "05/13/2024"
 date <- lubridate::mdy(d)
-n <- 49
+team <- "U13F"
+n <- 1
 ### File
-categories <- c("U12F", "2023-2024", "In-season")
-palestra <- c("Ubertini")
-assenti <- c("Mauro", "Panetto")
+categories <- c(team, "2024-2025", "Pre-season")
+convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
+               "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
+               "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
+assenti <- c()
 vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.8
-allenatore <- 0.8
-miglioramenti <- 0.8
-voto <- 0.8
 obiettivi <- "Clessidra - Attacco"
 url <- NA
 
@@ -20,11 +20,13 @@ url <- NA
 dd <- lubridate::wday(date, label = TRUE)
 if(dd == "Mon"){
   dd <- "M"
+  palestra <- "Ubertini"
 } else {
   dd <- "G"
+  palestra <- "Arè"
 }
-pat <- paste0("allenamenti/", date, "_", dd, "_", n)
-fs::dir_create(pat)
+pat <- paste0("allenamenti/", date, "_", team, "_", dd, "_", n, ".qmd")
+
 
 # Prepare file
 library(yaml)
@@ -39,13 +41,11 @@ cat(paste0("---\n",
                                     "(\\d\\d\\d\\d)-(\\d\\d)-(\\d\\d)", 
                                     "\\3/\\2/\\1"), "'\n",
            "  allenamento: '", n, "'\n",
+           "  convocate: ['", paste0(convocate, collapse = "', '"), "']\n",
            "  assenti: ['", paste0(assenti, collapse = "', '"), "']\n",
            "  vincitori: ['", paste0(vincitori, collapse = "', '"), "']\n",
            "  impegno: ", impegno, "\n",
            "  obiettivo: ", obiettivo, "\n",
-           "  allenatore: ", allenatore, "\n",
-           "  miglioramenti: ", miglioramenti, "\n",
-           "  voto: ", voto, "\n",
            "  url: ", url, "\n",
            "execute:\n",
            "  echo: false\n",
@@ -54,4 +54,4 @@ cat(paste0("---\n",
            "---\n\n",
            "## Obiettivi: ", obiettivi, "\n",
            "{{< include ../../_contents/_allenamento.qmd >}}"),
-    file = paste0(pat, "/index.qmd"))
+    file = pat)
