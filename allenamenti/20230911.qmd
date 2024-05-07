@@ -28,3 +28,4 @@ df sdfsdfkhsdl;kfhlsad f
 sfsdhflkh
 
 {{< meta params.squadra >}}
+{{< meta date >}}

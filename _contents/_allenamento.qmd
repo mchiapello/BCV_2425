@@ -51,12 +51,37 @@ ggplot(df, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) +
 #| echo: false
 #| message: false
 #| warning: false
+# dat <- lubridate::ymd(date)
+# conv <- params$convocate
+# ass <- params$assenti
+# players <- readRDS(paste0(here::here(), "/data/atlete2425.RDS"))
+# presenze <- readRDS(paste0(here::here(), "/data/presenze.RDS"))
+# 
+# out <- players |> 
+#   filter(ID %in% conv) |> 
+#   mutate(data = dat,
+#          squadra = squadra,
+#          presente = ifelse(ID %in% ass, 0, 1)) |> 
+#   select(-nascita)
+# 
+# 
+# nr <- presenze |> 
+#   filter(data == lubridate::ymd(dat),
+#          squadra == squadra) |> 
+#   nrow()
+# 
+# if(nr == 0){
+#   df <- presenze |> 
+#     bind_rows(out)
+# } else {
+#   df <- presenze
+# }
+# 
+# saveRDS(df, paste0(here::here(), "/data/presenze.RDS"))
 
-conv <- params$convocate
-ass <- params$assenti
-players <- readRDS(paste0(here::here(), "/data/atlete2425.RDS"))
-
-
+pre <- readRDS("../data/presenze.RDS")
+pre |> 
+  gt::gt()
 ```
 
 

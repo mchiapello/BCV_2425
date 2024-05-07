@@ -1,5 +1,5 @@
 ---
-date: 05/13/2024
+date: 2024-05-13
 categories: ['U13F', '2024-2025', 'Pre-season']
 params:
   squadra: 'U13F'
@@ -8,7 +8,7 @@ params:
   date: '13/05/2024'
   allenamento: '1'
   convocate: ['Per-Giu', 'Del-Aur', 'Gil-Ari', 'Pan-Mar', 'Neg-Ire', 'Tap-Ann', 'Ber-Sil', 'Cir-Ade', 'Bon-Isa', 'Goy-Bea', 'Ger-Val', 'Tor-Ari']
-  assenti: ['']
+  assenti: ['Per-Giu']
   vincitori: ['']
   impegno: 0.8
   obiettivo: 0.8

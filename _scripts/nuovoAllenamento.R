@@ -9,7 +9,7 @@ categories <- c(squadra, "2024-2025", "Pre-season")
 convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
-assenti <- c()
+assenti <- c("Per-Giu")
 vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.8
@@ -28,12 +28,12 @@ if(dd == "Mon"){
 pat <- paste0("allenamenti/", date, "_", squadra, "_", dd, "_", n, ".qmd")
 
 
-# Prepare file
+# Prepare allenamento.qmd file
 library(yaml)
 library(tidyverse)
 # Create a list with your YAML content
 cat(paste0("---\n", 
-           "date: ", d, "\n",
+           "date: ", date, "\n",
            "categories: ['", paste0(categories, collapse = "', '"), "']\n",
            "params:\n",
            "  squadra: '", squadra, "'\n",
@@ -58,3 +58,52 @@ cat(paste0("---\n",
            "## ", obiettivi, "\n",
            "{{< include ../_contents/_allenamento.qmd >}}"),
     file = pat)
+
+# Prepare allenamento summary
+al_old <- readRDS("data/allenamenti.RDS")
+al <- tibble(squadra = squadra,
+       data = date,
+       N = n,
+       tema = obiettivi,
+       obiettivo = obiettivo,
+       impegno = impegno)
+
+al_old_N <- al_old |> 
+  filter(squadra %in% squadra,
+         data %in% date) |> 
+  nrow()
+
+if(al_old_N == 0){
+  al_new <- al_old |> 
+    bind_rows(al)
+} else {
+  al_new <- al_old
+}
+
+saveRDS(al_new, "data/allenamenti.RDS")
+
+# Prepare presenze
+players <- readRDS(paste0(here::here(), "/data/atlete2425.RDS"))
+presenze <- readRDS(paste0(here::here(), "/data/presenze.RDS"))
+
+out <- players |> 
+  filter(ID %in% convocate) |> 
+  mutate(data = date,
+         squadra = squadra,
+         presente = ifelse(ID %in% assenti, 0, 1)) |> 
+  select(-nascita)
+
+
+nr <- presenze |> 
+  filter(data == date,
+         squadra == squadra) |> 
+  nrow()
+
+if(nr == 0){
+  df <- presenze |> 
+    bind_rows(out)
+} else {
+  df <- presenze
+}
+
+saveRDS(df, paste0(here::here(), "/data/presenze.RDS"))
