@@ -2,10 +2,10 @@
 ### Folder
 d <- "05/13/2024"
 date <- lubridate::mdy(d)
-team <- "U13F"
+squadra <- "U13F"
 n <- 1
 ### File
-categories <- c(team, "2024-2025", "Pre-season")
+categories <- c(squadra, "2024-2025", "Pre-season")
 convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
@@ -25,7 +25,7 @@ if(dd == "Mon"){
   dd <- "G"
   palestra <- "Arè"
 }
-pat <- paste0("allenamenti/", date, "_", team, "_", dd, "_", n, ".qmd")
+pat <- paste0("allenamenti/", date, "_", squadra, "_", dd, "_", n, ".qmd")
 
 
 # Prepare file
@@ -36,6 +36,8 @@ cat(paste0("---\n",
            "date: ", d, "\n",
            "categories: ['", paste0(categories, collapse = "', '"), "']\n",
            "params:\n",
+           "  squadra: '", squadra, "'\n",
+           "  n: '", n, "'\n",
            "  palestra: '", palestra, "'\n",
            "  date: '", str_replace(as.character(date), 
                                     "(\\d\\d\\d\\d)-(\\d\\d)-(\\d\\d)", 
@@ -46,12 +48,13 @@ cat(paste0("---\n",
            "  vincitori: ['", paste0(vincitori, collapse = "', '"), "']\n",
            "  impegno: ", impegno, "\n",
            "  obiettivo: ", obiettivo, "\n",
+           "  obiettivi: ", obiettivi, "\n",
            "  url: ", url, "\n",
            "execute:\n",
            "  echo: false\n",
            "  warning: false\n",
            "  message: false\n",
            "---\n\n",
-           "## Obiettivi: ", obiettivi, "\n",
-           "{{< include ../../_contents/_allenamento.qmd >}}"),
+           "## ", obiettivi, "\n",
+           "{{< include ../_contents/_allenamento.qmd >}}"),
     file = pat)

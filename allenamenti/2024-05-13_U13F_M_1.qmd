@@ -2,6 +2,8 @@
 date: 05/13/2024
 categories: ['U13F', '2024-2025', 'Pre-season']
 params:
+  squadra: 'U13F'
+  n: '1'
   palestra: 'Ubertini'
   date: '13/05/2024'
   allenamento: '1'
@@ -10,6 +12,7 @@ params:
   vincitori: ['']
   impegno: 0.8
   obiettivo: 0.8
+  obiettivi: Clessidra - Attacco
   url: NA
 execute:
   echo: false
@@ -17,5 +20,5 @@ execute:
   message: false
 ---
 
-## Obiettivi: Clessidra - Attacco
-{{< include ../../_contents/_allenamento.qmd >}}
+## Clessidra - Attacco
+{{< include ../_contents/_allenamento.qmd >}}

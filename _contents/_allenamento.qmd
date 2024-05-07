@@ -8,10 +8,11 @@ suppressPackageStartupMessages(library(lubridate))
 library(fs)
 
 # Load scripts
-source(paste0(here::here(), "/scripts/999_functions.R"))
+source(paste0(here::here(), "/_scripts/999_functions.R"))
 ```
 
 L'allenamento di oggi {{< meta date >}} si è svolto al {{< meta params.palestra >}}.
+
 
 ### Valutazione dell'allenamento  {{< fa gauge-simple-high size=normalsize >}}
 
@@ -22,10 +23,7 @@ L'allenamento di oggi {{< meta date >}} si è svolto al {{< meta params.palestra
 df <- tribble(
     ~variable, ~percentage,
     "Impegno collettivo", params$impegno,
-    "Raggiungimento\ndell'obiettivo", params$obiettivo,
-    "Soddisfazione\ndell'allenatore", params$allenatore,
-    "Miglioramenti attesi", params$miglioramenti,
-    "Voto", params$voto) |>  
+    "Raggiungimento\ndell'obiettivo", params$obiettivo) |>  
     mutate(group = ifelse(percentage <0.5, "red",
                           ifelse(percentage>=0.5 & percentage<0.7, "orange","green")),
            label = paste0(percentage * 100, "%"),
@@ -53,107 +51,14 @@ ggplot(df, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) +
 #| echo: false
 #| message: false
 #| warning: false
-pres <- readr::read_csv(paste0(here::here(), "/data/presenze.csv"), show_col_types = FALSE)
-players <- readr::read_csv(paste0(here::here(), "/data/elencoAtlete.csv"), show_col_types = FALSE)
 
-if(!lubridate::dmy(params$date) %in% pres$date){
-    pres2 <- pres |>
-      dplyr::bind_rows(players  |>
-                         dplyr::mutate(date = lubridate::dmy(params$date),
-                                       assenti = ifelse(cognome %in% params$assenti, 1, 0)))
+conv <- params$convocate
+ass <- params$assenti
+players <- readRDS(paste0(here::here(), "/data/atlete2425.RDS"))
 
-    fs::file_copy(paste0(here::here(), "/data/presenze.csv"),
-              paste0(here::here(), "/data/presenze_old.csv"),
-              overwrite = TRUE)
-
-    readr::write_csv(pres2, paste0(here::here(), "/data/presenze.csv"))
-
-    # # If a mistake is made before commit
-    # system("git restore data/presenze.csv")
-    # system("git restore data/presenze_old.csv")
-}
-pres2 <- readr::read_csv(paste0(here::here(), "/data/presenze.csv"), show_col_types = FALSE)
-pres2 |>
-    dplyr::filter(date %in% lubridate::dmy(params$date))  |>
-    dplyr::mutate(date = format(date, "%d-%m"),
-           assenti = ifelse(assenti == 1, "X", ""))  |>
-    dplyr::select(-date, -id, -nascita, -numero) |>
-    gt::gt()  |>
-    gtExtras::gt_theme_538()
-
-pp <- paste0("Erano presenti ", nrow(pres2 |> 
-                                       filter(date %in% lubridate::dmy(params$date),
-                                              assenti == "0")),
-             " atlete su ", nrow(players))
-```
-
-`r pp`
-
-## Classifica Bagnerone {{< fa ranking-star size=normalsize >}}
-
-### Classifica mensile
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-class <- readr::read_csv(paste0(here::here(), "/data/classificaRaw.csv"), show_col_types = FALSE)
-players <- readr::read_csv(paste0(here::here(), "/data/elencoAtlete.csv"), show_col_types = FALSE)
-
-if(!lubridate::dmy(params$date) %in% pres$date){
-  class <- class %>% 
-        bind_rows(pres2 |> 
-                    filter(date == lubridate::dmy(params$date)) |>
-                    mutate(vincitori = ifelse(cognome %in% params$vincitori, 1, 0)))
-
-    fs::file_copy(paste0(here::here(), "/data/classificaRaw.csv"),
-                  paste0(here::here(), "/data/classificaRaw_old.csv"),
-                  overwrite = TRUE)
-    write_csv(class, paste0(here::here(), "/data/classificaRaw.csv"))
-
-    # # If a mistake is made before commit
-    # system("git restore data/003_dati/classificaRaw.csv")
-    # system("git restore data/003_dati/classificaRaw_old.csv")
-}
-
-x2 <- readr::read_csv(paste0(here::here(), "/data/classificaRaw.csv"), show_col_types = FALSE)
-
-
-x2 |>
-    dplyr::mutate(mese = lubridate::month(params$date)) |>
-    dplyr::filter(mese == lubridate::month(date)) |>
-    dplyr::mutate(Punteggio = dplyr::case_when(vincitori == 1 & assenti == 0 ~ 3,
-                                 vincitori == 0 & assenti == 0 ~ 1,
-                                 TRUE ~ 0)) |>
-    dplyr::group_by(cognome, nome) |>
-    dplyr::summarise(Classifica = sum(Punteggio)) |>
-    dplyr::ungroup() |>
-    dplyr::arrange(desc(Classifica), cognome) |>
-    gt::gt() |>
-    gtExtras::gt_theme_538()
 
 ```
 
-### Classifica generale
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-x2 %>%
-    mutate(Punteggio = case_when(vincitori == 1 & assenti == 0 ~ 3,
-                                 vincitori == 0 & assenti == 0 ~ 1,
-                                 TRUE ~ 0)) %>%
-    group_by(cognome, nome) %>%
-    summarise(Classifica = sum(Punteggio)) %>%
-    ungroup %>%
-    arrange(desc(Classifica), cognome) %>%
-    gt::gt() %>%
-    gtExtras::gt_theme_538()
-
-```
 
 ## Video dell'allenamento {{< fa video size=normalsize >}}
 
