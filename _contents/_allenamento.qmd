@@ -81,6 +81,8 @@ ggplot(df, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) +
 
 pre <- readRDS("../data/presenze.RDS")
 pre |> 
+  filter(data %in% params$date,
+         squadra %in% params$squadra) |> 
   gt::gt()
 ```
 
@@ -107,7 +109,7 @@ if (params$url != "NA"){
 #| message: false
 #| warning: false
 
-tit <- paste0("Allenamento ", params$allenamento, " del ", params$date)
+tit <- paste0("Allenamento dell'", params$squadra, " numero ", params$allenamento, " del ", params$date)
 ```
 
 ---

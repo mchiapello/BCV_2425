@@ -2,13 +2,16 @@
 ### Folder
 d <- "05/13/2024"
 date <- lubridate::mdy(d)
-squadra <- "U13F"
+team <- "U13F"
 n <- 1
 ### File
-categories <- c(squadra, "2024-2025", "Pre-season")
+categories <- c(team, "2024-2025", "Pre-season")
 convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
+# convocate <- c("Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre", 
+#                "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia", 
+#                "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann")
 assenti <- c("Per-Giu")
 vincitori <- c()
 impegno <- 0.8
@@ -25,7 +28,7 @@ if(dd == "Mon"){
   dd <- "G"
   palestra <- "Arè"
 }
-pat <- paste0("allenamenti/", date, "_", squadra, "_", dd, "_", n, ".qmd")
+pat <- paste0("allenamenti/", date, "_",team, "_", dd, "_", n, ".qmd")
 
 
 # Prepare allenamento.qmd file
@@ -36,12 +39,10 @@ cat(paste0("---\n",
            "date: ", date, "\n",
            "categories: ['", paste0(categories, collapse = "', '"), "']\n",
            "params:\n",
-           "  squadra: '", squadra, "'\n",
+           "  squadra: '",team, "'\n",
            "  n: '", n, "'\n",
            "  palestra: '", palestra, "'\n",
-           "  date: '", str_replace(as.character(date), 
-                                    "(\\d\\d\\d\\d)-(\\d\\d)-(\\d\\d)", 
-                                    "\\3/\\2/\\1"), "'\n",
+           "  date: '", date, "'\n",
            "  allenamento: '", n, "'\n",
            "  convocate: ['", paste0(convocate, collapse = "', '"), "']\n",
            "  assenti: ['", paste0(assenti, collapse = "', '"), "']\n",
@@ -61,7 +62,7 @@ cat(paste0("---\n",
 
 # Prepare allenamento summary
 al_old <- readRDS("data/allenamenti.RDS")
-al <- tibble(squadra = squadra,
+al <- tibble(squadra =team,
        data = date,
        N = n,
        tema = obiettivi,
@@ -69,7 +70,7 @@ al <- tibble(squadra = squadra,
        impegno = impegno)
 
 al_old_N <- al_old |> 
-  filter(squadra %in% squadra,
+  filter(squadra %in%team,
          data %in% date) |> 
   nrow()
 
@@ -89,14 +90,14 @@ presenze <- readRDS(paste0(here::here(), "/data/presenze.RDS"))
 out <- players |> 
   filter(ID %in% convocate) |> 
   mutate(data = date,
-         squadra = squadra,
+         squadra =team,
          presente = ifelse(ID %in% assenti, 0, 1)) |> 
   select(-nascita)
 
 
 nr <- presenze |> 
-  filter(data == date,
-         squadra == squadra) |> 
+  filter(data %in% date,
+         squadra %in% team) |> 
   nrow()
 
 if(nr == 0){

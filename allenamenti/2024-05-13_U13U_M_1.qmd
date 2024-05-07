@@ -1,0 +1,24 @@
+---
+date: 2024-05-13
+categories: ['U13U', '2024-2025', 'Pre-season']
+params:
+  squadra: 'U13U'
+  n: '1'
+  palestra: 'Ubertini'
+  date: '2024-05-13'
+  allenamento: '1'
+  convocate: ['Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat', 'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann']
+  assenti: ['Cel-Sar']
+  vincitori: ['']
+  impegno: 0.9
+  obiettivo: 0.6
+  obiettivi: Difesa - Attacco
+  url: NA
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Difesa - Attacco
+{{< include ../_contents/_allenamento.qmd >}}

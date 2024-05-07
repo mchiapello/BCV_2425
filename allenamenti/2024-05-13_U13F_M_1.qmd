@@ -5,7 +5,7 @@ params:
   squadra: 'U13F'
   n: '1'
   palestra: 'Ubertini'
-  date: '13/05/2024'
+  date: '2024-05-13'
   allenamento: '1'
   convocate: ['Per-Giu', 'Del-Aur', 'Gil-Ari', 'Pan-Mar', 'Neg-Ire', 'Tap-Ann', 'Ber-Sil', 'Cir-Ade', 'Bon-Isa', 'Goy-Bea', 'Ger-Val', 'Tor-Ari']
   assenti: ['Per-Giu']
