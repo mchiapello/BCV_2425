@@ -17,7 +17,8 @@ x <- tbl(mydb, "atlete") |>
 
 assenti <- c("Goy-Bea", "Del-Aur")
 
-id <- tbl(mydb, "presenze")
+id <- tbl(mydb, "presenze") |> 
+  as_tibble()
 
 pr <- tbl(mydb, "atlete") |> 
   mutate(date = "2024-06-10",
@@ -26,6 +27,11 @@ pr <- tbl(mydb, "atlete") |>
 
 pr <- as_tibble(pr)
 
+if(any(id$date %in% unique(pr$date))){
+  print("Presenze già aggiunte")
+} else {
+  print("NO")
+}
 
 copy_to(mydb, pr, "presenze", append = TRUE)
 
