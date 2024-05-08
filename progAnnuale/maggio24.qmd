@@ -9,7 +9,6 @@ format:
   html: 
     toc: false
 page-layout: full
-draft: true
 ---
 
 ```{r}
@@ -28,6 +27,10 @@ help <- tibble(team = c(rep("U13F", 35),
                day = rep(c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"), 15),
                dove = case_when(team == "U13F" & day == "Mon" ~ "Ubertini",
                                 team == "U13F" & day == "Thu" ~ "Arè",
+                                team == "U13U" & day == "Thu" ~ "Arè",
+                                team == "U13U" & day == "Tue" ~ "Scuole",
+                                team == "U12U" & day == "Mon" ~ "Arè",
+                                team == "U12U" & day == "Wed" ~ "Ubertini",
                                 TRUE ~ "Unkwon"),
                x = c(rep(0.1:6.1, 5),
                      rep(0.1:6.1, 5),
@@ -36,20 +39,11 @@ help <- tibble(team = c(rep("U13F", 35),
                      rep(5:1, each = 7),
                      rep(4.7:0.7, each = 7)),
                label = case_when(team == "U13F" ~ paste0("<span style='color:MediumSlateBlue'>**",
-                                                         team, "**</span>", dove),
+                                                         team, "**</span> ", dove),
                                  team == "U13U" ~ paste0("<span style='color:Magenta'>**",
-                                                         team, "**</span>", dove), 
+                                                         team, "**</span> ", dove), 
                                  team == "U12U" ~ paste0("<span style='color:IndianRed'>**",
-                                                         team, "**</span>", dove)))
-
-
-calendR(year = 2024,
-        month = 5,
-        start = "M",
-        title = "BCV - Under 12/13 Femminile",
-        subtitle = "Maggio 2024") +
-geom_richtext(data = help, 
-              aes(x, y, label = label))
+                                                         team, "**</span> ", dove)))
 
 ```
 
@@ -65,11 +59,17 @@ geom_richtext(data = help,
 u13f <- help |>
     filter(team == "U13F",
            day %in% c("Mon", "Thu")) |>
-    slice(2:10)
+    slice(5:10)
 
+u13u <- help |>
+    filter(team == "U13U",
+           day %in% c("Tue", "Thu")) |>
+    slice(5:10)
 
-
-
+u12u <- help |>
+    filter(team == "U12U",
+           day %in% c("Mon")) |> 
+  slice(3:5)
 
 sampleImage = png::readPNG("../images/BCV.png") %>%
       grid::rasterGrob(interpolate = TRUE)
@@ -84,11 +84,11 @@ geom_richtext(data = u13f,
 geom_richtext(data = u13u, 
               aes(x, y, label = label)) +
 geom_richtext(data = u12u, 
-              aes(x, y, label = label))  +coord_cartesian(clip = 'off') +
-annotation_custom(sampleImage, x = 1.3, y = 7.2, ymax = 7.7, xmax = 2)
+              aes(x, y, label = label))  + coord_cartesian(clip = 'off') +
+annotation_custom(sampleImage, x = 1.3, y = 6, ymax = 6.5, xmax = 2)
 
-ggsave(p1, filename = "../progAnnuale/sept24.png", units = "mm", width = 297, height = 210, scale = 1.45)
+ggsave(p1, filename = "../progAnnuale/may24.png", units = "mm", width = 297, height = 210, scale = 1.25)
 
 ```
 
-![](sept24.png)
+![](may24.png)
