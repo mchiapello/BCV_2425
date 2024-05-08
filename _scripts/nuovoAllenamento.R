@@ -61,50 +61,71 @@ cat(paste0("---\n",
     file = pat)
 
 # Prepare allenamento summary
-al_old <- readRDS("data/allenamenti.RDS")
-al <- tibble(squadra =team,
-       data = date,
-       N = n,
-       tema = obiettivi,
-       obiettivo = obiettivo,
-       impegno = impegno)
-
-al_old_N <- al_old |> 
-  filter(squadra %in%team,
-         data %in% date) |> 
-  nrow()
-
-if(al_old_N == 0){
-  al_new <- al_old |> 
-    bind_rows(al)
+if(fs::file_exists("data/allenamenti.RDS")){
+  al_old <- readRDS("data/allenamenti.RDS")
+  # saveRDS(presenze, paste0(here::here(), "/data/presenze_old.RDS"))
+  al <- tibble(squadra =team,
+               data = date,
+               N = n,
+               tema = obiettivi,
+               obiettivo = obiettivo,
+               impegno = impegno)
+  
+  al_old_N <- al_old |> 
+    filter(squadra %in%team,
+           data %in% date) |> 
+    nrow()
+  
+  if(al_old_N == 0){
+    al_new <- al_old |> 
+      bind_rows(al)
+  } else {
+    al_new <- al_old
+  }
+  saveRDS(al_new, "data/allenamenti.RDS")
 } else {
-  al_new <- al_old
+  al <- tibble(squadra =team,
+               data = date,
+               N = n,
+               tema = obiettivi,
+               obiettivo = obiettivo,
+               impegno = impegno)
+  saveRDS(al, "data/allenamenti.RDS")
 }
 
-saveRDS(al_new, "data/allenamenti.RDS")
 
 # Prepare presenze
 players <- readRDS(paste0(here::here(), "/data/atlete2425.RDS"))
-presenze <- readRDS(paste0(here::here(), "/data/presenze.RDS"))
 
-out <- players |> 
-  filter(ID %in% convocate) |> 
-  mutate(data = date,
-         squadra =team,
-         presente = ifelse(ID %in% assenti, 0, 1)) |> 
-  select(-nascita)
-
-
-nr <- presenze |> 
-  filter(data %in% date,
-         squadra %in% team) |> 
-  nrow()
-
-if(nr == 0){
-  df <- presenze |> 
-    bind_rows(out)
+if(fs::file_exists("data/presenze.RDS")){
+  presenze <- readRDS(paste0(here::here(), "/data/presenze.RDS"))
+  # saveRDS(presenze, paste0(here::here(), "/data/presenze_old.RDS"))
+  
+  out <- players |> 
+    filter(ID %in% convocate) |> 
+    mutate(data = date,
+           squadra =team,
+           presente = ifelse(ID %in% assenti, 0, 1)) |> 
+    select(-nascita)
+  
+  nr <- presenze |> 
+    filter(data %in% date,
+           squadra %in% team) |> 
+    nrow()
+  
+  if(nr == 0){
+    df <- presenze |> 
+      bind_rows(out)
+  } else {
+    df <- presenze
+  }
+  saveRDS(df, paste0(here::here(), "/data/presenze.RDS"))
 } else {
-  df <- presenze
+  out <- players |> 
+    filter(ID %in% convocate) |> 
+    mutate(data = date,
+           squadra =team,
+           presente = ifelse(ID %in% assenti, 0, 1)) |> 
+    select(-nascita)
+  saveRDS(out, paste0(here::here(), "/data/presenze.RDS"))
 }
-
-saveRDS(df, paste0(here::here(), "/data/presenze.RDS"))
