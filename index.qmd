@@ -71,199 +71,192 @@ This is a test
 
 # Generale
 
-## Row {height="20%"}
-
-::: {.valuebox icon="speedometer" color="`r ciao2`"}
-Allenamenti fatti
-
-`r 10`
-
-:::
-
-## Row {height="80%"}
-
-::: {.card title="My Title"}
-
+## Row {height="30%"}
 ```{r}
-library(palmerpenguins)
+if(fs::file_exists("data/allenamenti.RDS")){
+  tmp <- readRDS("data/allenamenti.RDS")
+  af <- nrow(tmp)
+} else {
+  af <- 0
+}
 
-mass_flipper <- ggplot(data = penguins, 
-                       aes(x = flipper_length_mm,
-                           y = body_mass_g)) +
-  geom_point(aes(color = species, 
-                 shape = species),
-             size = 3,
-             alpha = 0.8) +
-  scale_color_manual(values = c("darkorange","purple","cyan4")) +
-  labs(title = "Penguin size, Palmer Station LTER",
-       subtitle = "Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
-       x = "Flipper length (mm)",
-       y = "Body mass (g)",
-       color = "Penguin species",
-       shape = "Penguin species") +
-theme_bw()
-
-ggsave(mass_flipper, filename = "_tmp/delete.png", units = "cm", width = 21, height = 29.7, scale = 1.5)
+if(fs::file_exists("data/partite.RDS")){
+  tmp <- readRDS("data/partite.RDS")
+  pg <- nrow(tmp)
+} else {
+  pg <- 0
+}
 ```
 
-![](_tmp/delete.png)
+::: {.valuebox icon="person-arms-up" color="#B4E815"}
+<strong>[Numero di Atlete]{style="font-size: 40px;"}</strong>
+
+`r 42`
 
 :::
 
+
+::: {.valuebox icon="card-checklist" color="#B4E815"}
+<strong>[Allenamenti fatti]{style="font-size: 40px;"}</strong>
+
+`r af`
+
+`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
+:::
+
+::: {.valuebox icon="arrows-collapse-vertical" color="#E8A715"}
+[Partite giocate]{style="font-size: 40px;"}
+
+`r pg`
+
+`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
+:::
+
+
+## Row {height="70%"}
+
+### Pippo
 
 # U13 FIPAV
 
-## Row {height="20%"}
-
 ```{r}
-#| content: valuebox
-#| title: "Allenamenti"
+if(fs::file_exists("data/allenamenti.RDS")){
+  tmp <- readRDS("data/allenamenti.RDS")
+  af_u13f <- tmp |> 
+          filter(team == "U13F") |> 
+          nrow()
+} else {
+  af_u13f <- 0
+}
 
-list(
-  icon = "file-medical",
-  color = "primary",
-  value = 20
-)
+if(fs::file_exists("data/partite.RDS")){
+  tmp <- readRDS("data/partite.RDS")
+  pg_u13f <- tmp |> 
+           filter(team == "U13F") |> 
+           nrow()
+} else {
+  pg_u13f <- 0
+}
+
+perc <- "red"
+icon <- "x-octagon-fill"
+np_u13f <- 2
 ```
 
-```{r}
-#| content: valuebox
-#| title: "Partite giocate"
+## Row {height="30%"}
 
-list(
-  icon = "clipboard2-pulse",
-  color = "red",
-  value = 20
-)
-```
+::: {.valuebox icon="card-checklist" color="#B4E815"}
+<strong>[Allenamenti fatti]{style="font-size: 40px;"}</strong>
 
-```{r}
-#| content: valuebox
-#| title: "Partite vinte"
+`r af_u13f`
 
-list(
-  icon = "clipboard2-pulse",
-  color = "red",
-  value = 120,
-  text = "Ciao"
-)
-```
+`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
+:::
 
-## Row {height="80%"}
+::: {.valuebox icon="arrows-collapse-vertical" color="#E8A715"}
+[Partite giocate]{style="font-size: 40px;"}
 
-### Ciao
+`r pg_u13f`
 
-fds fjs fskh fkhsdk;fh sujdf sfs;fj ;sado fsau'f as;f
+`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
+:::
+
+::: {.valuebox icon=`r icon` color=`r perc`}
+[% partite vinte]{style="font-size: 40px;"}
+
+`r paste0(pg_u13f, "%")`
+
+`r paste0('<i class="bi bi-percent"></i>', " su ", np_u13f, " partite.")`
+:::
+
+## Row {height="70%"}
+
+### Pippo
 
 # U13 UISP
 
-## Row {height="25%"}
-
 ```{r}
-#| content: valuebox
-#| title: "Allenamenti"
+if(fs::file_exists("data/allenamenti.RDS")){
+  tmp <- readRDS("data/allenamenti.RDS")
+  af_u13u <- tmp |> 
+          filter(team == "U13F") |> 
+          nrow()
+} else {
+  af_u13u <- 0
+}
 
-list(
-  icon = "file-medical",
-  color = "primary",
-  value = 20
-)
+if(fs::file_exists("data/partite.RDS")){
+  tmp <- readRDS("data/partite.RDS")
+  pg_u13u <- tmp |> 
+           filter(team == "U13F") |> 
+           nrow()
+} else {
+  pg_u13u <- 0
+}
+
+perc <- "#15E831"
+icon <- "award"
+np_u13u <- 2
 ```
 
-```{r}
-#| content: valuebox
-#| title: "Partite giocate"
+## Row {height="30%"}
 
-list(
-  icon = "clipboard2-pulse",
-  color = "red",
-  value = 20
-)
-```
+::: {.valuebox icon="card-checklist" color="#B4E815"}
+<strong>[Allenamenti fatti]{style="font-size: 40px;"}</strong>
 
-```{r}
-#| content: valuebox
-#| title: "Partite vinte"
-#| subtitle: "CIAO"
+`r af_u13u`
 
-list(
-  icon = "clipboard2-pulse",
-  color = "red",
-  value = 20
-)
-ciao <- "blue"
-ciao2 <- "pink"
-```
-
-::: {.valuebox icon="speedometer" color="`r ciao2`"}
-Marco work
-
-`r 10`
-
-`r paste0("Eravamo ", '<i class="bi bi-3-circle-fill"></i>', " were started today")`
+`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
 :::
 
-## Row {height="80%"}
+::: {.valuebox icon="arrows-collapse-vertical" color="#E8A715"}
+[Partite giocate]{style="font-size: 40px;"}
 
-```{r}
-#| title: "Partite vinte"
-library(palmerpenguins)
-ggplot(data = penguins, 
-                       aes(x = flipper_length_mm,
-                           y = body_mass_g)) +
-  geom_point(aes(color = species, 
-                 shape = species),
-             size = 3,
-             alpha = 0.8) +
-  scale_color_manual(values = c("darkorange","purple","cyan4")) +
-  labs(title = "Penguin size, Palmer Station LTER",
-       subtitle = "Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
-       x = "Flipper length (mm)",
-       y = "Body mass (g)",
-       color = "Penguin species",
-       shape = "Penguin species") +
-  theme(legend.position = c(0.2, 0.7),
-        plot.title.position = "plot",
-        plot.caption = element_text(hjust = 0, face= "italic"),
-        plot.caption.position = "plot")
+`r pg_u13u`
 
-```
+`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
+:::
+
+::: {.valuebox icon=`r icon` color=`r perc`}
+[% partite vinte]{style="font-size: 40px;"}
+
+`r paste0(pg_u13u, "%")`
+
+`r paste0('<i class="bi bi-percent"></i>', " su ", np_u13u, " partite.")`
+:::
+
+## Row {height="70%"}
+
+### Pippo
 
 # U12 UISP
 
-## Row {height="20%"}
+## Row {height="30%"}
 
-```{r}
-#| content: valuebox
-#| title: "Allenamenti"
+::: {.valuebox icon="card-checklist" color="#B4E815"}
+<strong>[Allenamenti fatti]{style="font-size: 40px;"}</strong>
 
-list(
-  icon = "file-medical",
-  color = "primary",
-  value = 20
-)
-```
+`r af`
 
-```{r}
-#| content: valuebox
-#| title: "Partite giocate"
+`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
+:::
 
-list(
-  icon = "clipboard2-pulse",
-  color = "red",
-  value = 20
-)
-```
+::: {.valuebox icon="arrows-collapse-vertical" color="#E8A715"}
+[Partite giocate]{style="font-size: 40px;"}
 
-```{r}
-#| content: valuebox
-#| title: "Partite vinte"
+`r pg`
 
-list(
-  icon = "clipboard2-pulse",
-  color = "red",
-  value = 20
-)
-```
+`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
+:::
 
-## Row {height="80%"}
+::: {.valuebox icon="arrows-collapse-vertical" color="#E8A715"}
+[% partite vinte]{style="font-size: 40px;"}
+
+`r pg`
+
+`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
+:::
+
+## Row {height="70%"}
+
+### Pippo
