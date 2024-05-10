@@ -1,7 +1,269 @@
 ---
-title: ""
+title: "BCV Settore Giovanile Femminile"
+format: 
+  dashboard:
+    nav-buttons: [github]
+    github: https://github.com/mine-cetinkaya-rundel/ld-dashboard
+logo: ../images/logo.png
+theme: [sandstone, theme/custom.scss]
+fig-width: 10
+fig-asp: 0.3
+params:
+  year: "2024/2025"
+  societa: "Basso Canavese Volley"
+  settore: "Giovanile"
+  genere: "Femminile"
+  anni: "2012 - 2013"
+editor_options: 
+  chunk_output_type: console
 ---
 
-::: {style="text-align: center; font-size: 30px;"}
-Questo è il sito di riferimanto dell'U12/U13 del BCV 2024/2025
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(readxl)
+library(scales)
+library(DT)
+library(gt)
+theme_set(theme_minimal(base_size = 24, base_family = "Atkinson Hyperlegible"))
+library(bslib)
+library(bsicons)
+```
+
+```{r}
+#| label: set-inputs
+
+time_period <- paste(params$year)
+ciao2 <- "pink"
+```
+
+#  {.sidebar}
+
+Questa dashboard mostra le statistiche per:
+
+|                     |                      |
+|---------------------|----------------------|
+| **Società**         | `{r} params$societa` |
+| **Settore**         | `{r} params$settore` |
+| **Genere**          | `{r} params$genere`  |
+| **Anni di nascita** | `{r} params$anni`    |
+| **Stagione**        | `{r} time_period`    |
+
+------------------------------------------------------------------------
+
+Nella stagione `{r} time_period` nel settore `{r} params$settore` (`{r} params$genere`) sono presenti 3 squadre con il seguente numero di atleti:
+
+|               |     |
+|---------------|-----|
+| **U13 FIPAV** | 14  |
+| **U13 UISP**  | 14  |
+| **U12 UISP**  | 14  |
+
+------------------------------------------------------------------------
+
+::: {.callout-note collapse="true"}
+## Disclaimer
+
+This is a test
 :::
+
+# Generale
+
+## Row {height="20%"}
+
+::: {.valuebox icon="speedometer" color="`r ciao2`"}
+Allenamenti fatti
+
+`r 10`
+
+:::
+
+## Row {height="80%"}
+
+::: {.card title="My Title"}
+
+```{r}
+library(palmerpenguins)
+
+mass_flipper <- ggplot(data = penguins, 
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(color = species, 
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin size, Palmer Station LTER",
+       subtitle = "Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+theme_bw()
+
+ggsave(mass_flipper, filename = "_tmp/delete.png", units = "cm", width = 21, height = 29.7, scale = 1.5)
+```
+
+![](_tmp/delete.png)
+
+:::
+
+
+# U13 FIPAV
+
+## Row {height="20%"}
+
+```{r}
+#| content: valuebox
+#| title: "Allenamenti"
+
+list(
+  icon = "file-medical",
+  color = "primary",
+  value = 20
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Partite giocate"
+
+list(
+  icon = "clipboard2-pulse",
+  color = "red",
+  value = 20
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Partite vinte"
+
+list(
+  icon = "clipboard2-pulse",
+  color = "red",
+  value = 120,
+  text = "Ciao"
+)
+```
+
+## Row {height="80%"}
+
+### Ciao
+
+fds fjs fskh fkhsdk;fh sujdf sfs;fj ;sado fsau'f as;f
+
+# U13 UISP
+
+## Row {height="25%"}
+
+```{r}
+#| content: valuebox
+#| title: "Allenamenti"
+
+list(
+  icon = "file-medical",
+  color = "primary",
+  value = 20
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Partite giocate"
+
+list(
+  icon = "clipboard2-pulse",
+  color = "red",
+  value = 20
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Partite vinte"
+#| subtitle: "CIAO"
+
+list(
+  icon = "clipboard2-pulse",
+  color = "red",
+  value = 20
+)
+ciao <- "blue"
+ciao2 <- "pink"
+```
+
+::: {.valuebox icon="speedometer" color="`r ciao2`"}
+Marco work
+
+`r 10`
+
+`r paste0("Eravamo ", '<i class="bi bi-3-circle-fill"></i>', " were started today")`
+:::
+
+## Row {height="80%"}
+
+```{r}
+#| title: "Partite vinte"
+library(palmerpenguins)
+ggplot(data = penguins, 
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(color = species, 
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin size, Palmer Station LTER",
+       subtitle = "Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme(legend.position = c(0.2, 0.7),
+        plot.title.position = "plot",
+        plot.caption = element_text(hjust = 0, face= "italic"),
+        plot.caption.position = "plot")
+
+```
+
+# U12 UISP
+
+## Row {height="20%"}
+
+```{r}
+#| content: valuebox
+#| title: "Allenamenti"
+
+list(
+  icon = "file-medical",
+  color = "primary",
+  value = 20
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Partite giocate"
+
+list(
+  icon = "clipboard2-pulse",
+  color = "red",
+  value = 20
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Partite vinte"
+
+list(
+  icon = "clipboard2-pulse",
+  color = "red",
+  value = 20
+)
+```
+
+## Row {height="80%"}
