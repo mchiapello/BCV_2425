@@ -112,6 +112,18 @@ if (params$url != "NA"){
 tit <- paste0("Allenamento dell'", params$squadra, " numero ", params$allenamento, " del ", params$date)
 ```
 
+## PDF dell'allenamento
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+pat <- "2024-05-13_U13F_M_1.pdf"
+```
+
+![Allenamento](`r pat`){width=800px height=1200px}
+
+
 ---
 title: "`r tit`"
 ---
