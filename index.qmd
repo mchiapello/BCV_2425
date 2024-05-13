@@ -172,6 +172,34 @@ np_u13f <- 2
 
 ### Pippo
 
+
+```{r}
+library(tidyverse)
+
+presenze <- readRDS("/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS")
+
+df <- presenze |> 
+  filter(squadra == "U13F") |> 
+  group_by(data) |> 
+  reframe(Convocate = row_number(),
+            M = sum(presente)) |> 
+  slice_tail()
+
+
+df |> 
+  ggplot(aes(x = data, y = Convocate)) +
+  geom_col(aes(fill = "Convocate")) +
+  geom_col(aes(x = data, y = M, fill = "Presenti")) +
+  labs(x = "", y = "Numero di ragazze",
+       title = "Presenze ad allenamento") +
+  scale_y_continuous(breaks = 1:15) +
+  scale_fill_manual(values = c("#8CBEB2", "#F3B562"), name = "") +
+   theme_light() +
+  theme(legend.position = "bottom")
+
+```
+
+
 # U13 UISP
 
 ```{r}

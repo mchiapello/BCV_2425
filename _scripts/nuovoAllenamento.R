@@ -18,7 +18,7 @@ vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.8
 obiettivi <- "Modulo 4/2 (Fase gioco)"
-url <- NA
+url <- "https://youtu.be/2K7YdPsUT7s"
 
 # Prepare the folder
 dd <- lubridate::wday(date, label = TRUE)

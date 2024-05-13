@@ -114,9 +114,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Basso Canavese Volley 2024/2025",
+    "title": "BCV Settore Giovanile Femminile",
     "section": "",
-    "text": "Questo è il sito di riferimanto dell’U12/U13 del BCV 2024/2025"
+    "text": "library(tidyverse)\nlibrary(readxl)\nlibrary(scales)\nlibrary(DT)\nlibrary(gt)\ntheme_set(theme_minimal(base_size = 24, base_family = \"Atkinson Hyperlegible\"))\nlibrary(bslib)\nlibrary(bsicons)\ntime_period &lt;- paste(params$year)\nciao2 &lt;- \"pink\""
   },
   {
     "objectID": "progAnnuale/ade-cir.html",
@@ -284,7 +284,7 @@
     "href": "allenamenti/2024-05-13_U13F_M_1.html",
     "title": "Allenamento dell’U13F numero 1 del 2024-05-13",
     "section": "",
-    "text": "L’allenamento di oggi May 13, 2024 si è svolto al Ubertini.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nID\ncognome\nnome\ndata\nsquadra\npresente\n\n\n\n\nPer-Giu\nPerissinotto\nGiulia\n2024-05-13\nU13F\n1\n\n\nDel-Aur\nDe Luca\nAurora\n2024-05-13\nU13F\n1\n\n\nGil-Ari\nGillone\nArianna\n2024-05-13\nU13F\n1\n\n\nPan-Mar\nPanetto\nMargherita\n2024-05-13\nU13F\n1\n\n\nNeg-Ire\nNegro Bitu\nIrene\n2024-05-13\nU13F\n1\n\n\nTap-Ann\nTapparo\nAnna\n2024-05-13\nU13F\n1\n\n\nBer-Sil\nBergandi\nSilvia\n2024-05-13\nU13F\n1\n\n\nCir-Ade\nCireddu\nAdele\n2024-05-13\nU13F\n1\n\n\nBon-Isa\nBoni\nIsabella\n2024-05-13\nU13F\n1\n\n\nGoy-Bea\nGoy\nBeatrice\n2024-05-13\nU13F\n1\n\n\nGer-Val\nGerace\nValeria\n2024-05-13\nU13F\n1\n\n\nTor-Ari\nTorchia\nArianna\n2024-05-13\nU13F\n1"
+    "text": "L’allenamento di oggi May 13, 2024 si è svolto al Ubertini.\nAllenamento particolarmente difficile, sarebbe stato meglio fare una rotazione per volta invece di P1/P6/P5 insieme.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nID\ncognome\nnome\ndata\nsquadra\npresente\n\n\n\n\nPer-Giu\nPerissinotto\nGiulia\n2024-05-13\nU13F\n1\n\n\nDel-Aur\nDe Luca\nAurora\n2024-05-13\nU13F\n1\n\n\nGil-Ari\nGillone\nArianna\n2024-05-13\nU13F\n1\n\n\nPan-Mar\nPanetto\nMargherita\n2024-05-13\nU13F\n1\n\n\nNeg-Ire\nNegro Bitu\nIrene\n2024-05-13\nU13F\n1\n\n\nTap-Ann\nTapparo\nAnna\n2024-05-13\nU13F\n1\n\n\nBer-Sil\nBergandi\nSilvia\n2024-05-13\nU13F\n1\n\n\nCir-Ade\nCireddu\nAdele\n2024-05-13\nU13F\n1\n\n\nBon-Isa\nBoni\nIsabella\n2024-05-13\nU13F\n1\n\n\nGoy-Bea\nGoy\nBeatrice\n2024-05-13\nU13F\n1\n\n\nGer-Val\nGerace\nValeria\n2024-05-13\nU13F\n1\n\n\nTor-Ari\nTorchia\nArianna\n2024-05-13\nU13F\n1"
   },
   {
     "objectID": "allenamenti/2024-05-13_U13F_M_1.html#obiettivi-clessidra---attacco",
@@ -298,7 +298,7 @@
     "href": "allenamenti/2024-05-13_U13F_M_1.html#video-dellallenamento",
     "title": "Allenamento dell’U13F numero 1 del 2024-05-13",
     "section": "Video dell’allenamento ",
-    "text": "Video dell’allenamento \nNessun video per questo allenamento."
+    "text": "Video dell’allenamento"
   },
   {
     "objectID": "allenamenti/2024-05-13_U13F_M_1.html#section",
@@ -382,7 +382,7 @@
     "href": "allenamenti/2024-05-13_U13F_M_1.html#modulo-42-fase-gioco",
     "title": "Allenamento dell’U13F numero 1 del 2024-05-13",
     "section": "",
-    "text": "L’allenamento di oggi May 13, 2024 si è svolto al Ubertini.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nID\ncognome\nnome\ndata\nsquadra\npresente\n\n\n\n\nPer-Giu\nPerissinotto\nGiulia\n2024-05-13\nU13F\n1\n\n\nDel-Aur\nDe Luca\nAurora\n2024-05-13\nU13F\n1\n\n\nGil-Ari\nGillone\nArianna\n2024-05-13\nU13F\n1\n\n\nPan-Mar\nPanetto\nMargherita\n2024-05-13\nU13F\n1\n\n\nNeg-Ire\nNegro Bitu\nIrene\n2024-05-13\nU13F\n1\n\n\nTap-Ann\nTapparo\nAnna\n2024-05-13\nU13F\n1\n\n\nBer-Sil\nBergandi\nSilvia\n2024-05-13\nU13F\n1\n\n\nCir-Ade\nCireddu\nAdele\n2024-05-13\nU13F\n1\n\n\nBon-Isa\nBoni\nIsabella\n2024-05-13\nU13F\n1\n\n\nGoy-Bea\nGoy\nBeatrice\n2024-05-13\nU13F\n1\n\n\nGer-Val\nGerace\nValeria\n2024-05-13\nU13F\n1\n\n\nTor-Ari\nTorchia\nArianna\n2024-05-13\nU13F\n1"
+    "text": "L’allenamento di oggi May 13, 2024 si è svolto al Ubertini.\nAllenamento particolarmente difficile, sarebbe stato meglio fare una rotazione per volta invece di P1/P6/P5 insieme.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nID\ncognome\nnome\ndata\nsquadra\npresente\n\n\n\n\nPer-Giu\nPerissinotto\nGiulia\n2024-05-13\nU13F\n1\n\n\nDel-Aur\nDe Luca\nAurora\n2024-05-13\nU13F\n1\n\n\nGil-Ari\nGillone\nArianna\n2024-05-13\nU13F\n1\n\n\nPan-Mar\nPanetto\nMargherita\n2024-05-13\nU13F\n1\n\n\nNeg-Ire\nNegro Bitu\nIrene\n2024-05-13\nU13F\n1\n\n\nTap-Ann\nTapparo\nAnna\n2024-05-13\nU13F\n1\n\n\nBer-Sil\nBergandi\nSilvia\n2024-05-13\nU13F\n1\n\n\nCir-Ade\nCireddu\nAdele\n2024-05-13\nU13F\n1\n\n\nBon-Isa\nBoni\nIsabella\n2024-05-13\nU13F\n1\n\n\nGoy-Bea\nGoy\nBeatrice\n2024-05-13\nU13F\n1\n\n\nGer-Val\nGerace\nValeria\n2024-05-13\nU13F\n1\n\n\nTor-Ari\nTorchia\nArianna\n2024-05-13\nU13F\n1"
   },
   {
     "objectID": "allenamenti/2024-05-13_U13F_M_1.html#pdf-dellallenamento",
@@ -390,5 +390,61 @@
     "title": "Allenamento dell’U13F numero 1 del 2024-05-13",
     "section": "PDF dell’allenamento",
     "text": "PDF dell’allenamento\n\n\n\nAllenamento"
+  },
+  {
+    "objectID": "index.html#row",
+    "href": "index.html#row",
+    "title": "BCV Settore Giovanile Femminile",
+    "section": "Row",
+    "text": "Row\n\nif(fs::file_exists(\"data/allenamenti.RDS\")){\n  tmp &lt;- readRDS(\"data/allenamenti.RDS\")\n  af &lt;- nrow(tmp)\n} else {\n  af &lt;- 0\n}\n\nif(fs::file_exists(\"data/partite.RDS\")){\n  tmp &lt;- readRDS(\"data/partite.RDS\")\n  pg &lt;- nrow(tmp)\n} else {\n  pg &lt;- 0\n}\n\n\nNumero di Atlete\n42\n\n\nAllenamenti fatti\n1\n dal mese di Maggio 2024.\n\n\nPartite giocate\n0\n dal mese di Maggio 2024."
+  },
+  {
+    "objectID": "index.html#row-1",
+    "href": "index.html#row-1",
+    "title": "BCV Settore Giovanile Femminile",
+    "section": "Row",
+    "text": "Row\n\nPippo"
+  },
+  {
+    "objectID": "index.html#row-2",
+    "href": "index.html#row-2",
+    "title": "BCV Settore Giovanile Femminile",
+    "section": "Row",
+    "text": "Row\n\nAllenamenti fatti\n1\n dal mese di Maggio 2024.\n\n\nPartite giocate\n0\n dal mese di Maggio 2024.\n\n\n% partite vinte\n0%\n su 2 partite."
+  },
+  {
+    "objectID": "index.html#row-3",
+    "href": "index.html#row-3",
+    "title": "BCV Settore Giovanile Femminile",
+    "section": "Row",
+    "text": "Row\n\nPippo\n\nlibrary(tidyverse)\n\npresenze &lt;- readRDS(\"/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS\")\n\ndf &lt;- presenze |&gt; \n  filter(squadra == \"U13F\") |&gt; \n  group_by(data) |&gt; \n  reframe(Convocate = row_number(),\n            M = sum(presente)) |&gt; \n  slice_tail()\n\n\ndf |&gt; \n  ggplot(aes(x = data, y = Convocate)) +\n  geom_col(aes(fill = \"Convocate\")) +\n  geom_col(aes(x = data, y = M, fill = \"Presenti\")) +\n  labs(x = \"\", y = \"Numero di ragazze\",\n       title = \"Presenze ad allenamento\") +\n  scale_y_continuous(breaks = 1:15) +\n  scale_fill_manual(values = c(\"#8CBEB2\", \"#F3B562\"), name = \"\") +\n   theme_light() +\n  theme(legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "index.html#row-4",
+    "href": "index.html#row-4",
+    "title": "BCV Settore Giovanile Femminile",
+    "section": "Row",
+    "text": "Row\n\nAllenamenti fatti\n1\n dal mese di Maggio 2024.\n\n\nPartite giocate\n0\n dal mese di Maggio 2024.\n\n\n% partite vinte\n0%\n su 2 partite."
+  },
+  {
+    "objectID": "index.html#row-5",
+    "href": "index.html#row-5",
+    "title": "BCV Settore Giovanile Femminile",
+    "section": "Row",
+    "text": "Row\n\nPippo"
+  },
+  {
+    "objectID": "index.html#row-6",
+    "href": "index.html#row-6",
+    "title": "BCV Settore Giovanile Femminile",
+    "section": "Row",
+    "text": "Row\n\nAllenamenti fatti\n1\n dal mese di Maggio 2024.\n\n\nPartite giocate\n0\n dal mese di Maggio 2024.\n\n\n% partite vinte\n0\n dal mese di Maggio 2024."
+  },
+  {
+    "objectID": "index.html#row-7",
+    "href": "index.html#row-7",
+    "title": "BCV Settore Giovanile Femminile",
+    "section": "Row",
+    "text": "Row\n\nPippo"
   }
 ]

@@ -1,0 +1,25 @@
+---
+date: 2024-05-13
+categories: ['U13F', '2024-2025', 'Pre-season']
+params:
+  squadra: 'U13F'
+  n: '1'
+  commento: 'Allenamento particolarmente difficile, sarebbe stato meglio fare una rotazione per volta invece di P1/P6/P5 insieme.'
+  palestra: 'Ubertini'
+  date: '2024-05-13'
+  allenamento: '1'
+  convocate: ['Per-Giu', 'Del-Aur', 'Gil-Ari', 'Pan-Mar', 'Neg-Ire', 'Tap-Ann', 'Ber-Sil', 'Cir-Ade', 'Bon-Isa', 'Goy-Bea', 'Ger-Val', 'Tor-Ari']
+  assenti: ['']
+  vincitori: ['']
+  impegno: 0.8
+  obiettivo: 0.8
+  obiettivi: Modulo 4/2 (Fase gioco)
+  url: https://youtu.be/2K7YdPsUT7s
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Modulo 4/2 (Fase gioco)
+{{< include ../_contents/_allenamento.qmd >}}

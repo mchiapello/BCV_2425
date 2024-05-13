@@ -13,6 +13,7 @@ source(paste0(here::here(), "/_scripts/999_functions.R"))
 
 L'allenamento di oggi {{< meta date >}} si è svolto al {{< meta params.palestra >}}.
 
+`r params$commento`
 
 ### Valutazione dell'allenamento  {{< fa gauge-simple-high size=normalsize >}}
 
