@@ -12,11 +12,11 @@ convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
 # convocate <- c("Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre", 
 #                "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia", 
 #                "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann")
-assenti <- c("Per-Giu")
+assenti <- c()
 vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.8
-obiettivi <- "Clessidra - Attacco"
+obiettivi <- "Modulo 4/2 (Fase gioco)"
 url <- NA
 
 # Prepare the folder

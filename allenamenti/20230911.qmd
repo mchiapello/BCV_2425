@@ -29,3 +29,5 @@ sfsdhflkh
 
 {{< meta params.squadra >}}
 {{< meta date >}}
+
+![Slides](2024-05-13_U13F_M_1.pdf.pdf){width=800px height=1200px}
