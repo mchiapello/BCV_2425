@@ -1,0 +1,414 @@
+---
+title: "BCV 2024/2025 - U13F"
+format: 
+  html:
+    css: template.css
+    page-layout: full
+params:
+  convocate: ["Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar", "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade", "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari"]
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(gtExtras)
+library(datavolley)
+library(here)
+
+```
+
+:::: {.container}
+```{r}
+atlete <- readRDS(paste0(here(), "/data/atlete2425.RDS")) |> 
+  filter(ID %in% params$convocate) |> 
+  select(cognome, nome) |> 
+  mutate(assenti = "") |> 
+  mutate(N = "", .before = "cognome") |> 
+  arrange(cognome)
+
+n1 <- nrow(atlete) %/% 2 + nrow(atlete) %% 2
+atlete |> 
+  slice(1:n1) |> 
+  gt() |> 
+   tab_options(row.striping.include_table_body = FALSE,
+              table.border.top.color = "black",      # Top border
+    table.border.top.width = px(1),
+    table.border.bottom.color = "black",   # Bottom border
+    table.border.bottom.width = px(1),
+    table_body.hlines.color = "black",     # Horizontal lines in body
+    table_body.hlines.width = px(1),
+    table_body.vlines.color = "black",     # Vertical lines in body
+    table_body.vlines.width = px(1),
+              table_body.border.bottom.width = px(1)) |> 
+  tab_style(
+    style = list(
+      cell_borders(
+        sides = c("left", "right", "top", "bottom"), 
+        color = "black",  
+        weight = px(1)  
+      )
+    ),
+    locations = list(cells_body(columns = everything()),
+                     cells_column_labels(columns = everything()))
+  ) |> 
+  cols_width(
+    N ~ px(30),
+    cognome ~ px(120),
+    nome ~ px(100),
+    assenti ~ px(60)
+  ) |> 
+  gtsave(filename = "atlete1.png")
+
+atlete |> 
+  slice(n1 + 1:nrow(atlete)) |> 
+  gt() |> 
+   tab_options(row.striping.include_table_body = FALSE,
+              table.border.top.color = "black",      # Top border
+    table.border.top.width = px(1),
+    table.border.bottom.color = "black",   # Bottom border
+    table.border.bottom.width = px(1),
+    table_body.hlines.color = "black",     # Horizontal lines in body
+    table_body.hlines.width = px(1),
+    table_body.vlines.color = "black",     # Vertical lines in body
+    table_body.vlines.width = px(1),
+              table_body.border.bottom.width = px(1)) |> 
+  tab_style(
+    style = list(
+      cell_borders(
+        sides = c("left", "right", "top", "bottom"), 
+        color = "black",  
+        weight = px(1)  
+      )
+    ),
+    locations = list(cells_body(columns = everything()),
+                     cells_column_labels(columns = everything()))
+  ) |> 
+  cols_width(
+    N ~ px(30),
+    cognome ~ px(120),
+    nome ~ px(100),
+    assenti ~ px(60)
+  ) |> 
+  gtsave(filename = "atlete2.png")
+
+
+```
+
+:::{.box1}
+### Atlete convocate
+![](atlete1.png){width="180"}
+![](atlete2.png){width="180"}
+:::
+
+
+:::{.box2}
+
+### Informazioni
+```{r}
+tibble(x = c("Data:", "Fase dell'anno:", "Palestra:",
+             "Numero atlete:", "Allenamento numero:"),
+       y = "") |> 
+  gt() |> 
+  # gt_theme_espn() |> 
+  tab_options(row.striping.include_table_body = FALSE,
+              table_body.hlines.color = "black",  # Color of horizontal lines
+              table_body.hlines.width = px(1),
+              # table_body.border.top.color = "black",
+              # table_body.border.top.width = px(1),
+              table_body.border.bottom.color = "black",
+              table_body.border.bottom.width = px(1),
+              column_labels.hidden = TRUE) |> 
+  tab_style(
+    style = list(
+      cell_borders(
+        sides = c("left", "right", "top"), 
+        color = "black",  
+        weight = px(1)  
+      )
+    ),
+    locations = list(cells_body(columns = everything()),
+                     cells_column_labels(columns = everything()))
+  ) |> 
+  cols_width(
+    x ~ px(180),
+    y ~ px(150)
+  ) |> 
+  gtsave(filename = "info.png")
+```
+
+![](info.png){width="300"}
+:::
+
+
+### Obiettivo
+
+
+::::
+
+
+
+::: {style="text-align: center; font-size: 25px; border:1px solid black; background-color: #F2F2F2; margin-bottom: 2px;"}
+<p style="margin-bottom: 1px;">**Allenamento**</p>
+:::
+
+
+::: {#block_container}
+::: {#div1}
+```{r}
+tibble(x = 1:10,
+       y = 1:10) |> 
+  ggplot(aes(x, y)) +
+  geom_hline(yintercept = 1) +
+geom_hline(yintercept = 2) +
+geom_hline(yintercept = 3) +
+geom_hline(yintercept = 4) +
+geom_hline(yintercept = 5) +
+geom_hline(yintercept = 6) +
+geom_hline(yintercept = 1.5) +
+geom_hline(yintercept = 2.5) +
+geom_hline(yintercept = 3.5) +
+geom_hline(yintercept = 4.5) +
+geom_hline(yintercept = 5.5) +
+geom_hline(yintercept = 6.5) +
+geom_vline(xintercept = 1.5) +
+geom_vline(xintercept = 11) +
+ylim(1,6) +
+annotate("rect", xmin = 1.5, xmax = 9, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+annotate("rect", xmin = 9, xmax = 11, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+theme_void() 
+  
+```
+:::
+
+::: {#div2}
+```{r}
+ggplot() + 
+  ggcourt(show_zones = FALSE, show_zone_lines = FALSE, labels = NULL) + 
+   coord_flip()
+```
+:::
+
+::: {#div1}
+```{r}
+tibble(x = 1:10,
+       y = 1:10) |> 
+  ggplot(aes(x, y)) +
+  geom_hline(yintercept = 1) +
+geom_hline(yintercept = 2) +
+geom_hline(yintercept = 3) +
+geom_hline(yintercept = 4) +
+geom_hline(yintercept = 5) +
+geom_hline(yintercept = 6) +
+geom_hline(yintercept = 1.5) +
+geom_hline(yintercept = 2.5) +
+geom_hline(yintercept = 3.5) +
+geom_hline(yintercept = 4.5) +
+geom_hline(yintercept = 5.5) +
+geom_hline(yintercept = 6.5) +
+geom_vline(xintercept = 1.5) +
+geom_vline(xintercept = 11) +
+ylim(1,6) +
+annotate("rect", xmin = 1.5, xmax = 9, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+annotate("rect", xmin = 9, xmax = 11, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+theme_void() 
+  
+```
+:::
+
+::: {#div2}
+```{r}
+ggplot() + 
+  ggcourt(show_zones = FALSE, show_zone_lines = FALSE, labels = NULL) + 
+   coord_flip()
+```
+:::
+:::
+
+
+::: {#block_container}
+::: {#div1}
+```{r}
+tibble(x = 1:10,
+       y = 1:10) |> 
+  ggplot(aes(x, y)) +
+  geom_hline(yintercept = 1) +
+geom_hline(yintercept = 2) +
+geom_hline(yintercept = 3) +
+geom_hline(yintercept = 4) +
+geom_hline(yintercept = 5) +
+geom_hline(yintercept = 6) +
+geom_hline(yintercept = 1.5) +
+geom_hline(yintercept = 2.5) +
+geom_hline(yintercept = 3.5) +
+geom_hline(yintercept = 4.5) +
+geom_hline(yintercept = 5.5) +
+geom_hline(yintercept = 6.5) +
+geom_vline(xintercept = 1.5) +
+geom_vline(xintercept = 11) +
+ylim(1,6) +
+annotate("rect", xmin = 1.5, xmax = 9, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+annotate("rect", xmin = 9, xmax = 11, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+theme_void() 
+  
+```
+:::
+
+::: {#div2}
+```{r}
+ggplot() + 
+  ggcourt(show_zones = FALSE, show_zone_lines = FALSE, labels = NULL) + 
+   coord_flip()
+```
+:::
+
+::: {#div1}
+```{r}
+tibble(x = 1:10,
+       y = 1:10) |> 
+  ggplot(aes(x, y)) +
+  geom_hline(yintercept = 1) +
+geom_hline(yintercept = 2) +
+geom_hline(yintercept = 3) +
+geom_hline(yintercept = 4) +
+geom_hline(yintercept = 5) +
+geom_hline(yintercept = 6) +
+geom_hline(yintercept = 1.5) +
+geom_hline(yintercept = 2.5) +
+geom_hline(yintercept = 3.5) +
+geom_hline(yintercept = 4.5) +
+geom_hline(yintercept = 5.5) +
+geom_hline(yintercept = 6.5) +
+geom_vline(xintercept = 1.5) +
+geom_vline(xintercept = 11) +
+ylim(1,6) +
+annotate("rect", xmin = 1.5, xmax = 9, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+annotate("rect", xmin = 9, xmax = 11, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+theme_void() 
+  
+```
+:::
+
+::: {#div2}
+```{r}
+ggplot() + 
+  ggcourt(show_zones = FALSE, show_zone_lines = FALSE, labels = NULL) + 
+   coord_flip()
+```
+:::
+:::
+
+
+::: {#block_container}
+::: {#div1}
+```{r}
+tibble(x = 1:10,
+       y = 1:10) |> 
+  ggplot(aes(x, y)) +
+  geom_hline(yintercept = 1) +
+geom_hline(yintercept = 2) +
+geom_hline(yintercept = 3) +
+geom_hline(yintercept = 4) +
+geom_hline(yintercept = 5) +
+geom_hline(yintercept = 6) +
+geom_hline(yintercept = 1.5) +
+geom_hline(yintercept = 2.5) +
+geom_hline(yintercept = 3.5) +
+geom_hline(yintercept = 4.5) +
+geom_hline(yintercept = 5.5) +
+geom_hline(yintercept = 6.5) +
+geom_vline(xintercept = 1.5) +
+geom_vline(xintercept = 11) +
+ylim(1,6) +
+annotate("rect", xmin = 1.5, xmax = 9, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+annotate("rect", xmin = 9, xmax = 11, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+theme_void() 
+  
+```
+:::
+
+::: {#div2}
+```{r}
+ggplot() + 
+  ggcourt(show_zones = FALSE, show_zone_lines = FALSE, labels = NULL) + 
+   coord_flip()
+```
+:::
+
+::: {#div1}
+```{r}
+tibble(x = 1:10,
+       y = 1:10) |> 
+  ggplot(aes(x, y)) +
+  geom_hline(yintercept = 1) +
+geom_hline(yintercept = 2) +
+geom_hline(yintercept = 3) +
+geom_hline(yintercept = 4) +
+geom_hline(yintercept = 5) +
+geom_hline(yintercept = 6) +
+geom_hline(yintercept = 1.5) +
+geom_hline(yintercept = 2.5) +
+geom_hline(yintercept = 3.5) +
+geom_hline(yintercept = 4.5) +
+geom_hline(yintercept = 5.5) +
+geom_hline(yintercept = 6.5) +
+geom_vline(xintercept = 1.5) +
+geom_vline(xintercept = 11) +
+ylim(1,6) +
+annotate("rect", xmin = 1.5, xmax = 9, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+annotate("rect", xmin = 9, xmax = 11, ymin = 5.5, ymax = 6, fill = "#F2F2F2", color = "black") +
+theme_void() 
+  
+```
+:::
+
+::: {#div2}
+```{r}
+ggplot() + 
+  ggcourt(show_zones = FALSE, show_zone_lines = FALSE, labels = NULL) + 
+   coord_flip()
+```
+:::
+:::
+
+::: {style="text-align: center; font-size: 25px; border:1px solid black; background-color: #F2F2F2; margin-bottom: 2px;"}
+<p style="margin-bottom: 1px;">**Fase finale**</p>
+:::
+
+::: {#block_container}
+
+```{r}
+# p1 <- ggplot() + 
+#   ggcourt(show_zones = FALSE, show_zone_lines = FALSE, labels = NULL) +
+#   labs(title = "Esecizio:") + 
+# theme(plot.margin=margin(0, 0, 0, 0, "cm"),
+#       plot.title = element_text(size = 30, face = "bold")) 
+# 
+# ggsave(p1, filename = paste0(here(), "/_tmp/court1.png"))
+# 
+# library(magick)
+# tiger <- image_read(paste0(here(), "/_tmp/court1.png"))
+# 
+# image_write(image_crop(tiger, "3850x2780+1900"), paste0(here(), "/_tmp/court2.png"))
+```
+
+![](court2.png){width="300"}
+
+::: {#div2}
+![](court2.png){width="300"}
+:::
+
+::: {#div2}
+![](court2.png){width="300"}
+:::
+
+::: {#div2}
+![](court2.png){width="300"}
+:::
+
+
+
+:::

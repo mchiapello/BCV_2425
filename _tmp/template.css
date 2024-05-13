@@ -1,0 +1,49 @@
+#block_container {
+    display: flex;
+    justify-content: left;
+    border:1px solid black;
+}
+
+
+.container {
+  width: 100%;
+  display: flex; /* Enable flexbox layout */
+  justify-content: left;
+  border:1px solid black; 
+  margin-bottom: 2px;
+}
+
+.box1 {
+  width: 70%;  /* Adjust width as needed */
+  padding: 2px;
+  border-right: 1px solid #ccc; /* Add a border (optional) */
+  margin: 1px;
+}
+
+.box2 {
+  width: 30%;  /* Adjust width as needed */
+  padding: 2px;
+  border-right: 1px solid #ccc; /* Add a border (optional) */
+  margin: 1px;
+}
+
+.box3 {
+  width: 30%;  /* Adjust width as needed */
+  padding: 2px;
+  margin: 1px;
+}
+
+.box4 {
+  width: 65%;  /* Adjust width as needed */
+  padding: 20px;
+  border-right: 1px solid #ccc; /* Add a border (optional) */
+  margin: 1px;
+}
+
+h3 {
+  margin-top: 0px !important;
+}
+
+img, svg {
+  vertical-align: top !important;
+}
