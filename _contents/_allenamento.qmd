@@ -45,6 +45,8 @@ ggplot(df, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) +
  guides(colour="none")
 ```
 
+`r cat(params$commento)`
+
 ### Presenze {{< fa child-reaching size=normalsize >}}
 
 ```{r presenze}

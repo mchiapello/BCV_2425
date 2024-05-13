@@ -4,6 +4,7 @@ d <- "05/13/2024"
 date <- lubridate::mdy(d)
 team <- "U13F"
 n <- 1
+commento <- c("Allenamento particolarmente difficile, sarebbe stato megli fare una rotazione per volta invece di P1/P6?p5 insieme.")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
 convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
@@ -29,7 +30,7 @@ if(dd == "Mon"){
   palestra <- "Arè"
 }
 pat <- paste0("allenamenti/", date, "_",team, "_", dd, "_", n, ".qmd")
-
+allen <- paste0(date, "_",team, "_", dd, "_", n, ".pdf")
 
 # Prepare allenamento.qmd file
 library(yaml)
@@ -41,6 +42,7 @@ cat(paste0("---\n",
            "params:\n",
            "  squadra: '",team, "'\n",
            "  n: '", n, "'\n",
+           "  commento: '", commento, "'\n",
            "  palestra: '", palestra, "'\n",
            "  date: '", date, "'\n",
            "  allenamento: '", n, "'\n",
