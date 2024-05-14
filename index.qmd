@@ -26,7 +26,6 @@ library(readxl)
 library(scales)
 library(DT)
 library(gt)
-theme_set(theme_minimal(base_size = 24, base_family = "Atkinson Hyperlegible"))
 library(bslib)
 library(bsicons)
 ```
@@ -117,6 +116,10 @@ if(fs::file_exists("data/partite.RDS")){
 ### Pippo
 
 ```{r}
+#| fig-width: 10
+#| fig-height: 5
+#| fig-asp: 1
+
 library(tidyverse)
 library(patchwork)
 
@@ -219,6 +222,9 @@ np_u13f <- 2
 
 
 ```{r}
+#| fig-width: 10
+#| fig-height: 5
+#| fig-asp: 1
 library(tidyverse)
 
 presenze <- readRDS("/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS")
@@ -302,6 +308,9 @@ np_u13u <- 2
 ### Pippo
 
 ```{r}
+#| fig-width: 10
+#| fig-height: 5
+#| fig-asp: 1
 library(tidyverse)
 library(patchwork)
 
