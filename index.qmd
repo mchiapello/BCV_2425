@@ -116,6 +116,51 @@ if(fs::file_exists("data/partite.RDS")){
 
 ### Pippo
 
+```{r}
+library(tidyverse)
+library(patchwork)
+
+presenze <- readRDS("/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS")
+
+df <- presenze |> 
+  group_by(data, squadra) |> 
+  reframe(Convocate = row_number(),
+            M = sum(presente)) |> 
+  group_by(data, squadra) |> 
+  slice_tail() 
+
+u13f <- df |> 
+  filter(squadra == "U13F") |> 
+  ggplot(aes(x = data, y = Convocate)) +
+  geom_col(aes(fill = "Convocate")) +
+  geom_col(aes(x = data, y = M, fill = "Presenti")) +
+  labs(x = "", y = "Numero di ragazze",
+       # title = "Presenze ad allenamento",
+       subtitle = "U13F") +
+  scale_y_continuous(breaks = 1:15) +
+  scale_fill_manual(values = c("#8CBEB2", "#F3B562"), name = "") +
+   theme_light() +
+  theme(legend.position = "bottom")
+
+u13u <- df |> 
+  filter(squadra == "U13U") |> 
+  ggplot(aes(x = data, y = Convocate)) +
+  geom_col(aes(fill = "Convocate")) +
+  geom_col(aes(x = data, y = M, fill = "Presenti")) +
+  labs(x = "", y = "Numero di ragazze",
+       # title = "Presenze ad allenamento",
+       subtitle = "U13U") +
+  scale_y_continuous(breaks = 1:15) +
+  scale_fill_manual(values = c("#8CBEB2", "#F3B562"), name = "") +
+   theme_light() +
+  theme(legend.position = "bottom")
+
+u13f / u13u + plot_annotation(title = 'Presenza ad allenamento',
+                              theme = theme(plot.title = element_text(size = 18,
+                                                                      hjust = .5))) +
+              plot_layout(guides = "collect", axis_titles = "collect") & theme(legend.position = "bottom")
+```
+
 # U13 FIPAV
 
 ```{r}
@@ -255,6 +300,35 @@ np_u13u <- 2
 ## Row {height="70%"}
 
 ### Pippo
+
+```{r}
+library(tidyverse)
+library(patchwork)
+
+presenze <- readRDS("/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS")
+
+df <- presenze |> 
+  filter(squadra == "U13U") |> 
+  group_by(data) |> 
+  reframe(Convocate = row_number(),
+            M = sum(presente)) |> 
+  slice_tail()
+
+
+df |> 
+  ggplot(aes(x = data, y = Convocate)) +
+  geom_col(aes(fill = "Convocate")) +
+  geom_col(aes(x = data, y = M, fill = "Presenti")) +
+  labs(x = "", y = "Numero di ragazze",
+       title = "Presenze ad allenamento") +
+  scale_y_continuous(breaks = 1:15) +
+  scale_fill_manual(values = c("#8CBEB2", "#F3B562"), name = "") +
+   theme_light() +
+  theme(legend.position = "bottom")
+
+```
+
+
 
 # U12 UISP
 
