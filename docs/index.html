@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -74,6 +40,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="site_libs/quarto-dashboard/stickythead.js"></script>
+<script src="site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
+<script src="site_libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="site_libs/quarto-dashboard/components.js"></script>
+<link href="site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,10 +77,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="quarto-dashboard nav-fixed dashboard-fill dashboard-sidebar fullcontent">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -170,95 +144,308 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
 </ul>
-          </div> <!-- /navcollapse -->
+          <div class="quarto-dashboard-links"><a class="quarto-dashboard-link" href="https://github.com/mchiapello/BCV_2425/" title="GitHub"><i class="bi bi-github"></i></a></div></div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-</header>
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">       
+    <a href="#"><img src="../images/logo.png" alt="" class="navbar-logo d-inline-block"></a>
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">BCV Settore Giovanile Femminile</a></div>
+        
+        
+      </div>
+    </div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-generale" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#generale" data-scrolling="false" href="#generale" aria-controls="generale" aria-selected="true"><span class="nav-link-text">Generale</span></a></li><li class="nav-item" role="presentation"><a id="tab-u13-fipav" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#u13-fipav" data-scrolling="false" href="#u13-fipav" aria-controls="u13-fipav" aria-selected="false"><span class="nav-link-text">U13 FIPAV</span></a></li><li class="nav-item" role="presentation"><a id="tab-u13-uisp" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#u13-uisp" data-scrolling="false" href="#u13-uisp" aria-controls="u13-uisp" aria-selected="false"><span class="nav-link-text">U13 UISP</span></a></li><li class="nav-item" role="presentation"><a id="tab-u12-uisp" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#u12-uisp" data-scrolling="false" href="#u12-uisp" aria-controls="u12-uisp" aria-selected="false"><span class="nav-link-text">U12 UISP</span></a></li></ul></div></div>
+</nav>
+</header></header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages dashboard-sidebar-container">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
-  <li><a href="#generale" id="toc-generale" class="nav-link" data-scroll-target="#generale">Generale</a>
-  <ul class="collapse">
-  <li><a href="#row" id="toc-row" class="nav-link" data-scroll-target="#row">Row</a></li>
-  <li><a href="#row-1" id="toc-row-1" class="nav-link" data-scroll-target="#row-1">Row</a>
-  <ul class="collapse">
-  <li><a href="#pippo" id="toc-pippo" class="nav-link" data-scroll-target="#pippo">Pippo</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#u13-fipav" id="toc-u13-fipav" class="nav-link" data-scroll-target="#u13-fipav">U13 FIPAV</a>
-  <ul class="collapse">
-  <li><a href="#row-2" id="toc-row-2" class="nav-link" data-scroll-target="#row-2">Row</a></li>
-  <li><a href="#row-3" id="toc-row-3" class="nav-link" data-scroll-target="#row-3">Row</a>
-  <ul class="collapse">
-  <li><a href="#pippo-1" id="toc-pippo-1" class="nav-link" data-scroll-target="#pippo-1">Pippo</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#u13-uisp" id="toc-u13-uisp" class="nav-link" data-scroll-target="#u13-uisp">U13 UISP</a>
-  <ul class="collapse">
-  <li><a href="#row-4" id="toc-row-4" class="nav-link" data-scroll-target="#row-4">Row</a></li>
-  <li><a href="#row-5" id="toc-row-5" class="nav-link" data-scroll-target="#row-5">Row</a>
-  <ul class="collapse">
-  <li><a href="#pippo-2" id="toc-pippo-2" class="nav-link" data-scroll-target="#pippo-2">Pippo</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#u12-uisp" id="toc-u12-uisp" class="nav-link" data-scroll-target="#u12-uisp">U12 UISP</a>
-  <ul class="collapse">
-  <li><a href="#row-6" id="toc-row-6" class="nav-link" data-scroll-target="#row-6">Row</a></li>
-  <li><a href="#row-7" id="toc-row-7" class="nav-link" data-scroll-target="#row-7">Row</a>
-  <ul class="collapse">
-  <li><a href="#pippo-3" id="toc-pippo-3" class="nav-link" data-scroll-target="#pippo-3">Pippo</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">BCV Settore Giovanile Femminile</h1>
+<div class="bslib-sidebar-layout html-fill-item html-fill-container" data-bslib-sidebar-open="desktop" data-bslib-sidebar-init="true" data-bslib-sidebar-border="false" data-bslib-sidebar-border-radius="false"><div class="main html-fill-container html-fill-item"><div class="sidebar-content html-fill-item html-fill-container">
+<div class="tab-content bslib-grid html-fill-item html-fill-container" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div id="generale" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-generale">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 30fr) minmax(3em, 70fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #B4E815;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-person-arms-up"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<p><strong><span style="font-size: 40px;">Numero di Atlete</span></strong></p>
+</p>
+<p class="value-box-value">
+42
+</p>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">24</span>, <span class="at">base_family =</span> <span class="st">"Atkinson Hyperlegible"</span>))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bslib)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bsicons)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>time_period <span class="ot">&lt;-</span> <span class="fu">paste</span>(params<span class="sc">$</span>year)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ciao2 <span class="ot">&lt;-</span> <span class="st">"pink"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="section" class="level1 sidebar">
-<h1 class="sidebar"></h1>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #B4E815;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-card-checklist"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<p><strong><span style="font-size: 40px;">Allenamenti fatti</span></strong></p>
+</p>
+<p class="value-box-value">
+1
+</p>
+<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #E8A715;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-arrows-collapse-vertical"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<span style="font-size: 40px;">Partite giocate</span>
+</p>
+<p class="value-box-value">
+0
+</p>
+<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: ;
+grid-auto-rows: minmax(0, 1fr);">
+
+</div>
+</div>
+</div><div id="u13-fipav" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-u13-fipav">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 30fr) minmax(3em, 70fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #B4E815;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-card-checklist"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<p><strong><span style="font-size: 40px;">Allenamenti fatti</span></strong></p>
+</p>
+<p class="value-box-value">
+1
+</p>
+<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #E8A715;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-arrows-collapse-vertical"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<span style="font-size: 40px;">Partite giocate</span>
+</p>
+<p class="value-box-value">
+0
+</p>
+<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box bg-red showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-x-octagon-fill"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<span style="font-size: 40px;">% partite vinte</span>
+</p>
+<p class="value-box-value">
+0%
+</p>
+<p><i class="bi bi-percent"></i> su 2 partite.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-dashboard-img-contain">
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+</div><div id="u13-uisp" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-u13-uisp">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 30fr) minmax(3em, 70fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #B4E815;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-card-checklist"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<p><strong><span style="font-size: 40px;">Allenamenti fatti</span></strong></p>
+</p>
+<p class="value-box-value">
+1
+</p>
+<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #E8A715;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-arrows-collapse-vertical"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<span style="font-size: 40px;">Partite giocate</span>
+</p>
+<p class="value-box-value">
+0
+</p>
+<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #15E831;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-award"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<span style="font-size: 40px;">% partite vinte</span>
+</p>
+<p class="value-box-value">
+0%
+</p>
+<p><i class="bi bi-percent"></i> su 2 partite.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: ;
+grid-auto-rows: minmax(0, 1fr);">
+
+</div>
+</div>
+</div><div id="u12-uisp" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-u12-uisp">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 30fr) minmax(3em, 70fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #B4E815;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-card-checklist"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<p><strong><span style="font-size: 40px;">Allenamenti fatti</span></strong></p>
+</p>
+<p class="value-box-value">
+1
+</p>
+<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #E8A715;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-arrows-collapse-vertical"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<span style="font-size: 40px;">Partite giocate</span>
+</p>
+<p class="value-box-value">
+0
+</p>
+<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card valuebox html-fill-item html-fill-container bslib-card bslib-value-box showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" style=" background: #E8A715;">
+<div class="card-body html-fill-item html-fill-container">
+<div class="html-fill-item html-fill-container value-box-grid">
+<div class="value-box-showcase html-fill-item html-fill-container">
+
+<i class="bi bi-arrows-collapse-vertical"></i></div>
+<div class="value-box-area">
+<p class="value-box-title">
+<span style="font-size: 40px;">% partite vinte</span>
+</p>
+<p class="value-box-value">
+0
+</p>
+<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: ; grid-auto-columns: minmax(0, 1fr);">
+
+
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><aside id="bslib-sidebar-1" class="sidebar html-fill-container html-fill-item"><div class="html-fill-container html-fill-item">
 <p>Questa dashboard mostra le statistiche per:</p>
 <table class="table">
 <tbody>
@@ -319,210 +506,18 @@ Disclaimer
 </div>
 </div>
 </div>
-</section>
-<section id="generale" class="level1">
-<h1>Generale</h1>
-<section id="row" class="level2" height="30%">
-<h2 height="30%" class="anchored" data-anchor-id="row">Row</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(fs<span class="sc">::</span><span class="fu">file_exists</span>(<span class="st">"data/allenamenti.RDS"</span>)){</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/allenamenti.RDS"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  af <span class="ot">&lt;-</span> <span class="fu">nrow</span>(tmp)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  af <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(fs<span class="sc">::</span><span class="fu">file_exists</span>(<span class="st">"data/partite.RDS"</span>)){</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/partite.RDS"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  pg <span class="ot">&lt;-</span> <span class="fu">nrow</span>(tmp)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  pg <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></aside>
+<button class="collapse-toggle" type="button" title="Toggle sidebar" aria-expanded="true" aria-controls="bslib-sidebar-1">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-chevron-left collapse-icon" style="fill:currentColor;" aria-hidden="true" role="img">
+      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
+    </svg>
+</button>
+<script data-bslib-sidebar-init="">
+bslib.Sidebar.initCollapsibleAll()
+</script>
 </div>
-<div class="valuebox" data-icon="person-arms-up" color="#B4E815">
-<p><strong><span style="font-size: 40px;">Numero di Atlete</span></strong></p>
-<p>42</p>
-</div>
-<div class="valuebox" data-icon="card-checklist" color="#B4E815">
-<p><strong><span style="font-size: 40px;">Allenamenti fatti</span></strong></p>
-<p>1</p>
-<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
-</div>
-<div class="valuebox" data-icon="arrows-collapse-vertical" color="#E8A715">
-<p><span style="font-size: 40px;">Partite giocate</span></p>
-<p>0</p>
-<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
-</div>
-</section>
-<section id="row-1" class="level2" height="70%">
-<h2 height="70%" class="anchored" data-anchor-id="row-1">Row</h2>
-<section id="pippo" class="level3">
-<h3 class="anchored" data-anchor-id="pippo">Pippo</h3>
-</section>
-</section>
-</section>
-<section id="u13-fipav" class="level1">
-<h1>U13 FIPAV</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(fs<span class="sc">::</span><span class="fu">file_exists</span>(<span class="st">"data/allenamenti.RDS"</span>)){</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/allenamenti.RDS"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  af_u13f <span class="ot">&lt;-</span> tmp <span class="sc">|&gt;</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>          <span class="fu">filter</span>(squadra <span class="sc">==</span> <span class="st">"U13F"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>          <span class="fu">nrow</span>()</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  af_u13f <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(fs<span class="sc">::</span><span class="fu">file_exists</span>(<span class="st">"data/partite.RDS"</span>)){</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/partite.RDS"</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  pg_u13f <span class="ot">&lt;-</span> tmp <span class="sc">|&gt;</span> </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>           <span class="fu">filter</span>(squadra <span class="sc">==</span> <span class="st">"U13F"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>           <span class="fu">nrow</span>()</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  pg_u13f <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>perc <span class="ot">&lt;-</span> <span class="st">"red"</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>icon <span class="ot">&lt;-</span> <span class="st">"x-octagon-fill"</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>np_u13f <span class="ot">&lt;-</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="row-2" class="level2" height="30%">
-<h2 height="30%" class="anchored" data-anchor-id="row-2">Row</h2>
-<div class="valuebox" data-icon="card-checklist" color="#B4E815">
-<p><strong><span style="font-size: 40px;">Allenamenti fatti</span></strong></p>
-<p>1</p>
-<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
-</div>
-<div class="valuebox" data-icon="arrows-collapse-vertical" color="#E8A715">
-<p><span style="font-size: 40px;">Partite giocate</span></p>
-<p>0</p>
-<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
-</div>
-<div class="valuebox" data-icon="x-octagon-fill" color="red">
-<p><span style="font-size: 40px;">% partite vinte</span></p>
-<p>0%</p>
-<p><i class="bi bi-percent"></i> su 2 partite.</p>
-</div>
-</section>
-<section id="row-3" class="level2" height="70%">
-<h2 height="70%" class="anchored" data-anchor-id="row-3">Row</h2>
-<section id="pippo-1" class="level3">
-<h3 class="anchored" data-anchor-id="pippo-1">Pippo</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>presenze <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> presenze <span class="sc">|&gt;</span> </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(squadra <span class="sc">==</span> <span class="st">"U13F"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(data) <span class="sc">|&gt;</span> </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(<span class="at">Convocate =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">M =</span> <span class="fu">sum</span>(presente)) <span class="sc">|&gt;</span> </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_tail</span>()</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> </span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> data, <span class="at">y =</span> Convocate)) <span class="sc">+</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">"Convocate"</span>)) <span class="sc">+</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> data, <span class="at">y =</span> M, <span class="at">fill =</span> <span class="st">"Presenti"</span>)) <span class="sc">+</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Numero di ragazze"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Presenze ad allenamento"</span>) <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>) <span class="sc">+</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#8CBEB2"</span>, <span class="st">"#F3B562"</span>), <span class="at">name =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="u13-uisp" class="level1">
-<h1>U13 UISP</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(fs<span class="sc">::</span><span class="fu">file_exists</span>(<span class="st">"data/allenamenti.RDS"</span>)){</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/allenamenti.RDS"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  af_u13u <span class="ot">&lt;-</span> tmp <span class="sc">|&gt;</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>          <span class="fu">filter</span>(squadra <span class="sc">==</span> <span class="st">"U13F"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>          <span class="fu">nrow</span>()</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  af_u13u <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(fs<span class="sc">::</span><span class="fu">file_exists</span>(<span class="st">"data/partite.RDS"</span>)){</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/partite.RDS"</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  pg_u13u <span class="ot">&lt;-</span> tmp <span class="sc">|&gt;</span> </span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>           <span class="fu">filter</span>(squadra <span class="sc">==</span> <span class="st">"U13F"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>           <span class="fu">nrow</span>()</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  pg_u13u <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>perc <span class="ot">&lt;-</span> <span class="st">"#15E831"</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>icon <span class="ot">&lt;-</span> <span class="st">"award"</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>np_u13u <span class="ot">&lt;-</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="row-4" class="level2" height="30%">
-<h2 height="30%" class="anchored" data-anchor-id="row-4">Row</h2>
-<div class="valuebox" data-icon="card-checklist" color="#B4E815">
-<p><strong><span style="font-size: 40px;">Allenamenti fatti</span></strong></p>
-<p>1</p>
-<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
-</div>
-<div class="valuebox" data-icon="arrows-collapse-vertical" color="#E8A715">
-<p><span style="font-size: 40px;">Partite giocate</span></p>
-<p>0</p>
-<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
-</div>
-<div class="valuebox" data-icon="award" color="#15E831">
-<p><span style="font-size: 40px;">% partite vinte</span></p>
-<p>0%</p>
-<p><i class="bi bi-percent"></i> su 2 partite.</p>
-</div>
-</section>
-<section id="row-5" class="level2" height="70%">
-<h2 height="70%" class="anchored" data-anchor-id="row-5">Row</h2>
-<section id="pippo-2" class="level3">
-<h3 class="anchored" data-anchor-id="pippo-2">Pippo</h3>
-</section>
-</section>
-</section>
-<section id="u12-uisp" class="level1">
-<h1>U12 UISP</h1>
-<section id="row-6" class="level2" height="30%">
-<h2 height="30%" class="anchored" data-anchor-id="row-6">Row</h2>
-<div class="valuebox" data-icon="card-checklist" color="#B4E815">
-<p><strong><span style="font-size: 40px;">Allenamenti fatti</span></strong></p>
-<p>1</p>
-<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
-</div>
-<div class="valuebox" data-icon="arrows-collapse-vertical" color="#E8A715">
-<p><span style="font-size: 40px;">Partite giocate</span></p>
-<p>0</p>
-<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
-</div>
-<div class="valuebox" data-icon="arrows-collapse-vertical" color="#E8A715">
-<p><span style="font-size: 40px;">% partite vinte</span></p>
-<p>0</p>
-<p><i class="bi bi-calendar3"></i> dal mese di Maggio 2024.</p>
-</div>
-</section>
-<section id="row-7" class="level2" height="70%">
-<h2 height="70%" class="anchored" data-anchor-id="row-7">Row</h2>
-<section id="pippo-3" class="level3">
-<h3 class="anchored" data-anchor-id="pippo-3">Pippo</h3>
 
 
-</section>
-</section>
-</section>
-
-</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -934,6 +929,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
 
 
 

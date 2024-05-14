@@ -1,19 +1,20 @@
 # Define variavbles
 ### Folder
-d <- "05/13/2024"
+d <- "05/14/2024"
 date <- lubridate::mdy(d)
-team <- "U13F"
+team <- "U13U"
 n <- 1
-commento <- c("Allenamento particolarmente difficile, sarebbe stato megli fare una rotazione per volta invece di P1/P6?p5 insieme.")
+commento <- c("Primo allenamento dell'annno.")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
-convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
-               "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
-               "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
-# convocate <- c("Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre", 
-#                "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia", 
-#                "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann")
-assenti <- c()
+# convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
+#                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
+#                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
+convocate <- c("Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre",
+               "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia",
+               "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann",
+               "Neg-Ire", "Ger-Val")
+assenti <- c("Lam-Gre", "Cel-Sar", "Col-Ann")
 vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.8
@@ -65,7 +66,7 @@ cat(paste0("---\n",
 # Prepare allenamento summary
 if(fs::file_exists("data/allenamenti.RDS")){
   al_old <- readRDS("data/allenamenti.RDS")
-  # saveRDS(presenze, paste0(here::here(), "/data/presenze_old.RDS"))
+  saveRDS(al_old, paste0(here::here(), "/data/allenamenti_old.RDS"))
   al <- tibble(squadra =team,
                data = date,
                N = n,
@@ -101,7 +102,7 @@ players <- readRDS(paste0(here::here(), "/data/atlete2425.RDS"))
 
 if(fs::file_exists("data/presenze.RDS")){
   presenze <- readRDS(paste0(here::here(), "/data/presenze.RDS"))
-  # saveRDS(presenze, paste0(here::here(), "/data/presenze_old.RDS"))
+  saveRDS(presenze, paste0(here::here(), "/data/presenze_old.RDS"))
   
   out <- players |> 
     filter(ID %in% convocate) |> 
@@ -131,3 +132,4 @@ if(fs::file_exists("data/presenze.RDS")){
     select(-nascita)
   saveRDS(out, paste0(here::here(), "/data/presenze.RDS"))
 }
+
