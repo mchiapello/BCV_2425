@@ -4,7 +4,7 @@ d <- "05/14/2024"
 date <- lubridate::mdy(d)
 team <- "U13U"
 n <- 1
-commento <- c("Primo allenamento dell'annno.")
+commento <- c("Primo allenamento dell anno.")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
 # convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
@@ -13,21 +13,25 @@ categories <- c(team, "2024-2025", "Pre-season")
 convocate <- c("Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre",
                "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia",
                "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann",
-               "Neg-Ire", "Ger-Val")
+               "Neg-Ire", "Ger-Val", "Ser-Sof")
 assenti <- c("Lam-Gre", "Cel-Sar", "Col-Ann")
 vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.8
 obiettivi <- "Modulo 4/2 (Fase gioco)"
-url <- "https://youtu.be/2K7YdPsUT7s"
+url <- "https://youtu.be/oPSUI-Nzk2w"
 
 # Prepare the folder
 dd <- lubridate::wday(date, label = TRUE)
 if(dd == "Mon"){
   dd <- "M"
   palestra <- "Ubertini"
+} 
+if(dd == "Tue") {
+  dd <- "Tu"
+  palestra <- "Scuole"
 } else {
-  dd <- "G"
+  dd <- "Th"
   palestra <- "Arè"
 }
 pat <- paste0("allenamenti/", date, "_",team, "_", dd, "_", n, ".qmd")
@@ -43,6 +47,7 @@ cat(paste0("---\n",
            "params:\n",
            "  squadra: '",team, "'\n",
            "  n: '", n, "'\n",
+           "  allen: '", allen, "' \n",
            "  commento: '", commento, "'\n",
            "  palestra: '", palestra, "'\n",
            "  date: '", date, "'\n",

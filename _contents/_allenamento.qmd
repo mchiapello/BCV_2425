@@ -46,8 +46,6 @@ ggplot(df, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) +
  guides(colour="none")
 ```
 
-`r cat(params$commento)`
-
 ### Presenze {{< fa child-reaching size=normalsize >}}
 
 ```{r presenze}
@@ -121,10 +119,10 @@ tit <- paste0("Allenamento dell'", params$squadra, " numero ", params$allenament
 #| message: false
 #| warning: false
 
-pat <- "2024-05-13_U13F_M_1.pdf"
+
 ```
 
-![Allenamento](`r pat`){width=800px height=1200px}
+![Allenamento](`r params$allen`){width=800px height=1200px}
 
 
 ---
