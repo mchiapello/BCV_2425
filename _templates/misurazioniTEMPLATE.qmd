@@ -1,0 +1,104 @@
+---
+title: "BCV 2024/2025 - U13"
+format: 
+  html:
+    css: template.css
+    page-layout: full
+params:
+  convocate: ["Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar", "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade","Bon-Isa", "Goy-Bea", "Ger-Val","Tor-Ari", "Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre", "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia", "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann", "Ser-Sof"]
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(gtExtras)
+library(datavolley)
+library(here)
+# 
+# params <- NULL
+# params$convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar", "Neg-Ire", "Tap-Ann", 
+#                "Ber-Sil", "Cir-Ade","Bon-Isa", "Goy-Bea", "Ger-Val","Tor-Ari",
+#                "Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre",
+#                "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia",
+#                "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann",
+#                "Ser-Sof")
+```
+
+::: {.container2}
+```{r}
+atlete <- readRDS(paste0(here(), "/data/atlete2425.RDS")) |> 
+  filter(ID %in% params$convocate) |> 
+  select(cognome, nome) |> 
+  mutate(Height = "",
+         Wingspan = "",
+         `One-Hand Reach` = "",
+         `Block Touch` = "",
+         `Spike Touch` = "",
+         `Pro Agility` = "") |> 
+  mutate(N = "", .before = "cognome") |> 
+  arrange(cognome)
+
+atlete |> 
+  gt() |> 
+   tab_options(table.width = px(800),
+    row.striping.include_table_body = FALSE,
+    table.border.top.color = "black",      # Top border
+    table.border.top.width = px(1),
+    table.border.bottom.color = "black",   # Bottom border
+    table.border.bottom.width = px(1),
+    table_body.hlines.color = "black",     # Horizontal lines in body
+    table_body.hlines.width = px(1),
+    table_body.vlines.color = "black",     # Vertical lines in body
+    table_body.vlines.width = px(1),
+    table_body.border.bottom.width = px(1)) |> 
+  tab_style(
+    style = list(
+      cell_borders(
+        sides = c("left", "right", "top", "bottom"), 
+        color = "black",  
+        weight = px(1)  
+      )
+    ),
+    locations = list(cells_body(columns = everything()),
+                     cells_column_labels(columns = everything()))
+  ) |> 
+  cols_width(
+    N ~ px(30),
+    cognome ~ px(120),
+    nome ~ px(100),
+    everything() ~ px(130)
+  ) |> 
+cols_align(
+    align = "center",
+    columns = everything()  # Apply to all columns
+  ) |> 
+tab_footnote(
+    footnote = "A measurement of the athlete’s height with shoes off.",
+    locations = cells_column_labels(columns = c(Height))  
+  ) |> 
+tab_footnote(
+    footnote = "A measurement of the athlete’s middle finger to middle finger with arms spread wide.",
+    locations = cells_column_labels(columns = c(Wingspan))  
+  ) |> 
+tab_footnote(
+    footnote = "A measurement of the athlete’s vertical reach with one hand, measured by the middle fingers.",
+    locations = cells_column_labels(columns = c(`One-Hand Reach`))  
+  ) |> 
+tab_footnote(
+    footnote = "With their hands in front of their chest, the athlete will mimic blocking a volleyball while trying to reach maximum height.",
+    locations = cells_column_labels(columns = c(`Block Touch`))  
+  ) |> 
+tab_footnote(
+    footnote = "A measurement of the maximum spike height of an athlete with a full spike approach.",
+    locations = cells_column_labels(columns = c(`Spike Touch`))  
+  ) |> 
+tab_footnote(
+    footnote = "An agility test at maximum speed and directional changes.",
+    locations = cells_column_labels(columns = c(`Pro Agility`))  
+  ) 
+```
+:::

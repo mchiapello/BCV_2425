@@ -47,3 +47,10 @@ h3 {
 img, svg {
   vertical-align: top !important;
 }
+
+.container2 {
+  width: 100%;
+  display: flex; /* Enable flexbox layout */
+  justify-content: center;
+  margin-bottom: 2px;
+}
