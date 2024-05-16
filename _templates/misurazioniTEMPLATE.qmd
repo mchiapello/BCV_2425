@@ -35,6 +35,7 @@ atlete <- readRDS(paste0(here(), "/data/atlete2425.RDS")) |>
   select(cognome, nome) |> 
   mutate(Height = "",
          Wingspan = "",
+         `Leg length` = "",
          `One-Hand Reach` = "",
          `Block Touch` = "",
          `Spike Touch` = "",
@@ -85,11 +86,15 @@ tab_footnote(
     locations = cells_column_labels(columns = c(Wingspan))  
   ) |> 
 tab_footnote(
+    footnote = "A measurement from the athlete’s hip bone to the foot.",
+    locations = cells_column_labels(columns = c(`Leg length`))  
+  ) |> 
+tab_footnote(
     footnote = "A measurement of the athlete’s vertical reach with one hand, measured by the middle fingers.",
     locations = cells_column_labels(columns = c(`One-Hand Reach`))  
   ) |> 
 tab_footnote(
-    footnote = "With their hands in front of their chest, the athlete will mimic blocking a volleyball while trying to reach maximum height.",
+    footnote = "A measurement of the maximum blocking height the athlete can reach.",
     locations = cells_column_labels(columns = c(`Block Touch`))  
   ) |> 
 tab_footnote(
