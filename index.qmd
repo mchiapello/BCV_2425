@@ -26,6 +26,7 @@ library(readxl)
 library(scales)
 library(DT)
 library(gt)
+library(gtExtras)
 library(bslib)
 library(bsicons)
 library(here)
@@ -114,7 +115,6 @@ if(fs::file_exists("data/partite.RDS")){
 
 ## Row {height="70%"}
 
-### Pippo
 
 ```{r}
 #| fig-width: 10
@@ -140,7 +140,7 @@ u13f <- df |>
   geom_col(aes(x = data, y = M, fill = "Presenti")) +
   labs(x = "", y = "Numero di ragazze",
        # title = "Presenze ad allenamento",
-       subtitle = "U13U") +
+       subtitle = "U13F") +
   scale_y_continuous(breaks = 1:15) +
   scale_fill_manual(values = c("#8CBEB2", "#F3B562"), name = "") +
    theme_light() +
@@ -164,6 +164,43 @@ u13f / u13u + plot_annotation(title = 'Presenza ad allenamento',
                                                                       hjust = .5))) +
               plot_layout(guides = "collect", axis_titles = "collect") & theme(legend.position = "bottom")
 ```
+
+
+
+```{r}
+old <- readRDS("data/misurazioni.RDS")
+df <- old |> 
+  mutate(Altezza = height - 3,
+         `Stacco da fermo` =  block - reach,
+         `Stacco con rincorsa` = spike - reach) |> 
+  select(cognome, nome, data, Altezza, `Stacco da fermo`, `Stacco con rincorsa`)
+
+df |> 
+  group_by(data) |> 
+  reframe(across(c(Altezza:`Stacco con rincorsa`), 
+                 list(min = min, mean = mean, max = max), na.rm = TRUE)) |> 
+  pivot_longer(cols = c(-data),
+               names_to = "Misura",
+               values_to = "cm") |> 
+  mutate(Misura = str_replace(Misura, "_min", " minima"),
+         Misura = str_replace(Misura, "_max", " massima"),
+         Misura = str_replace(Misura, "_mean", " media"),
+         cm = round(cm, 0)) |> 
+select(-data) |> 
+gt() |> 
+tab_style(style = cell_fill(color = "#F05648"),
+            locations = cells_body(columns = "cm", 
+                                   rows = (grepl("minima", Misura)))) |> 
+tab_style(style = cell_fill(color = "#F3B562"),
+            locations = cells_body(columns = "cm", 
+                                   rows = (grepl("media", Misura)))) |> 
+tab_style(style = cell_fill(color = "#04BF8A"),
+            locations = cells_body(columns = "cm", 
+                                   rows = (grepl("massima", Misura)))) |> 
+gt_theme_guardian()
+```
+
+
 
 # U13 FIPAV
 
