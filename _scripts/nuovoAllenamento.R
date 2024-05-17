@@ -1,25 +1,25 @@
 # Define variavbles
 ### Folder
-d <- "05/14/2024"
+d <- "05/16/2024"
 date <- lubridate::mdy(d)
-team <- "U13U"
-n <- 1
-commento <- c("Primo allenamento dell anno.")
+team <- "U13F"
+n <- 2
+commento <- c("")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
-# convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
-#                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
-#                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
-convocate <- c("Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre",
-               "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia",
-               "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann",
-               "Neg-Ire", "Ger-Val", "Ser-Sof")
-assenti <- c("Lam-Gre", "Cel-Sar", "Col-Ann")
+convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
+               "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
+               "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
+# convocate <- c("Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre",
+#                "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia",
+#                "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann",
+#                "Ser-Sof")
+assenti <- c()
 vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.8
-obiettivi <- "Modulo 4/2 (Fase gioco)"
-url <- "https://youtu.be/oPSUI-Nzk2w"
+obiettivi <- "Misurazioni e posizioni in campo"
+url <- "https://youtu.be/kEwgGLoRJLU"
 
 # Prepare the folder
 dd <- lubridate::wday(date, label = TRUE)

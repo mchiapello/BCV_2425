@@ -1,0 +1,26 @@
+---
+date: 2024-05-16
+categories: ['U13U', '2024-2025', 'Pre-season']
+params:
+  squadra: 'U13U'
+  n: '2'
+  allen: '2024-05-16_U13U_Th_2.pdf' 
+  commento: ''
+  palestra: 'Arè'
+  date: '2024-05-16'
+  allenamento: '2'
+  convocate: ['Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat', 'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann', 'Ser-Sof']
+  assenti: ['Ser-Sof']
+  vincitori: ['']
+  impegno: 0.8
+  obiettivo: 0.8
+  obiettivi: Misurazioni e posizioni in campo
+  url: https://youtu.be/DSlv3BAmAHA
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Misurazioni e posizioni in campo
+{{< include ../_contents/_allenamento.qmd >}}

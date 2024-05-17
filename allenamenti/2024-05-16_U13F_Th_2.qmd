@@ -1,0 +1,28 @@
+---
+date: 2024-05-16
+categories: ['U13F', '2024-2025', 'Pre-season']
+params:
+  squadra: 'U13F'
+  n: '2'
+  allen: '2024-05-16_U13F_Th_2.pdf' 
+  commento: ''
+  palestra: 'Arè'
+  date: '2024-05-16'
+  allenamento: '2'
+  convocate: ['Per-Giu', 'Del-Aur', 'Gil-Ari', 'Pan-Mar', 'Neg-Ire', 'Tap-Ann', 'Ber-Sil', 'Cir-Ade', 'Bon-Isa', 'Goy-Bea', 'Ger-Val', 'Tor-Ari']
+  assenti: ['']
+  vincitori: ['']
+  impegno: 0.8
+  obiettivo: 0.8
+  obiettivi: Misurazioni e posizioni in campo
+  url: https://youtu.be/kEwgGLoRJLU
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Misurazioni e posizioni in campo
+{{< include ../_contents/_allenamento.qmd >}}
+
+{{< include ../_contents/_misurazioni.qmd >}}

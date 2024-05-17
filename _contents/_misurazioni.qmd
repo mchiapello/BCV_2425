@@ -21,29 +21,63 @@ tit2 <- paste0("Le misurazioni del mese di ", mm[mm$n == lubridate::month(params
 #| message: false
 #| warning: false
 # Create data
-x <- read_csv(paste0(here::here(), "/data/misurazioni.csv")) 
+x <- readRDS(paste0(here::here(), "/data/misurazioni.RDS")) |> 
+  filter(ID %in% params$convocate)
 
 x |> 
   drop_na() |> 
-  dplyr::mutate(mese = lubridate::month(date)) |>
+  dplyr::mutate(mese = lubridate::month(data)) |>
   dplyr::filter(mese == lubridate::month(params$date)) |> 
-  mutate(atleta = str_replace(atleta, "-", " ")) |> 
-  arrange(desc(saltoMovimento)) |> 
-  select(-mese) |> 
+  mutate(height = height -3,
+         ape = round(wingspan / height, 2),
+         staccoB = block - reach,
+         staccoS = spike - reach) |> 
+  arrange(desc(spike)) |> 
+  select(-ID, -mese, -nascita, -data) |> 
     gt()  |>  
     # HIGHLIGHT massima altezza 
      tab_style(style = cell_fill(color = "#04BF8A"),
-            locations = cells_body(columns = "Rincorsa", 
-                                   rows = (Rincorsa > 215)))  |>  
-    tab_style(style = cell_fill(color = "#03A64A"),
-            locations = cells_body(columns = "Muro", 
-                                   rows = (Muro > 215))) |> 
-  tab_style(style = cell_fill(color = "#BDE038"),
-            locations = cells_body(columns = "saltoFerma", 
-                                   rows = (saltoFerma == max(saltoFerma))))  |>  
+            locations = cells_body(columns = "spike", 
+                                   rows = (spike > 215)))  |>  
+    tab_style(style = cell_fill(color = "#04BF8A"),
+            locations = cells_body(columns = "block", 
+                                   rows = (block > 215))) |> 
+  tab_style(style = cell_fill(color = "#DAFDBA"),
+            locations = cells_body(columns = "staccoB", 
+                                   rows = (staccoB == max(staccoB))))  |>  
     tab_style(style = cell_fill(color = "#DAFDBA"),
-            locations = cells_body(columns = "saltoMovimento", 
-                                   rows = (saltoMovimento == max(saltoMovimento)))) |> 
+            locations = cells_body(columns = "staccoS", 
+                                   rows = (staccoS == max(staccoS)))) |> 
+  tab_style(style = cell_fill(color = "#DAFDBA"),
+            locations = cells_body(columns = "agility", 
+                                   rows = (agility < 6 ))) |> 
+  tab_footnote(
+    footnote = "Tolti 3 cm per via della misurazione fatta con le scarpe.",
+    locations = cells_column_labels(columns = c(height))) |>
+  tab_footnote(
+    footnote = "Il verde indica chi salta sopra i 215 cm.",
+    locations = cells_column_labels(columns = c(block))  
+  ) |> 
+tab_footnote(
+    footnote = "Il verde indica chi salta sopra i 215 cm.",
+    locations = cells_column_labels(columns = c(spike))  
+  ) |> 
+  tab_footnote(
+    footnote = "Il verde indica chi è stato sotto i 6 secondi",
+    locations = cells_column_labels(columns = c(agility))  
+  ) |> 
+  tab_footnote(
+    footnote = "Rapporto tra wingspan e altezza.",
+    locations = cells_column_labels(columns = c(ape))  
+  ) |> 
+  tab_footnote(
+    footnote = "Il verde indica salta chi più in alto nello stacco da fermo.",
+    locations = cells_column_labels(columns = c(staccoB))  
+  ) |> 
+  tab_footnote(
+    footnote = "Il verde indica salta chi più in alto nello stacco con rincorsa.",
+    locations = cells_column_labels(columns = c(staccoS))  
+  ) |> 
     gt_theme_538()
 ```
 
