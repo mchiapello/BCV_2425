@@ -1,32 +1,35 @@
+# Libraries
 library(tidyverse)
 library(gt)
-library(dbplyr)
 
-library(dplyr)
-con <- DBI::dbConnect(RSQLite::SQLite(), dbname = "atlete")
+# Read data
+atlete <- readRDS("data/atlete2425.RDS")
 
-tbl(con, "atlete")
+# Insert data
+m1 <- atlete |> 
+  arrange(cognome) |> 
+  mutate(data = lubridate::ymd("2024-05-16"),
+         height = c(157,151,150,166,141,145,151,146,161,144,159,143,141,167,
+                    173,140,158,149,158,150,158,NA,157,164,136),
+         wingspan = c(155,153,150,164,139,147,148,146,152,145,160,148,141,
+                      162,168,141,161,146,158,152,159,NA,157,167,132),
+         reach = c(204,199,194,213,183,189,195,187,203,188,210,185,180,210,
+                   223,182,206,186,207,198,205,NA,203,213,174),
+         block = c(220,221,214,240,203,210,220,208,230,207,233,207,205,232,
+                   246,197,220,210,221,219,231,NA,232,226,194),
+         spike = c(226,222,221,251,210,215,229,210,236,208,241,215,210,240,
+                   247,206,223,211,223,225,241,NA,238,233,200),
+         agility = c(6.57,6.30,6.32,5.75,6.42,6.15,5.52,6.51,5.94,6.33,6.50,
+                     6.78,6.17,5.73,6.16,5.81,7.25,6.37,7.05,6.82,5.60,NA,
+                     5.80,6.69,6.29))
+
+if(fs::file_exists("data/misurazioni.RDS")){
+  old <- readRDS("data/misurazioni.RDS")
+  new <- old |> 
+    bind_rows(m1)
+} else {
+  new <- m1
+}
+saveRDS(new, "data/misurazioni.RDS")
 
 
-library(DBI)
-mydb <- dbConnect(RSQLite::SQLite(), "data/DB.sqlite")
-
-x <- tbl(mydb, "atlete") |> 
-  left_join(tbl(mydb, "squadre"))
-
-
-assenti <- c("Goy-Bea", "Del-Aur")
-
-id <- tbl(mydb, "presenze")
-
-pr <- tbl(mydb, "atlete") |> 
-  mutate(date = "2024-06-10",
-         presente = ifelse(ID %in% assenti, 1, 0)) |> 
-  select(ID, date, presente)
-
-pr <- as_tibble(pr)
-
-
-copy_to(mydb, pr, "presenze", append = TRUE)
-
-tbl(mydb, "presenze") |> print(n=Inf)
