@@ -24,3 +24,5 @@ execute:
 
 ## Misurazioni e posizioni in campo
 {{< include ../_contents/_allenamento.qmd >}}
+
+{{< include ../_contents/_misurazioni.qmd >}}
