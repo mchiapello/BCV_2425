@@ -28,6 +28,7 @@ library(DT)
 library(gt)
 library(bslib)
 library(bsicons)
+library(here)
 ```
 
 ```{r}
@@ -123,7 +124,7 @@ if(fs::file_exists("data/partite.RDS")){
 library(tidyverse)
 library(patchwork)
 
-presenze <- readRDS("/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS")
+presenze <- readRDS(paste0(here(), "/data/presenze.RDS"))
 
 df <- presenze |> 
   group_by(data, squadra) |> 
@@ -139,7 +140,7 @@ u13f <- df |>
   geom_col(aes(x = data, y = M, fill = "Presenti")) +
   labs(x = "", y = "Numero di ragazze",
        # title = "Presenze ad allenamento",
-       subtitle = "U13F") +
+       subtitle = "U13U") +
   scale_y_continuous(breaks = 1:15) +
   scale_fill_manual(values = c("#8CBEB2", "#F3B562"), name = "") +
    theme_light() +
@@ -227,27 +228,27 @@ np_u13f <- 2
 #| fig-asp: 1
 library(tidyverse)
 
-presenze <- readRDS("/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS")
 
-df <- presenze |> 
+dfu13f <- presenze |> 
   filter(squadra == "U13F") |> 
   group_by(data) |> 
   reframe(Convocate = row_number(),
             M = sum(presente)) |> 
+  group_by(data) |> 
   slice_tail()
 
 
-df |> 
+dfu13f |> 
   ggplot(aes(x = data, y = Convocate)) +
   geom_col(aes(fill = "Convocate")) +
   geom_col(aes(x = data, y = M, fill = "Presenti")) +
   labs(x = "", y = "Numero di ragazze",
-       title = "Presenze ad allenamento") +
+       # title = "Presenze ad allenamento",
+       subtitle = "U13F") +
   scale_y_continuous(breaks = 1:15) +
   scale_fill_manual(values = c("#8CBEB2", "#F3B562"), name = "") +
    theme_light() +
   theme(legend.position = "bottom")
-
 ```
 
 
@@ -314,22 +315,22 @@ np_u13u <- 2
 library(tidyverse)
 library(patchwork)
 
-presenze <- readRDS("/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS")
-
-df <- presenze |> 
+dfu13u <- presenze |> 
   filter(squadra == "U13U") |> 
   group_by(data) |> 
   reframe(Convocate = row_number(),
             M = sum(presente)) |> 
+  group_by(data) |> 
   slice_tail()
 
 
-df |> 
+dfu13u |> 
   ggplot(aes(x = data, y = Convocate)) +
   geom_col(aes(fill = "Convocate")) +
   geom_col(aes(x = data, y = M, fill = "Presenti")) +
   labs(x = "", y = "Numero di ragazze",
-       title = "Presenze ad allenamento") +
+       # title = "Presenze ad allenamento",
+       subtitle = "U13U") +
   scale_y_continuous(breaks = 1:15) +
   scale_fill_manual(values = c("#8CBEB2", "#F3B562"), name = "") +
    theme_light() +
