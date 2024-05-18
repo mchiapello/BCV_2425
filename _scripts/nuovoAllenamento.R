@@ -1,15 +1,18 @@
 # Define variavbles
 ### Folder
-d <- "05/16/2024"
+d <- "05/20/2024"
 date <- lubridate::mdy(d)
 team <- "U13F"
-n <- 2
+n <- 3
 commento <- c("")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
-convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
-               "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
-               "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
+convocate <- c("Per-Giu", "Ger-Val", "Bon-Isa", "Tap-Ann", "Chi-Mar", 
+               "Ser-Sof", "Del-Aur", "Cir-Ade", "Tor-Ari", "Aud-Gin", 
+               "Fra-Mat", "Lam-Gre", "Cel-Sar")
+# convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
+#                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
+#                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
 # convocate <- c("Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre",
 #                "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia",
 #                "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann",
