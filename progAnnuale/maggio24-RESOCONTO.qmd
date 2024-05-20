@@ -1,0 +1,35 @@
+---
+title: "Resoconto (Maggio 2024)"
+date: 05/20/2024
+date-modified: 05/20/2024
+categories: ['Squadre', 'Resoconto', 'U13F']
+params:
+  atleta: 'Tutte'
+format:
+  html: 
+    toc: false
+page-layout: full
+---
+
+## Rincorsa d'attacco
+
+Dopo l'allenamento con le misurazioni e le riprese delle rincorse (allegate), ci siamo resi conto che le ragazze **non sanno fare la rincorsa** neanche senza palla. Tutte saltano molti cm meno di quello che potrebbero fare con una rincorsa ideale.
+
+[Puntare sulla rincorsa]{style="color: red; font-size: 20px;"} per perseguire l'obiettivo dell'attacco forte.
+
+{{<video https://youtu.be/wIOhLbCe9n0 >}}
+
+## Rotazioni
+
+- Come atteso le rotazioni per ruolo hanno creato non pochi problemi alle ragazze. 
+- Stiamo lavorando principalmente in transizione per eliminare la difficoltà delle posizioni di CP e BP. 
+- Il lavoro con il bloccaggio della palla aiuta molto. Possono riflettere su quello che stanno facendo
+- Come progressione abbiamo inserito prima il secondo tocco senza fermare la palla e successivamente anche il terzo. Sul primo tocco stiamo ancora lavorando fermando la palla per non andare in continuazione out-of-system. 
+
+## Pallone pesante
+
+- Il pallone sembra stia causando meno problemi del previsto
+- Addirittura ho l'impressione che in rice e difesa sia più facile da controllare
+
+## Ruoli
+- Grande sorpresa Arianna T: non ha ancora capito le posizioni ma ha grandi potenzialità come palleggiatrice
