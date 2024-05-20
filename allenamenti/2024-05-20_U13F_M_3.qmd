@@ -4,8 +4,8 @@ categories: ['U13F', '2024-2025', 'Pre-season']
 params:
   squadra: 'U13F'
   n: '3'
-  allen: '2024-05-20_U13F_Th_3.pdf' 
-  commento: 'Greta è andata via a metà allenamento per un lutto in famiglia.'
+  allen: '2024-05-20_U13F_M_3.pdf' 
+  commento: 'Greta è andata via a metà allenamento per un lutto in famiglia. Molte ragazzi assenti dopo la giornata con la Cardullo.'
   palestra: 'Ubertini'
   date: '2024-05-20'
   allenamento: '3'
@@ -20,7 +20,6 @@ execute:
   echo: false
   warning: false
   message: false
-draft: true
 ---
 
 ## Alleanemento per ruolo
@@ -31,4 +30,4 @@ draft: true
 Durante l'allenamento abbiamo ripreso le schiacciate e le ragazze potevano vederle 
 con un ritardo di 5 secondi sullo schermo del computer. Il focus è stato sulle rincorse. Qui di seguito è possibile vedere le rincorse dall'angolazione filmate:
 
-{{<video >}}
+{{<video https://youtu.be/PZU9IdHQNs0 >}}
