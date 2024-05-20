@@ -17,12 +17,12 @@ convocate <- c("Per-Giu", "Ger-Val", "Bon-Isa", "Tap-Ann", "Chi-Mar",
 #                "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia",
 #                "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann",
 #                "Ser-Sof")
-assenti <- c()
+assenti <- c("Del-Aur", "Fra-Mat", "Ger-Val", "Lam-Gre")
 vincitori <- c()
 impegno <- 0.8
-obiettivo <- 0.8
-obiettivi <- "Misurazioni e posizioni in campo"
-url <- "https://youtu.be/kEwgGLoRJLU"
+obiettivo <- 0.7
+obiettivi <- "Alleanemento per ruolo"
+url <- "https://youtu.be/tuY1BrI_wQk"
 
 # Prepare the folder
 dd <- lubridate::wday(date, label = TRUE)
