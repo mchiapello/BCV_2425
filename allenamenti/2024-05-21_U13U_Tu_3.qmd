@@ -1,0 +1,26 @@
+---
+date: 2024-05-21
+categories: ['U13U', '2024-2025', 'Pre-season']
+params:
+  squadra: 'U13U'
+  n: '3'
+  allen: '2024-05-21_U13U_Tu_3.pdf' 
+  commento: ''
+  palestra: 'Scuole'
+  date: '2024-05-21'
+  allenamento: '3'
+  convocate: ['Pan-Mar', 'Urs-Ann', 'Agu-Bia', 'Gil-Ari', 'Neg-Ire', 'Goy-Bea', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann', 'Bud-Eri', 'Ber-Sil']
+  assenti: ['Gil-Ari']
+  vincitori: ['']
+  impegno: 0.8
+  obiettivo: 0.8
+  obiettivi: Alleanemento attacco
+  url: NA
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Alleanemento attacco
+{{< include ../_contents/_allenamento.qmd >}}
