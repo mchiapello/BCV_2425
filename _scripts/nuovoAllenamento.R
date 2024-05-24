@@ -1,27 +1,27 @@
 # Define variavbles
 ### Folder
-d <- "05/21/2024"
+d <- "05/23/2024"
 date <- lubridate::mdy(d)
-team <- "U13U"
-n <- 3
+team <- "U13F"
+n <- 4
 commento <- c("")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
-# convocate <- c("Per-Giu", "Ger-Val", "Bon-Isa", "Tap-Ann", "Chi-Mar", 
-#                "Ser-Sof", "Del-Aur", "Cir-Ade", "Tor-Ari", "Aud-Gin", 
+# convocate <- c("Per-Giu", "Ger-Val", "Bon-Isa", "Tap-Ann", "Chi-Mar",
+#                "Ser-Sof", "Del-Aur", "Cir-Ade", "Tor-Ari", "Aud-Gin",
 #                "Fra-Mat", "Lam-Gre", "Cel-Sar")
-# convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
-#                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
-#                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
-convocate <- c("Pan-Mar", "Urs-Ann", "Agu-Bia", "Gil-Ari", "Neg-Ire",
-               "Goy-Bea", "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann",
-               "Bud-Eri", "Ber-Sil")
-assenti <- c("Gil-Ari")
+convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
+               "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
+               "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
+# convocate <- c("Pan-Mar", "Urs-Ann", "Agu-Bia", "Gil-Ari", "Neg-Ire",
+#                "Goy-Bea", "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann",
+#                "Bud-Eri", "Ber-Sil")
+assenti <- c("Del-Aur")
 vincitori <- c()
 impegno <- 0.8
-obiettivo <- 0.8
-obiettivi <- "Alleanemento attacco"
-url <- NA
+obiettivo <- 0.9
+obiettivi <- "Fase gioco"
+url <- "https://youtu.be/6QobzOa57L0"
 
 # Prepare the folder
 dd <- lubridate::wday(date, label = TRUE)

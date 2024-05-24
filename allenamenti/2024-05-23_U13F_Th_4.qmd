@@ -1,0 +1,26 @@
+---
+date: 2024-05-23
+categories: ['U13F', '2024-2025', 'Pre-season']
+params:
+  squadra: 'U13F'
+  n: '4'
+  allen: '2024-05-23_U13F_Th_4.pdf' 
+  commento: ''
+  palestra: 'Arè'
+  date: '2024-05-23'
+  allenamento: '4'
+  convocate: ['Per-Giu', 'Del-Aur', 'Gil-Ari', 'Pan-Mar', 'Neg-Ire', 'Tap-Ann', 'Ber-Sil', 'Cir-Ade', 'Bon-Isa', 'Goy-Bea', 'Ger-Val', 'Tor-Ari']
+  assenti: ['Del-Aur']
+  vincitori: ['']
+  impegno: 0.8
+  obiettivo: 0.9
+  obiettivi: Fase gioco
+  url: https://youtu.be/6QobzOa57L0
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Fase gioco
+{{< include ../_contents/_allenamento.qmd >}}
