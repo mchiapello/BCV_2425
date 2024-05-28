@@ -1,22 +1,24 @@
 # Define variavbles
 ### Folder
-d <- "05/27/2024"
+d <- "05/28/2024"
 date <- lubridate::mdy(d)
-team <- "U13F"
+team <- "U13U"
 n <- 5
 commento <- c("")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
-convocate <- c("Gil-Ari", "Tap-Ann", "Pan-Mar", "Ber-Sil", "Cir-Ade", "Bon-Isa", 
-               "Goy-Bea",  "Ger-Val", "Tor-Ari", "Lam-Gre", "Cel-Sar", "Cas-Giu", 
-               "Bud-Eri")
+# convocate <- c("Gil-Ari", "Tap-Ann", "Pan-Mar", "Ber-Sil", "Cir-Ade", "Bon-Isa", 
+#                "Goy-Bea",  "Ger-Val", "Tor-Ari", "Lam-Gre", "Cel-Sar", "Cas-Giu", 
+#                "Bud-Eri")
 # convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
 #                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
 #                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
-# convocate <- c('Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat', 
-#                'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann', 
+convocate <- c('Chi-Mar', 'Aud-Gin', 'Fra-Mat', 'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 
+               'Fio-Mat', 'Col-Ann', 'Ser-Sof', "Del-Aur", "Per-Giu", "Neg-Ire")
+# convocate <- c('Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat',
+#                'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann',
 #                'Ser-Sof')
-assenti <- c("Ber-Sil", "Cir-Ade", "Cel-Sar")
+assenti <- c('Fio-Mat')
 vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.7

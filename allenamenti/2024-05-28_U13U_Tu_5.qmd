@@ -1,0 +1,26 @@
+---
+date: 2024-05-28
+categories: ['U13U', '2024-2025', 'Pre-season']
+params:
+  squadra: 'U13U'
+  n: '5'
+  allen: '2024-05-28_U13U_Tu_5.pdf' 
+  commento: ''
+  palestra: 'Scuole'
+  date: '2024-05-28'
+  allenamento: '5'
+  convocate: ['Chi-Mar', 'Aud-Gin', 'Fra-Mat', 'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Col-Ann', 'Ser-Sof', 'Del-Aur', 'Per-Giu', 'Neg-Ire']
+  assenti: ['Fio-Mat']
+  vincitori: ['']
+  impegno: 0.8
+  obiettivo: 0.7
+  obiettivi: Battuta - Attacco - Fase gioco
+  url: NA
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Battuta - Attacco - Fase gioco
+{{< include ../_contents/_allenamento.qmd >}}
