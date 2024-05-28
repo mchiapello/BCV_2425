@@ -63,14 +63,14 @@ x |>
                                          ID == "Del-Aur" ~ "Ricevitore/Attaccante",
                                          ID == "Gil-Ari" ~ "Centrale",
                                          ID == "Pan-Mar" ~ "Alzatore/Attaccante",
-                                         ID == "Neg-Ire" ~ "Ricevitore/Attaccante",
+                                         ID == "Neg-Ire" ~ "Centrale",
                                          ID == "Tap-Ann" ~ "Alzatore/Attaccante",
                                          ID == "Ber-Sil" ~ "Ricevitore/Attaccante",
                                          ID == "Cir-Ade" ~ "Ricevitore/Attaccante",
                                          ID == "Bon-Isa" ~ "Alzatore/Attaccante",
                                          ID == "Goy-Bea" ~ "Ricevitore/Attaccante",
                                          ID == "Ger-Val" ~ "Centrale",
-                                         ID == "Tor-Ari" ~ "Centrale")) |> 
+                                         ID == "Tor-Ari" ~ "Alzatore/Attaccante")) |> 
   dplyr::arrange(ruolo, cognome) |> 
     dplyr::select(cognome, nome, ruolo) |> 
   gt::gt()
