@@ -1,0 +1,33 @@
+---
+date: 2024-05-27
+categories: ['U13F', '2024-2025', 'Pre-season']
+params:
+  squadra: 'U13F'
+  n: '5'
+  allen: '2024-05-27_U13F_M_5.pdf' 
+  commento: ''
+  palestra: 'Arè'
+  date: '2024-05-27'
+  allenamento: '5'
+  convocate: ['Gil-Ari', 'Tap-Ann', 'Pan-Mar', 'Ber-Sil', 'Cir-Ade', 'Bon-Isa', 'Goy-Bea', 'Ger-Val', 'Tor-Ari', 'Lam-Gre', 'Cel-Sar', 'Cas-Giu', 'Bud-Eri']
+  assenti: ['Ber-Sil', 'Cir-Ade', 'Cel-Sar']
+  vincitori: ['']
+  impegno: 0.8
+  obiettivo: 0.7
+  obiettivi: Battuta - Attacco - Fase gioco
+  url: https://youtu.be/wJRd3k_vkZc
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Battuta - Attacco - Fase gioco
+{{< include ../_contents/_allenamento.qmd >}}
+
+### Rincorse
+
+Durante l'allenamento abbiamo ripreso le schiacciate e le ragazze potevano vederle 
+con un ritardo di 5 secondi sullo schermo del computer. Il focus è stato sulle rincorse. Qui di seguito è possibile vedere le rincorse dall'angolazione filmate:
+
+{{<video https://youtu.be/R9wpZlDKujM >}}

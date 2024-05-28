@@ -1,26 +1,26 @@
 # Define variavbles
 ### Folder
-d <- "05/23/2024"
+d <- "05/27/2024"
 date <- lubridate::mdy(d)
-team <- "U13U"
-n <- 4
+team <- "U13F"
+n <- 5
 commento <- c("")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
-# convocate <- c("Per-Giu", "Ger-Val", "Bon-Isa", "Tap-Ann", "Chi-Mar",
-#                "Ser-Sof", "Del-Aur", "Cir-Ade", "Tor-Ari", "Aud-Gin",
-#                "Fra-Mat", "Lam-Gre", "Cel-Sar")
+convocate <- c("Gil-Ari", "Tap-Ann", "Pan-Mar", "Ber-Sil", "Cir-Ade", "Bon-Isa", 
+               "Goy-Bea",  "Ger-Val", "Tor-Ari", "Lam-Gre", "Cel-Sar", "Cas-Giu", 
+               "Bud-Eri")
 # convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
 #                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
 #                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
-convocate <- c('Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat', 
-               'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann', 
-               'Ser-Sof')
-assenti <- c("Cas-Giu")
+# convocate <- c('Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat', 
+#                'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann', 
+#                'Ser-Sof')
+assenti <- c("Ber-Sil", "Cir-Ade", "Cel-Sar")
 vincitori <- c()
 impegno <- 0.8
-obiettivo <- 0.8
-obiettivi <- "Fase gioco"
+obiettivo <- 0.7
+obiettivi <- "Battuta - Attacco - Fase gioco"
 url <- NA
 
 # Prepare the folder
@@ -28,8 +28,7 @@ dd <- lubridate::wday(date, label = TRUE)
 if(dd == "Mon"){
   dd <- "M"
   palestra <- "Ubertini"
-} 
-if(dd == "Tue") {
+} else if (dd == "Tue") {
   dd <- "Tu"
   palestra <- "Scuole"
 } else {
