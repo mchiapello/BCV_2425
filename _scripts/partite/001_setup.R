@@ -5,7 +5,7 @@ library(tidyverse)
 library(fs)
 library(here)
 setwd(here())
-source("scripts/999_functions.R")
+source("_scripts/999_functions.R")
 
 ###############################################################################
 # Create match/allenamento
