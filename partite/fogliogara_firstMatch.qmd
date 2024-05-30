@@ -1,0 +1,172 @@
+---
+title: "Pre-match"
+date: 05/30/2024
+categories: ['2024-2025', 'Foglio Gara', 'UISP', 'FIPAV', 'Amichevole']
+params:
+  loro: 'Fortitudo'
+  noi: 'BVC'
+  campionato: 'UISP'
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(datavolley)
+library(gt)
+library(gtExtras)
+library(patchwork)
+library(ggtext)
+
+# Parameters
+noi <- params$noi
+loro <- params$loro
+
+# Function
+add <- function(x){
+  tmp <- x$lab
+  x |> 
+    bind_rows(tibble(x = c(3, 3, 2, 1, 1, 2),
+                     y = c(1, 2, 2, 2, 1, 1),
+                     lab = tmp[c(2, 3, 4, 5, 6, 1)], 
+                     rot = "R2")) |> 
+    bind_rows(tibble(x = c(3, 3, 2, 1, 1, 2),
+                     y = c(1, 2, 2, 2, 1, 1),
+                     lab = tmp[c(3, 4, 5, 6, 1, 2)], 
+                     rot = "R3")) |> 
+    bind_rows(tibble(x = c(3, 3, 2, 1, 1, 2),
+                     y = c(1, 2, 2, 2, 1, 1),
+                     lab = tmp[c(4, 5, 6, 1, 2, 3)], 
+                     rot = "R4")) |> 
+    bind_rows(tibble(x = c(3, 3, 2, 1, 1, 2),
+                     y = c(1, 2, 2, 2, 1, 1),
+                     lab = tmp[c(5, 6, 1, 2, 3, 4)], 
+                     rot = "R5")) |> 
+    bind_rows(tibble(x = c(3, 3, 2, 1, 1, 2),
+                     y = c(1, 2, 2, 2, 1, 1),
+                     lab = tmp[c(6, 1, 2, 3, 4, 5)], 
+                     rot = "R6"))
+}
+
+court_colour <- "white"
+grid_colour <- "black"
+```
+
+
+
+## `r paste0("**", noi, "** contro **", loro, "** (Prima partita)")`
+
+
+### Rotazioni
+
+#### Set 1 - FIPAV
+
+```{r}
+#| fig-width: 7
+#| fig-height: 1
+x <- tibble(x = c(3, 3, 2, 1, 1, 2),
+       y = c(1, 2, 2, 2, 1, 1),
+       lab = c("**Isa**", "**Ade**", "Ire", "AriT", "**Aur**", "Val"), 
+       rot = "R1") 
+
+x1 <- add(x)
+
+x1 |> 
+  ggplot(aes(x, y, label = lab)) +
+  annotate(geom = "rect", xmin = 0.5, xmax = 3.5, 
+           ymin = 0.5, ymax = 2.5, 
+           fill = court_colour, 
+           colour = "black") +
+  annotate(geom = "rect", xmin = 0.3, xmax = 3.7, 
+                  ymin = 2.48, ymax = 2.6, 
+                  fill = grid_colour) +
+  annotate("segment", x = 1.5, xend = 1.5, y = .5, yend = 2.5,
+           colour = grid_colour) +
+  annotate("segment", x = 2.5, xend = 2.5, y = .5, yend = 2.5,
+           colour = grid_colour) +
+  annotate("segment", x = .5, xend = 3.5, y = 1.7, yend = 1.7,
+           colour = grid_colour) +
+  geom_richtext(size = 3, fill = NA, label.color = NA) +
+  theme_void() +
+  facet_grid(cols = vars(rot)) 
+
+```
+
+#### Set 2 - FIPAV
+
+```{r}
+#| fig-width: 7
+#| fig-height: 1
+x <- tibble(x = c(3, 3, 2, 1, 1, 2),
+       y = c(1, 2, 2, 2, 1, 1),
+       lab = c("**Isa**", "**Ade**", "GiuP", "Mar", "**Aur**", "AriG"), 
+       rot = "R1") 
+
+x2 <- add(x)
+
+x2 |> 
+  ggplot(aes(x, y, label = lab)) +
+  annotate(geom = "rect", xmin = 0.5, xmax = 3.5, 
+           ymin = 0.5, ymax = 2.5, 
+           fill = court_colour, 
+           colour = "black") +
+  annotate(geom = "rect", xmin = 0.3, xmax = 3.7, 
+                  ymin = 2.48, ymax = 2.6, 
+                  fill = grid_colour) +
+  annotate("segment", x = 1.5, xend = 1.5, y = .5, yend = 2.5,
+           colour = grid_colour) +
+  annotate("segment", x = 2.5, xend = 2.5, y = .5, yend = 2.5,
+           colour = grid_colour) +
+  annotate("segment", x = .5, xend = 3.5, y = 1.7, yend = 1.7,
+           colour = grid_colour) +
+  geom_richtext(size = 3, fill = NA, label.color = NA) +
+  theme_void() +
+  facet_grid(cols = vars(rot)) 
+
+```
+
+
+
+
+
+
+::: grid
+::: g-col-4
+```{r}
+# players <- readRDS(paste0(here::here(), "/data/atlete2425.RDS")) |> 
+#   # arrange(numero) |> 
+#   # select(cognome, nome, numero)
+#   select(cognome, nome)
+# 
+# nn <- floor(nrow(players)/2)
+# nn2 <- ceiling(nrow(players)/2)
+#   
+# players |> 
+#   slice(1:nn2) |> 
+#   gt::gt() |> 
+#   gt::tab_options(table.font.size = 12) #|> 
+#   # gt::tab_style(
+#   #   style = cell_fill(color = "lightgreen"),
+#   #   locations = cells_body(rows = col == "red")) |> 
+#   #  cols_hide(columns = c(col))
+
+```
+:::
+
+::: g-col-4
+```{r}
+# players |> 
+#   slice(nn2+1:nrow(players)) |> 
+#   gt::gt() |> 
+#   gt::tab_options(table.font.size = 12) #|> 
+#   # gt::tab_style(
+#   #   style = cell_fill(color = "lightgreen"),
+#   #   locations = cells_body(rows = col == "red")) |> 
+#   #  cols_hide(columns = c(col))
+
+```
+:::
+:::

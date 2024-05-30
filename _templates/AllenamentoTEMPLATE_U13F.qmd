@@ -5,7 +5,7 @@ format:
     css: template.css
     page-layout: full
 params:
-  convocate: ["Gil-Ari", "Tap-Ann", "Pan-Mar", "Ber-Sil", "Cir-Ade", "Bon-Isa", "Goy-Bea",  "Ger-Val", "Tor-Ari", "Lam-Gre", "Cel-Sar", "Cas |> -Giu", "Bud-Eri"]
+  convocate: ["Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar", "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade","Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari"]
 execute:
   echo: false
   warning: false

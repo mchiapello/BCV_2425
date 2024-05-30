@@ -5,7 +5,7 @@ format:
     css: template.css
     page-layout: full
 params:
-  convocate: ["Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre", "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia", "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann", "Neg-Ire", "Ger-Val"]
+  convocate: ["Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre", "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia", "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann", "Ser-Sof"]
 execute:
   echo: false
   warning: false
@@ -18,6 +18,9 @@ library(gt)
 library(gtExtras)
 library(datavolley)
 library(here)
+
+# c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar", "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade","Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
+# c("Chi-Mar", "Bud-Eri", "Aud-Gin", "Lam-Gre", "Cel-Sar", "Fra-Mat", "Urs-Ann", "Agu-Bia", "Mol-Gin", "Fio-Mat", "Cas-Giu", "Col-Ann", "Ser-Sof")
 
 ```
 
