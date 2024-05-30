@@ -141,3 +141,48 @@ if(fs::file_exists("data/presenze.RDS")){
   saveRDS(out, paste0(here::here(), "/data/presenze.RDS"))
 }
 
+################################################################################
+# Create summary table
+tt <- tibble(
+  data = date,
+  categories = paste0("'", paste0(categories, collapse = "', '"), "'"),
+  squadra = team,
+  n = n,
+  allen = allen,
+  commento = commento,
+  palestra = palestra,
+  allenamento = n,
+  convocate = list(
+    tibble(ID = convocate) |> left_join(players)
+    ),
+  assenti = list(
+    tibble(ID = assenti)
+  ),
+  vincitori = list(
+    tibble(ID = vincitori)
+  ),
+  impegno = impegno,
+  obiettivo = obiettivo,
+  obiettivi = obiettivi,
+  url = url
+)
+
+if(fs::file_exists("data/summaryAllenamenti.RDS")){
+  old <- readRDS(paste0(here::here(), "/data/summaryAllenamenti.RDS"))
+  saveRDS(old, paste0(here::here(), "/data/summaryAllenamenti_old.RDS"))
+  
+  nr2 <- old |> 
+    filter(data %in% tt$data,
+           squadra %in% tt$squadra) |> 
+    nrow()
+  
+  if(nr2 == 0){
+    df <- old |> 
+      bind_rows(tt)
+  } else {
+    df <- tt
+  }
+  saveRDS(df, paste0(here::here(), "/data/summaryAllenamenti.RDS"))
+} else {
+  saveRDS(tt, paste0(here::here(), "/data/summaryAllenamenti.RDS"))
+}
