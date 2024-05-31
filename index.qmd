@@ -86,6 +86,8 @@ if(fs::file_exists("data/partite.RDS")){
 } else {
   pg <- 0
 }
+
+
 ```
 
 ::: {.valuebox icon="person-arms-up" color="#B4E815"}
@@ -219,15 +221,60 @@ if(fs::file_exists("data/allenamenti.RDS")){
 if(fs::file_exists("data/partite.RDS")){
   tmp <- readRDS("data/partite.RDS")
   pg_u13f <- tmp |> 
-           filter(squadra == "U13F") |> 
+           filter(team == "U13F") |> 
            nrow()
 } else {
   pg_u13f <- 0
 }
 
-perc <- "red"
-icon <- "x-octagon-fill"
-np_u13f <- 2
+if(fs::file_exists("data/partite.RDS")){
+  tmp <- readRDS("data/partite.RDS")
+  fa <- tmp |> 
+                                filter(team == "U13F") |> 
+                                count(vinto) |> 
+                                filter(vinto == FALSE) |> 
+                                pull(n)
+if(length(fa) == 1) {
+  fa <- fa
+} else {
+  fa <- 0
+}
+ tr <- tmp |> 
+                                filter(team == "U13F") |> 
+                                count(vinto) |> 
+                                filter(vinto == TRUE) |> 
+                                pull(n)
+if(length(tr) == 1) {
+  tr <- tr
+} else {
+  tr <- 0
+}
+if(length(fa) == 1) fa <- fa
+
+  vs_u13f <- tibble(vinto = c(FALSE, TRUE),
+                            n = 0)
+  vs_u13f[vs_u13f$vinto == FALSE, ]$n <- fa
+  vs_u13f[vs_u13f$vinto == TRUE, ]$n <- tr
+} else {
+  vs_u13f <- 0
+}
+
+np_u13f <- sum(vs_u13f$n)
+
+percV <- vs_u13f[vs_u13f$vinto == TRUE, ]$n / np_u13f
+
+if(vs_u13f[vs_u13f$vinto == FALSE, ]$n > vs_u13f[vs_u13f$vinto == TRUE, ]$n) {
+  color <- "#F05648"
+  icon <- "x-octagon-fill"
+} else if (vs_u13f[vs_u13f$vinto == FALSE, ]$n < vs_u13f[vs_u13f$vinto == TRUE, ]$n){
+  color <- "#E8A715"
+  icon <- "arrows-collapse-vertical"
+} else {
+  color <- "#15E831"
+  icon <- "award"
+}
+
+
 ```
 
 ## Row {height="30%"}
@@ -248,12 +295,12 @@ np_u13f <- 2
 `r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
 :::
 
-::: {.valuebox icon=`r icon` color=`r perc`}
+::: {.valuebox icon=`r icon` color=`r color`}
 [% partite vinte]{style="font-size: 40px;"}
 
-`r paste0(pg_u13f, "%")`
+`r paste0(percV, "%")`
 
-`r paste0('<i class="bi bi-percent"></i>', " su ", np_u13f, " partite.")`
+`r paste0("su ", np_u13f, " partite.")`
 :::
 
 ## Row {height="70%"}
@@ -307,7 +354,7 @@ if(fs::file_exists("data/allenamenti.RDS")){
 if(fs::file_exists("data/partite.RDS")){
   tmp <- readRDS("data/partite.RDS")
   pg_u13u <- tmp |> 
-           filter(squadra == "U13F") |> 
+           filter(team == "U13F") |> 
            nrow()
 } else {
   pg_u13u <- 0
