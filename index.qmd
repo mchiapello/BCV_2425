@@ -261,12 +261,12 @@ if(length(fa) == 1) fa <- fa
 
 np_u13f <- sum(vs_u13f$n)
 
-percV <- vs_u13f[vs_u13f$vinto == TRUE, ]$n / np_u13f
+percV <- round(vs_u13f[vs_u13f$vinto == TRUE, ]$n / np_u13f *100, 0)
 
 if(vs_u13f[vs_u13f$vinto == FALSE, ]$n > vs_u13f[vs_u13f$vinto == TRUE, ]$n) {
   color <- "#F05648"
   icon <- "x-octagon-fill"
-} else if (vs_u13f[vs_u13f$vinto == FALSE, ]$n < vs_u13f[vs_u13f$vinto == TRUE, ]$n){
+} else if (vs_u13f[vs_u13f$vinto == FALSE, ]$n == vs_u13f[vs_u13f$vinto == TRUE, ]$n){
   color <- "#E8A715"
   icon <- "arrows-collapse-vertical"
 } else {
@@ -354,15 +354,58 @@ if(fs::file_exists("data/allenamenti.RDS")){
 if(fs::file_exists("data/partite.RDS")){
   tmp <- readRDS("data/partite.RDS")
   pg_u13u <- tmp |> 
-           filter(team == "U13F") |> 
+           filter(team == "U13U") |> 
            nrow()
 } else {
   pg_u13u <- 0
 }
 
-perc <- "#15E831"
-icon <- "award"
-np_u13u <- 2
+if(fs::file_exists("data/partite.RDS")){
+  tmp <- readRDS("data/partite.RDS")
+  fa <- tmp |> 
+          filter(team == "U13U") |> 
+          count(vinto) |> 
+          filter(vinto == FALSE) |> 
+          pull(n)
+if(length(fa) == 1) {
+  fa <- fa
+} else {
+  fa <- 0
+}
+ tr <- tmp |> 
+          filter(team == "U13U") |> 
+          count(vinto) |> 
+          filter(vinto == TRUE) |> 
+          pull(n)
+if(length(tr) == 1) {
+  tr <- tr
+} else {
+  tr <- 0
+}
+if(length(fa) == 1) fa <- fa
+
+  vs_u13u <- tibble(vinto = c(FALSE, TRUE),
+                            n = 0)
+  vs_u13u[vs_u13u$vinto == FALSE, ]$n <- fa
+  vs_u13u[vs_u13u$vinto == TRUE, ]$n <- tr
+} else {
+  vs_u13u <- 0
+}
+
+np_u13u <- sum(vs_u13u$n)
+
+percV <- round(vs_u13u[vs_u13u$vinto == TRUE, ]$n / np_u13u *100, 0)
+
+if(vs_u13u[vs_u13u$vinto == FALSE, ]$n > vs_u13u[vs_u13u$vinto == TRUE, ]$n) {
+  color <- "#F05648"
+  icon <- "x-octagon-fill"
+} else if (vs_u13u[vs_u13u$vinto == FALSE, ]$n == vs_u13u[vs_u13u$vinto == TRUE, ]$n){
+  color <- "#E8A715"
+  icon <- "arrows-collapse-vertical"
+} else {
+  color <- "#15E831"
+  icon <- "award"
+}
 ```
 
 ## Row {height="30%"}
@@ -383,12 +426,12 @@ np_u13u <- 2
 `r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
 :::
 
-::: {.valuebox icon=`r icon` color=`r perc`}
+::: {.valuebox icon=`r icon` color=`r color`}
 [% partite vinte]{style="font-size: 40px;"}
 
-`r paste0(pg_u13u, "%")`
+`r paste0(percV, "%")`
 
-`r paste0('<i class="bi bi-percent"></i>', " su ", np_u13u, " partite.")`
+`r paste0("su ", np_u13u, " partite.")`
 :::
 
 ## Row {height="70%"}
@@ -430,6 +473,26 @@ dfu13u |>
 
 # U12 UISP
 
+```{r}
+######### TEST ############
+vs_u12 <- tibble(vinto = c(FALSE, TRUE),
+                            n = c(10,11))
+np_u12 <- sum(vs_u12$n)
+
+percV <- round(vs_u12[vs_u12$vinto == TRUE, ]$n / np_u12 *100, 0)
+
+if(vs_u12[vs_u12$vinto == FALSE, ]$n > vs_u12[vs_u12$vinto == TRUE, ]$n) {
+  color <- "#F05648"
+  icon <- "x-octagon-fill"
+} else if (vs_u12[vs_u12$vinto == FALSE, ]$n == vs_u12[vs_u12$vinto == TRUE, ]$n){
+  color <- "#E8A715"
+  icon <- "arrows-collapse-vertical"
+} else {
+  color <- "#15E831"
+  icon <- "award"
+}
+```
+
 ## Row {height="30%"}
 
 ::: {.valuebox icon="card-checklist" color="#B4E815"}
@@ -448,12 +511,12 @@ dfu13u |>
 `r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
 :::
 
-::: {.valuebox icon="arrows-collapse-vertical" color="#E8A715"}
+::: {.valuebox icon=`r icon` color=`r color`}
 [% partite vinte]{style="font-size: 40px;"}
 
-`r pg`
+`r percV`
 
-`r paste0('<i class="bi bi-calendar3"></i>', " dal mese di Maggio 2024.")`
+`r paste0("su ", np_u12, " partite.")`
 :::
 
 ## Row {height="70%"}
