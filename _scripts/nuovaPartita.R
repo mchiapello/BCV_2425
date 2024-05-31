@@ -16,9 +16,9 @@ phase <- ""
 home_away <- TRUE
 day_number <- 1
 match_number <- NA
-set_won <- c(3,0)
+set_won <- c(0,2)
 coach_home <- "Chiapello"
-coach_away <- "Rovero"
+coach_away <- ""
 shirt_colour_home <- "white"
 shirt_colour_away <- "black"
 home_away_team <- c("a", "*")
@@ -31,10 +31,10 @@ output <- vector(mode = "list", length = 3L)
 
 # OUTPATH
 mat <- paste0("/scout/", type, "/", 
-                date, "_", 
-                str_replace_all(str_to_title(home), " ", "")
-                , "-vs-", 
-                str_replace_all(str_to_title(away), " ", ""))
+              date, "_", 
+              str_replace_all(str_to_title(home), " ", ""), "_", team,
+              "-vs-", 
+              str_replace_all(str_to_title(away), " ", ""))
 
 dir_create(paste0(here(), mat))
 output[[1]] <- mat 
@@ -74,6 +74,7 @@ df <- tibble(data = date,
        away = away,
        type = type,
        team = team,
+       vinto = output[[3]] |> filter(team_id == "BAS") |> pull(won_match),
        path = list(output[[1]]),
        match = list(output[[2]]),
        teams = list(output[[3]]))
