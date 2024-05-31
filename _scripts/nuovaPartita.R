@@ -17,10 +17,10 @@ home_away <- TRUE
 day_number <- 1
 match_number <- NA
 set_won <- c(0,2)
-coach_home <- "Chiapello"
+coach_home <- "Bernardi"
 coach_away <- ""
 shirt_colour_home <- "white"
-shirt_colour_away <- "black"
+shirt_colour_away <- "yellow"
 home_away_team <- c("a", "*")
 
 
@@ -86,11 +86,11 @@ if(fs::file_exists("data/partite.RDS")){
   
   nr2 <- old |> 
     filter(data %in% df$data,
-           squadra %in% df$team) |> 
+           team %in% df$team) |> 
     nrow()
   
   if(nr2 == 0){
-    df <- old |> 
+    df2 <- old |> 
       bind_rows(df)
   } else {
     df2 <- df
