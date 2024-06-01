@@ -6,14 +6,15 @@ library(fs)
 library(here)
 setwd(here())
 source("_scripts/999_functions.R")
-
+dd <- "2024-05-30" # <===== TO CHANGE
+tt <- "U13U"        # <===== TO CHANGE
 ################################################################################
 # Create variables
 ap <- readRDS("data/partite.RDS")
 ## Filter the right match
 rm <- ap |> 
-  filter(data == "2024-05-30", # <===== TO CHANGE
-         team == "U13U")       # <===== TO CHANGE
+  filter(data == dd,
+         team == tt)       
 out <- as.character(rm$path)
 match <- rm$match[[1]]
 teams <- rm$teams[[1]]
@@ -96,38 +97,41 @@ ov_scouter(x, video_file = video_file,
            launch_browser = TRUE)
 
 ################################################################################
-########################## TO DO ###################################
-#### Add a way to create a scout.R file into the out folder, so I can restart the scaut from the ovl file
-################################################################################
+# Scout File in the out folder
+cat(paste0(
+  "library(ovscout2)\n", 
+  "library(tidyverse)\n",
+  "library(fs)\n",
+  "library(here)\n",
+  "# Create variables\n",
+  "ap <- readRDS(paste0(here(), '/data/partite.RDS'))\n",
+  "## Filter the right match\n",
+  "rm <- ap |>\n",
+  "     filter(data == '", dd, "',\n",
+  "            team == '", tt, "')", "\n",
+  "out <- as.character(rm$path)\n",
+  "match <- rm$match[[1]]\n",
+  "teams <- rm$teams[[1]]\n\n",
+  "################################################################################",
+  "# Restart scouting\n",
+  "ov_scouter(dir_ls(paste0(here(), out), regexp = 'ovs$'),\n",
+  "           scouting_options = list(transition_sets = TRUE,\n",
+  "           attack_table = read_csv(paste0(here(), '/data/myAttacks.csv'))),\n",
+  "           app_styling = list(review_pane_width = 50),\n",
+  "           launch_browser = TRUE)\n\n",
+  "################################################################################\n",
+  "# Link Youtube video with scout\n",
+  "dvw <- dir_ls(paste0(here(), out), regexp = 'dvw$')\n",
+  "x <- dv_read(dvw)\n",
+  "dv_meta_video(x) <- ''\n",
+  "dv_write(x, dvw)\n\n",
+  "################################################################################\n",
+  "# Copy the dvw file into 'all' folder\n",
+  "file_copy(dir_ls(paste0(here(), out), regexp = 'dvw$'), here('scout', 'partite'), overwrite = TRUE)\n\n",
+  "################################################################################\n",
+  "# Remove video file\n",
+  "file_delete(dir_ls(paste0(here(), out), regexp = 'mp4$'))"), file = paste0(here(), out, "/scout.R"))
 
-################################################################################
-# Restart scouting
-ov_scouter(dir_ls(paste0(here(), out), regexp = "ovs$"),
-           scouting_options = list(transition_sets = TRUE,
-                                   attack_table = read_csv("data/myAttacks.csv")),
-           app_styling = list(review_pane_width = 50),
-         #  shortcuts = sc,
-           launch_browser = TRUE)
-
-################################################################################
-# Update court reference
-# refx <- ovideo::ov_shiny_court_ref(video_file = video_file, t = 2800)
-# outT <- "/Users/chiapell/personale/PALLAVOLO/U12F_Caluso_2324/partite/2024-03-09_Canavolley"
-
-################################################################################
-# Link Youtube video with scout
-dvw <- dir_ls(out, regexp = "dvw$")
-x <- dv_read(dvw)
-dv_meta_video(x) <- "https://youtu.be/m3XFedJlFsw"
-dv_write(x, dvw)
-
-################################################################################
-# Copy the dvw file into 'all' folder
-file_copy(dir_ls(out, regexp = "dvw$"), here("partite", "all"), overwrite = TRUE)
-
-################################################################################
-# Remove video file
-file_delete(dir_ls(out, regexp = "mp4$"))
 
 
 
