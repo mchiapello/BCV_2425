@@ -1,0 +1,80 @@
+[3DATAVOLLEYSCOUT]
+FILEFORMAT: 2.0
+GENERATOR-DAY: 2024/06/01 10.44.15
+GENERATOR-IDP: ovscout2
+GENERATOR-PRG: ovscout2-R
+GENERATOR-REL: 0.2.9
+GENERATOR-VER: 
+GENERATOR-NAM: 
+LASTCHANGE-DAY: 2024/06/01 10.45.52
+LASTCHANGE-IDP: datavolley
+LASTCHANGE-PRG: datavolley-R
+LASTCHANGE-REL: 1.7.4
+LASTCHANGE-VER: 
+LASTCHANGE-NAM: 
+[3MATCH]
+2024/05/30;00.00.00;2024-2025;Amichevole;;True;1;;UTF-8;1;Z;
+;;12345;;;;;;
+[3TEAMS]
+BAS;Basso Canavese Volley;0;Bernardi;;16777215;;;;
+FOR;Fortitudo;0;;;16776960;;;;
+[3MORE]
+;;;;;Marco Chiapello;
+;0;0;
+[3COMMENTS]
+;;;;
+[3SET]
+True;;;;;;
+True;;;;;;
+True;;;;;;
+True;;;;;;
+True;;;;;;
+[3PLAYERS-H]
+0;13;1;4;;;;;CHI-MAR;Chimienti;Martina;;;6;False;;;;;;;;
+0;16;2;5;;;;;LAM-GRE;LaMonaca;Greta;;;6;False;;;;;;;;
+0;17;3;3;;;;;CEL-SAR;Celestra;Sara;;;6;False;;;;;;;;
+0;18;4;2;;;;;FRA-MAT;Fragonas;Matilde;;;6;False;;;;;;;;
+0;19;5;;;;;;URS-ANN;Ursu;Anna Maria;;;6;False;;;;;;;;
+0;20;6;;;;;;AGU-BIA;Aguiari;Bianca;;;6;False;;;;;;;;
+0;22;7;;;;;;FIO-MAT;Fiorina;Matilde;;;6;False;;;;;;;;
+0;23;8;6;;;;;CAS-GIU;Casula;Giulia;;;6;False;;;;;;;;
+0;24;9;1;;;;;COL-ANN;Colapreso;Annalisa;;;6;False;;;;;;;;
+[3PLAYERS-V]
+0;1;1;1;;;;;ATC-YDG;Atcfj;Ydgab;;;6;False;;;;;;;;
+0;2;2;2;;;;;JFO-WKN;Jfotw;Wknrs;;;6;False;;;;;;;;
+0;3;3;3;;;;;ZLW-AUY;Zlwfh;Auyjv;;;6;False;;;;;;;;
+0;4;4;4;;;;;LYW-NJG;Lywfg;Njgio;;;6;False;;;;;;;;
+0;5;5;5;;;;;SJF-UEI;Sjfnb;Ueiny;;;6;False;;;;;;;;
+0;6;6;6;;;;;MRV-EBJ;Mrvnf;Ebjlo;;;6;False;;;;;;;;
+[3ATTACKCOMBINATION]
+VP;8;C;H;High Pipe;;255;4150;P;;;1.98125;2.83333333333333
+XP;8;C;M;Pipe;;16711680;4150;P;;;1.98125;2.83333333333333
+V5;4;R;H;High Ball Pos 4;;255;4912;F;;;0.55625;3.42592592592593
+V6;2;L;H;High Ball Pos 2;;255;4988;B;;;3.40625;3.42592592592593
+V3;3;C;O;High Ball Pos 3;;255;4950;-;;;1.98125;3.42592592592593
+[3SETTERCALL]
+K1;;Front Quick;;16711680;3949;4454;4958;;;
+K2;;Back Quick;;16711680;3864;4278;4974;;;
+K7;;Seven;;16711680;3923;4426;4930;;;
+KC;;Quick in 3;;16711680;3849;4449;5049;;;
+KM;;Shifted to 2;;16711680;0000;0000;0000;4924,5524,5530,6332,6312,5012,5024;12632256;
+KP;;Shifted to 4;;16711680;0000;0000;0000;5457,5057,5557,5552,6352,6364,5377,5077,5058,5058;12632256;
+KE;;No First Tempo;;0;0000;0000;0000;5858,5826,6426,6458,6458;12632256;
+[3WINNINGSYMBOLS]
+=~~~#~~~=~~~~~~~=/~~#~~~=/~~#~~~=~~~~~~~=~~~~~~~=~~~~~~~
+[3RESERVE]
+[3VIDEO]
+Camera0=/Users/chiapell/personale/PALLAVOLO/BCV_2425/scout/partite/2024-05-30_BassoCanaveseVolley_U13U-vs-Fortitudo/20240530_Fortitudo_iphone.mp4
+[3SCOUT]
+*P24>LUp;;;;;;;10.44.29;1;1;1;;;;24;18;17;13;16;23;1;2;3;4;5;6;
+*z1>LUp;;;;;;;10.44.29;1;1;1;;;;24;18;17;13;16;23;1;2;3;4;5;6;
+aP01>LUp;;;;;;;10.44.29;1;1;1;;;;24;18;17;13;16;23;1;2;3;4;5;6;
+az1>LUp;;;;;;;10.44.29;1;1;1;;;;24;18;17;13;16;23;1;2;3;4;5;6;
+a01SH/~~~68A;;;;9746;;2962;10.45.46;1;1;1;;10;;24;18;17;13;16;23;1;2;3;4;5;6;
+*24RH/~~~68A;;;;9746;;2962;10.45.46;1;1;1;;12;;24;18;17;13;16;23;1;2;3;4;5;6;
+a02FH-~~~9;;;;6632;;;10.45.46;1;1;1;;13;;24;18;17;13;16;23;1;2;3;4;5;6;
+a01EH+~~~~1D;;;;8432;;;10.45.46;1;1;1;;15;;24;18;17;13;16;23;1;2;3;4;5;6;
+a03FH=~~~61C;;;;8563;;8035;10.45.46;1;1;1;;16;;24;18;17;13;16;23;1;2;3;4;5;6;
+*$$&H#;;;;;;;10.45.46;1;1;1;;;;24;18;17;13;16;23;1;2;3;4;5;6;
+*p01:00;;;;;;;10.45.46;1;1;1;;;;24;18;17;13;16;23;1;2;3;4;5;6;
+*z6;;;;;;;10.45.46;1;6;1;;;;18;17;13;16;23;24;1;2;3;4;5;6;

@@ -56,7 +56,7 @@ output[[3]] <- tibble(team_id = c(str_to_upper(str_sub(str_replace(home, " ", ""
                                                          start = 1L, end = 3L)), 
                                     str_to_upper(str_sub(str_replace(away, " ", ""),
                                                          start = 1L, end = 3L))),
-                        team = team,
+                        team = c(home, away),
                         set_won = set_won,
                         coach = c(coach_home, coach_away),
                         assistent = NA,
