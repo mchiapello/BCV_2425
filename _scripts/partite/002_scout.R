@@ -88,6 +88,7 @@ x$meta$attacks <- read_csv("data/myAttacks.csv")
 
 ################################################################################
 # Do the scouting
+#' Scout at least one point and save the ovl file
 ov_scouter(x, video_file = video_file,
            court_ref = readRDS(paste0(here(), out, "/mrefx.RDS")),
            scouting_options = list(transition_sets = TRUE,
