@@ -7,7 +7,7 @@ library(here)
 setwd(here())
 source("_scripts/999_functions.R")
 dd <- "2024-05-30" # <===== TO CHANGE
-tt <- "U13U"        # <===== TO CHANGE
+tt <- "U13F"        # <===== TO CHANGE
 ################################################################################
 # Create variables
 ap <- readRDS("data/partite.RDS")
@@ -28,14 +28,12 @@ video_file  <- dir_ls(paste0(here(), out), regexp = "*mp4$")
 # u13u <- c('Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 
 #           'Fra-Mat', 'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 
 #           'Cas-Giu', 'Col-Ann', 'Ser-Sof')
-# u13f <- c('Per-Giu', 'Del-Aur', 'Gil-Ari', 'Pan-Mar', 'Neg-Ire', 'Tap-Ann', 
+# u13f <- c('Per-Giu', 'Del-Aur', 'Gil-Ari', 'Pan-Mar', 'Neg-Ire', 'Tap-Ann',
 #           'Ber-Sil', 'Cir-Ade', 'Bon-Isa', 'Goy-Bea', 'Ger-Val', 'Tor-Ari')
 
 ## BVC 
 bcv <- readRDS("data/atlete2425.RDS") |> 
-  filter(ID %in% c('Chi-Mar', 'Lam-Gre', 'Cel-Sar', 'Fio-Mat',
-                   'Fra-Mat', 'Urs-Ann', 'Agu-Bia', 
-                   'Cas-Giu', 'Col-Ann')) |> 
+  filter(ID %in% u13f) |> 
   left_join(readRDS("data/numeriMaglia.RDS")) |> 
   select(number, firstname = nome, lastname = cognome)
 
@@ -61,7 +59,7 @@ if(teams$team_id[1] == "BAS"){
   visiting <- as.data.frame(bcv)
 }
 
-# Ricordarsi di assegnare correttamente squadre in casa e fuori casa => 2 punti da cambiare
+# Create dv object
 x <- dv_create(match = match, 
                teams = teams, 
                players_h = home,
@@ -69,12 +67,12 @@ x <- dv_create(match = match,
 
 ################################################################################
 ## Court ref
-refx <- ovideo::ov_shiny_court_ref(video_file = video_file, t = 100)
+refx <- ovideo::ov_shiny_court_ref(video_file = video_file, t = 10)
 saveRDS(refx, paste0(here(), out, "/mrefx.RDS"))
 
 ## enter the team lineups for set 1
 x <- dv_set_lineups(x, set_number = 1, 
-                    lineups = list(c(24,18,17,13,16,23), 
+                    lineups = list(c(9,8,3,12,15,1), 
                                    c(1:6)), 
                     setter_positions = c(1, 1))
 
