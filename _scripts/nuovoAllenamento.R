@@ -1,9 +1,9 @@
 # Define variavbles
 ### Folder
-d <- "05/30/2024"
+d <- "06/06/2024"
 date <- lubridate::mdy(d)
 team <- "U13U"
-n <- 6
+n <- 7
 commento <- c("")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
@@ -15,7 +15,8 @@ categories <- c(team, "2024-2025", "Pre-season")
 convocate <- c('Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat',
                'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann',
                'Ser-Sof')
-assenti <- c('Ser-Sof', 'Mol-Gin')
+assenti <- c('Ser-Sof', 'Chi-Mar', 'Bud-Eri', 'Urs-Ann', 'Agu-Bia', 'Mol-Gin',
+             'Col-Ann')
 vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.7
