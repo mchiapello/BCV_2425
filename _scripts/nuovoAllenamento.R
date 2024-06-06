@@ -2,21 +2,20 @@
 ### Folder
 d <- "06/06/2024"
 date <- lubridate::mdy(d)
-team <- "U13U"
+team <- "U13F"
 n <- 7
 commento <- c("")
 ### File
 categories <- c(team, "2024-2025", "Pre-season")
 # # U13F
-# convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
-#                "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
-#                "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
+convocate <- c("Per-Giu", "Del-Aur", "Gil-Ari", "Pan-Mar",
+               "Neg-Ire", "Tap-Ann", "Ber-Sil", "Cir-Ade",
+               "Bon-Isa", "Goy-Bea", "Ger-Val", "Tor-Ari")
 # U13U
-convocate <- c('Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat',
-               'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann',
-               'Ser-Sof')
-assenti <- c('Ser-Sof', 'Chi-Mar', 'Bud-Eri', 'Urs-Ann', 'Agu-Bia', 'Mol-Gin',
-             'Col-Ann')
+# convocate <- c('Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat',
+#                'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann',
+#                'Ser-Sof')
+assenti <- c("Per-Giu", "Ber-Sil", "Cir-Ade","Goy-Bea", "Neg-Ire")
 vincitori <- c()
 impegno <- 0.8
 obiettivo <- 0.7
