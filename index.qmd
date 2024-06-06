@@ -2,8 +2,7 @@
 title: "BCV Settore Giovanile Femminile"
 format: 
   dashboard:
-    nav-buttons: [github]
-    github: https://github.com/mine-cetinkaya-rundel/ld-dashboard
+    orientation: rows
 logo: ../images/logo.png
 fig-width: 10
 fig-asp: 0.3
@@ -39,7 +38,9 @@ time_period <- paste(params$year)
 ciao2 <- "pink"
 ```
 
-#  {.sidebar}
+# Generale {orientation="rows"}
+
+##  {.sidebar}
 
 Questa dashboard mostra le statistiche per:
 
@@ -64,14 +65,15 @@ Nella stagione `{r} time_period` nel settore `{r} params$settore` (`{r} params$g
 ------------------------------------------------------------------------
 
 ::: {.callout-note collapse="true"}
-## Disclaimer
+### Disclaimer
 
 This is a test
 :::
 
-# Generale
+
 
 ## Row {height="30%"}
+
 ```{r}
 if(fs::file_exists("data/allenamenti.RDS")){
   tmp <- readRDS("data/allenamenti.RDS")
@@ -115,8 +117,9 @@ if(fs::file_exists("data/partite.RDS")){
 :::
 
 
-## Row {height="70%"}
+## Row {.fill}
 
+### Column
 
 ```{r}
 #| fig-width: 10
@@ -169,6 +172,7 @@ u13f / u13u + plot_annotation(title = 'Presenza ad allenamento',
               plot_layout(guides = "collect", axis_titles = "collect") & theme(legend.position = "bottom")
 ```
 
+### Column
 
 
 ```{r}
@@ -203,6 +207,7 @@ tab_style(style = cell_fill(color = "#04BF8A"),
                                    rows = (grepl("massima", Misura)))) |> 
 gt_theme_guardian()
 ```
+
 
 
 
@@ -277,6 +282,7 @@ if(vs_u13f[vs_u13f$vinto == FALSE, ]$n > vs_u13f[vs_u13f$vinto == TRUE, ]$n) {
 
 ```
 
+
 ## Row {height="30%"}
 
 ::: {.valuebox icon="card-checklist" color="#B4E815"}
@@ -337,6 +343,8 @@ dfu13f |>
    theme_light() +
   theme(legend.position = "bottom")
 ```
+
+
 
 
 # U13 UISP
