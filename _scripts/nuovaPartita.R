@@ -3,21 +3,21 @@ library(here)
 library(fs)
 
 # Define variavbles
-d <- "05/30/2024"
+d <- "06/06/2024"
 date <- lubridate::mdy(d)
-team <- "U13U"
+team <- "U13F"
 home <- "Basso Canavese Volley"
-away <- "Fortitudo"
+away <- "Samone"
 type <- "partite"
 time <- "18:00:00"
 season <- "2024-2025"
 league <- "Amichevole"
 phase <- ""
 home_away <- TRUE
-day_number <- 1
+day_number <- 2
 match_number <- NA
-set_won <- c(0,2)
-coach_home <- "Bernardi"
+set_won <- c(3,0)
+coach_home <- "Chiapello"
 coach_away <- ""
 shirt_colour_home <- "white"
 shirt_colour_away <- "yellow"
