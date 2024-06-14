@@ -25,7 +25,7 @@
     "href": "allenamenti.html",
     "title": "Allenamenti",
     "section": "",
-    "text": "Questa pagina contiene la lista di tutti gli allenamaneti per monitorare la presenza delle ragazze e rivedere i filtati degli allenamenti.\n\n\n\n\n\nData\n\n\nObiettivi\n\n\nSquadra\n\n\n\n\n\n\nJun 6, 2024\n\n\nr tit\n\n\nU13U\n\n\n\n\nJun 6, 2024\n\n\nr tit\n\n\nU13F\n\n\n\n\nMay 30, 2024\n\n\nAmichevole - Fase gioco\n\n\nU13F\n\n\n\n\nMay 30, 2024\n\n\nAmichevole - Fase gioco\n\n\nU13U\n\n\n\n\nMay 28, 2024\n\n\nBattuta - Attacco - Fase gioco\n\n\nU13U\n\n\n\n\nMay 27, 2024\n\n\nBattuta - Attacco - Fase gioco\n\n\nU13F\n\n\n\n\nMay 23, 2024\n\n\nFase gioco\n\n\nU13F\n\n\n\n\nMay 23, 2024\n\n\nFase gioco\n\n\nU13U\n\n\n\n\nMay 21, 2024\n\n\nAlleanemento attacco\n\n\nU13U\n\n\n\n\nMay 20, 2024\n\n\nAlleanemento per ruolo\n\n\nU13F\n\n\n\n\nMay 16, 2024\n\n\nMisurazioni e posizioni in campo\n\n\nU13F\n\n\n\n\nMay 16, 2024\n\n\nMisurazioni e posizioni in campo\n\n\nU13U\n\n\n\n\nMay 14, 2024\n\n\nModulo 4/2 (Fase gioco)\n\n\nU13U\n\n\n\n\nMay 13, 2024\n\n\nModulo 4/2 (Fase gioco)\n\n\nU13F\n\n\n\n\n\nNo matching items"
+    "text": "Questa pagina contiene la lista di tutti gli allenamaneti per monitorare la presenza delle ragazze e rivedere i filtati degli allenamenti.\n\n\n\n\n\nData\n\n\nObiettivi\n\n\nSquadra\n\n\nLink\n\n\n\n\n\n\nJun 13, 2024\n\n\nEsercizi coordinativi - Gioco\n\n\nU13F\n\n\nr tit\n\n\n\n\nJun 6, 2024\n\n\nAmichevole - Fase gioco\n\n\nU13U\n\n\nr tit\n\n\n\n\nJun 6, 2024\n\n\nAmichevole - Fase gioco\n\n\nU13F\n\n\nr tit\n\n\n\n\nMay 30, 2024\n\n\nAmichevole - Fase gioco\n\n\nU13F\n\n\nr tit\n\n\n\n\nMay 30, 2024\n\n\nAmichevole - Fase gioco\n\n\nU13U\n\n\nr tit\n\n\n\n\nMay 28, 2024\n\n\nBattuta - Attacco - Fase gioco\n\n\nU13U\n\n\nr tit\n\n\n\n\nMay 27, 2024\n\n\nBattuta - Attacco - Fase gioco\n\n\nU13F\n\n\nr tit\n\n\n\n\nMay 23, 2024\n\n\nFase gioco\n\n\nU13F\n\n\nr tit\n\n\n\n\nMay 23, 2024\n\n\nFase gioco\n\n\nU13U\n\n\nr tit\n\n\n\n\nMay 21, 2024\n\n\nAlleanemento attacco\n\n\nU13U\n\n\nr tit\n\n\n\n\nMay 20, 2024\n\n\nAlleanemento per ruolo\n\n\nU13F\n\n\nr tit\n\n\n\n\nMay 16, 2024\n\n\nMisurazioni e posizioni in campo\n\n\nU13F\n\n\nr tit\n\n\n\n\nMay 16, 2024\n\n\nMisurazioni e posizioni in campo\n\n\nU13U\n\n\nr tit\n\n\n\n\nMay 14, 2024\n\n\nModulo 4/2 (Fase gioco)\n\n\nU13U\n\n\nr tit\n\n\n\n\nMay 13, 2024\n\n\nModulo 4/2 (Fase gioco)\n\n\nU13F\n\n\nr tit\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -116,7 +116,7 @@
     "href": "index.html",
     "title": "BCV Settore Giovanile Femminile",
     "section": "",
-    "text": "library(tidyverse)\nlibrary(readxl)\nlibrary(scales)\nlibrary(DT)\nlibrary(gt)\ntheme_set(theme_minimal(base_size = 24, base_family = \"Atkinson Hyperlegible\"))\nlibrary(bslib)\nlibrary(bsicons)\ntime_period &lt;- paste(params$year)\nciao2 &lt;- \"pink\""
+    "text": "Questa dashboard mostra le statistiche per:\n\n\n\nSocietà\nBasso Canavese Volley\n\n\nSettore\nGiovanile\n\n\nGenere\nFemminile\n\n\nAnni di nascita\n2012 - 2013\n\n\nStagione\n2024/2025\n\n\n\n\nNella stagione 2024/2025 nel settore Giovanile (Femminile) sono presenti 3 squadre con il seguente numero di atleti:\n\n\n\nU13 FIPAV\n14\n\n\nU13 UISP\n14\n\n\nU12 UISP\n14\n\n\n\n\n\n\n\n\n\n\nDisclaimer\n\n\n\n\n\nThis is a test\n\n\n\n\n\n\n\nNumero di Atlete\n42\n\n\nAllenamenti fatti\n14\n dal mese di Maggio 2024.\n\n\nPartite giocate\n4\n dal mese di Maggio 2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMisura\ncm\n\n\n\n\nAltezza minima\n133\n\n\nAltezza media\n150\n\n\nAltezza massima\n170\n\n\nStacco da fermo minima\n13\n\n\nStacco da fermo media\n21\n\n\nStacco da fermo massima\n29\n\n\nStacco con rincorsa minima\n16\n\n\nStacco con rincorsa media\n27\n\n\nStacco con rincorsa massima\n38"
   },
   {
     "objectID": "progAnnuale/ade-cir.html",
@@ -375,7 +375,7 @@
     "href": "progAnnuale/u13f.html#ruoli",
     "title": "U13 Fipav",
     "section": "Ruoli",
-    "text": "Ruoli\n\n\n\n\n\n\n\n\n\ncognome\nnome\nruolo\n\n\n\n\nBoni\nIsabella\nAlzatore/Attaccante\n\n\nPanetto\nMargherita\nAlzatore/Attaccante\n\n\nTapparo\nAnna\nAlzatore/Attaccante\n\n\nTorchia\nArianna\nAlzatore/Attaccante\n\n\nGerace\nValeria\nCentrale\n\n\nGillone\nArianna\nCentrale\n\n\nNegro Bitu\nIrene\nCentrale\n\n\nPerissinotto\nGiulia\nCentrale\n\n\nBergandi\nSilvia\nRicevitore/Attaccante\n\n\nCireddu\nAdele\nRicevitore/Attaccante\n\n\nDe Luca\nAurora\nRicevitore/Attaccante\n\n\nGoy\nBeatrice\nRicevitore/Attaccante"
+    "text": "Ruoli\n\n\n\n\n\n\n\n\ncognome\nnome\nruolo\n\n\n\n\nBoni\nIsabella\nAlzatore/Attaccante\n\n\nPanetto\nMargherita\nAlzatore/Attaccante\n\n\nTapparo\nAnna\nAlzatore/Attaccante\n\n\nTorchia\nArianna\nAlzatore/Attaccante\n\n\nGerace\nValeria\nCentrale\n\n\nGillone\nArianna\nCentrale\n\n\nNegro Bitu\nIrene\nCentrale\n\n\nPerissinotto\nGiulia\nCentrale\n\n\nBergandi\nSilvia\nRicevitore/Attaccante\n\n\nCireddu\nAdele\nRicevitore/Attaccante\n\n\nDe Luca\nAurora\nRicevitore/Attaccante\n\n\nGoy\nBeatrice\nRicevitore/Attaccante"
   },
   {
     "objectID": "allenamenti/2024-05-13_U13F_M_1.html#modulo-42-fase-gioco",
@@ -395,36 +395,36 @@
     "objectID": "index.html#row",
     "href": "index.html#row",
     "title": "BCV Settore Giovanile Femminile",
-    "section": "Row",
-    "text": "Row\n\nif(fs::file_exists(\"data/allenamenti.RDS\")){\n  tmp &lt;- readRDS(\"data/allenamenti.RDS\")\n  af &lt;- nrow(tmp)\n} else {\n  af &lt;- 0\n}\n\nif(fs::file_exists(\"data/partite.RDS\")){\n  tmp &lt;- readRDS(\"data/partite.RDS\")\n  pg &lt;- nrow(tmp)\n} else {\n  pg &lt;- 0\n}\n\n\nNumero di Atlete\n42\n\n\nAllenamenti fatti\n1\n dal mese di Maggio 2024.\n\n\nPartite giocate\n0\n dal mese di Maggio 2024."
+    "section": "",
+    "text": "Numero di Atlete\n42\n\n\nAllenamenti fatti\n14\n dal mese di Maggio 2024.\n\n\nPartite giocate\n4\n dal mese di Maggio 2024."
   },
   {
     "objectID": "index.html#row-1",
     "href": "index.html#row-1",
     "title": "BCV Settore Giovanile Femminile",
-    "section": "Row",
-    "text": "Row\n\nPippo"
+    "section": "",
+    "text": "Misura\ncm\n\n\n\n\nAltezza minima\n133\n\n\nAltezza media\n150\n\n\nAltezza massima\n170\n\n\nStacco da fermo minima\n13\n\n\nStacco da fermo media\n21\n\n\nStacco da fermo massima\n29\n\n\nStacco con rincorsa minima\n16\n\n\nStacco con rincorsa media\n27\n\n\nStacco con rincorsa massima\n38"
   },
   {
     "objectID": "index.html#row-2",
     "href": "index.html#row-2",
     "title": "BCV Settore Giovanile Femminile",
     "section": "Row",
-    "text": "Row\n\nAllenamenti fatti\n1\n dal mese di Maggio 2024.\n\n\nPartite giocate\n0\n dal mese di Maggio 2024.\n\n\n% partite vinte\n0%\n su 2 partite."
+    "text": "Row\n\nAllenamenti fatti\n7\n dal mese di Maggio 2024.\n\n\nPartite giocate\n2\n dal mese di Maggio 2024.\n\n\n% partite vinte\n50%\nsu 2 partite."
   },
   {
     "objectID": "index.html#row-3",
     "href": "index.html#row-3",
     "title": "BCV Settore Giovanile Femminile",
     "section": "Row",
-    "text": "Row\n\nPippo\n\nlibrary(tidyverse)\n\npresenze &lt;- readRDS(\"/Volumes/SSD_Marco/personale/pallavolo/BCV_2425/data/presenze.RDS\")\n\ndf &lt;- presenze |&gt; \n  filter(squadra == \"U13F\") |&gt; \n  group_by(data) |&gt; \n  reframe(Convocate = row_number(),\n            M = sum(presente)) |&gt; \n  slice_tail()\n\n\ndf |&gt; \n  ggplot(aes(x = data, y = Convocate)) +\n  geom_col(aes(fill = \"Convocate\")) +\n  geom_col(aes(x = data, y = M, fill = \"Presenti\")) +\n  labs(x = \"\", y = \"Numero di ragazze\",\n       title = \"Presenze ad allenamento\") +\n  scale_y_continuous(breaks = 1:15) +\n  scale_fill_manual(values = c(\"#8CBEB2\", \"#F3B562\"), name = \"\") +\n   theme_light() +\n  theme(legend.position = \"bottom\")"
+    "text": "Row\n\nPippo"
   },
   {
     "objectID": "index.html#row-4",
     "href": "index.html#row-4",
     "title": "BCV Settore Giovanile Femminile",
     "section": "Row",
-    "text": "Row\n\nAllenamenti fatti\n1\n dal mese di Maggio 2024.\n\n\nPartite giocate\n0\n dal mese di Maggio 2024.\n\n\n% partite vinte\n0%\n su 2 partite."
+    "text": "Row\n\nAllenamenti fatti\n7\n dal mese di Maggio 2024.\n\n\nPartite giocate\n2\n dal mese di Maggio 2024.\n\n\n% partite vinte\n0%\nsu 2 partite."
   },
   {
     "objectID": "index.html#row-5",
@@ -438,7 +438,7 @@
     "href": "index.html#row-6",
     "title": "BCV Settore Giovanile Femminile",
     "section": "Row",
-    "text": "Row\n\nAllenamenti fatti\n1\n dal mese di Maggio 2024.\n\n\nPartite giocate\n0\n dal mese di Maggio 2024.\n\n\n% partite vinte\n0\n dal mese di Maggio 2024."
+    "text": "Row\n\nAllenamenti fatti\n14\n dal mese di Maggio 2024.\n\n\nPartite giocate\n4\n dal mese di Maggio 2024.\n\n\n% partite vinte\n52\nsu 21 partite."
   },
   {
     "objectID": "index.html#row-7",
@@ -824,5 +824,47 @@
     "title": "Allenamento dell’U13F numero 6 del 2024-05-30",
     "section": "PDF dell’allenamento",
     "text": "PDF dell’allenamento\n\n\n\nAllenamento"
+  },
+  {
+    "objectID": "allenamenti/2024-06-13_U13F_Th_8.html",
+    "href": "allenamenti/2024-06-13_U13F_Th_8.html",
+    "title": "Allenamento dell’U13F numero 8 del 2024-06-13",
+    "section": "",
+    "text": "L’allenamento di oggi June 13, 2024 si è svolto al Arè.\nUltimo allenamento dell’anno. Molte ragazze erano già in vacanza. Fatto Congiunto con U13U.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nID\ncognome\nnome\ndata\nsquadra\npresente\n\n\n\n\nPer-Giu\nPerissinotto\nGiulia\n2024-06-13\nU13F\n0\n\n\nDel-Aur\nDe Luca\nAurora\n2024-06-13\nU13F\n0\n\n\nGil-Ari\nGillone\nArianna\n2024-06-13\nU13F\n1\n\n\nPan-Mar\nPanetto\nMargherita\n2024-06-13\nU13F\n0\n\n\nNeg-Ire\nNegro Bitu\nIrene\n2024-06-13\nU13F\n0\n\n\nTap-Ann\nTapparo\nAnna\n2024-06-13\nU13F\n1\n\n\nBer-Sil\nBergandi\nSilvia\n2024-06-13\nU13F\n1\n\n\nCir-Ade\nCireddu\nAdele\n2024-06-13\nU13F\n1\n\n\nBon-Isa\nBoni\nIsabella\n2024-06-13\nU13F\n1\n\n\nGoy-Bea\nGoy\nBeatrice\n2024-06-13\nU13F\n0\n\n\nGer-Val\nGerace\nValeria\n2024-06-13\nU13F\n1\n\n\nTor-Ari\nTorchia\nArianna\n2024-06-13\nU13F\n1\n\n\nChi-Mar\nChimienti\nMartina\n2024-06-13\nU13F\n1\n\n\nBud-Eri\nBudau\nErika\n2024-06-13\nU13F\n1\n\n\nAud-Gin\nAudrito\nGinevra\n2024-06-13\nU13F\n1\n\n\nLam-Gre\nLaMonaca\nGreta\n2024-06-13\nU13F\n1\n\n\nCel-Sar\nCelestra\nSara\n2024-06-13\nU13F\n0\n\n\nFra-Mat\nFragonas\nMatilde\n2024-06-13\nU13F\n0\n\n\nUrs-Ann\nUrsu\nAnna Maria\n2024-06-13\nU13F\n0\n\n\nAgu-Bia\nAguiari\nBianca\n2024-06-13\nU13F\n0\n\n\nMol-Gin\nMolinari\nGinevra\n2024-06-13\nU13F\n0\n\n\nFio-Mat\nFiorina\nMatilde\n2024-06-13\nU13F\n0\n\n\nCas-Giu\nCasula\nGiulia\n2024-06-13\nU13F\n0\n\n\nCol-Ann\nColapreso\nAnnalisa\n2024-06-13\nU13F\n0\n\n\nSer-Sof\nSerra\nSofia\n2024-06-13\nU13F\n0"
+  },
+  {
+    "objectID": "allenamenti/2024-06-13_U13F_Th_8.html#amichevole---fase-gioco",
+    "href": "allenamenti/2024-06-13_U13F_Th_8.html#amichevole---fase-gioco",
+    "title": "Allenamento dell’U13F numero 8 del 2024-06-13",
+    "section": "",
+    "text": "L’allenamento di oggi June 13, 2024 si è svolto al Arè.\nUltimo allenamento dell’anno. Molte ragazze erano già in vacanza. Fatto Congiunto con U13U.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nID\ncognome\nnome\ndata\nsquadra\npresente\n\n\n\n\nPer-Giu\nPerissinotto\nGiulia\n2024-06-13\nU13F\n0\n\n\nDel-Aur\nDe Luca\nAurora\n2024-06-13\nU13F\n0\n\n\nGil-Ari\nGillone\nArianna\n2024-06-13\nU13F\n1\n\n\nPan-Mar\nPanetto\nMargherita\n2024-06-13\nU13F\n0\n\n\nNeg-Ire\nNegro Bitu\nIrene\n2024-06-13\nU13F\n0\n\n\nTap-Ann\nTapparo\nAnna\n2024-06-13\nU13F\n1\n\n\nBer-Sil\nBergandi\nSilvia\n2024-06-13\nU13F\n1\n\n\nCir-Ade\nCireddu\nAdele\n2024-06-13\nU13F\n1\n\n\nBon-Isa\nBoni\nIsabella\n2024-06-13\nU13F\n1\n\n\nGoy-Bea\nGoy\nBeatrice\n2024-06-13\nU13F\n0\n\n\nGer-Val\nGerace\nValeria\n2024-06-13\nU13F\n1\n\n\nTor-Ari\nTorchia\nArianna\n2024-06-13\nU13F\n1\n\n\nChi-Mar\nChimienti\nMartina\n2024-06-13\nU13F\n1\n\n\nBud-Eri\nBudau\nErika\n2024-06-13\nU13F\n1\n\n\nAud-Gin\nAudrito\nGinevra\n2024-06-13\nU13F\n1\n\n\nLam-Gre\nLaMonaca\nGreta\n2024-06-13\nU13F\n1\n\n\nCel-Sar\nCelestra\nSara\n2024-06-13\nU13F\n0\n\n\nFra-Mat\nFragonas\nMatilde\n2024-06-13\nU13F\n0\n\n\nUrs-Ann\nUrsu\nAnna Maria\n2024-06-13\nU13F\n0\n\n\nAgu-Bia\nAguiari\nBianca\n2024-06-13\nU13F\n0\n\n\nMol-Gin\nMolinari\nGinevra\n2024-06-13\nU13F\n0\n\n\nFio-Mat\nFiorina\nMatilde\n2024-06-13\nU13F\n0\n\n\nCas-Giu\nCasula\nGiulia\n2024-06-13\nU13F\n0\n\n\nCol-Ann\nColapreso\nAnnalisa\n2024-06-13\nU13F\n0\n\n\nSer-Sof\nSerra\nSofia\n2024-06-13\nU13F\n0"
+  },
+  {
+    "objectID": "allenamenti/2024-06-13_U13F_Th_8.html#video-dellallenamento",
+    "href": "allenamenti/2024-06-13_U13F_Th_8.html#video-dellallenamento",
+    "title": "Allenamento dell’U13F numero 8 del 2024-06-13",
+    "section": "Video dell’allenamento ",
+    "text": "Video dell’allenamento"
+  },
+  {
+    "objectID": "allenamenti/2024-06-13_U13F_Th_8.html#pdf-dellallenamento",
+    "href": "allenamenti/2024-06-13_U13F_Th_8.html#pdf-dellallenamento",
+    "title": "Allenamento dell’U13F numero 8 del 2024-06-13",
+    "section": "PDF dell’allenamento",
+    "text": "PDF dell’allenamento\n\n\n\nAllenamento"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "BCV Settore Giovanile Femminile",
+    "section": "",
+    "text": "Questa dashboard mostra le statistiche per:\n\n\n\nSocietà\nBasso Canavese Volley\n\n\nSettore\nGiovanile\n\n\nGenere\nFemminile\n\n\nAnni di nascita\n2012 - 2013\n\n\nStagione\n2024/2025\n\n\n\n\nNella stagione 2024/2025 nel settore Giovanile (Femminile) sono presenti 3 squadre con il seguente numero di atleti:\n\n\n\nU13 FIPAV\n14\n\n\nU13 UISP\n14\n\n\nU12 UISP\n14\n\n\n\n\n\n\n\n\n\n\nDisclaimer\n\n\n\n\n\nThis is a test"
+  },
+  {
+    "objectID": "allenamenti/2024-06-13_U13F_Th_8.html#esercizi-coordinativi---gioco",
+    "href": "allenamenti/2024-06-13_U13F_Th_8.html#esercizi-coordinativi---gioco",
+    "title": "Allenamento dell’U13F numero 8 del 2024-06-13",
+    "section": "",
+    "text": "L’allenamento di oggi June 13, 2024 si è svolto al Arè.\nUltimo allenamento dell’anno. Molte ragazze erano già in vacanza. Fatto Congiunto con U13U.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nID\ncognome\nnome\ndata\nsquadra\npresente\n\n\n\n\nPer-Giu\nPerissinotto\nGiulia\n2024-06-13\nU13F\n0\n\n\nDel-Aur\nDe Luca\nAurora\n2024-06-13\nU13F\n0\n\n\nGil-Ari\nGillone\nArianna\n2024-06-13\nU13F\n1\n\n\nPan-Mar\nPanetto\nMargherita\n2024-06-13\nU13F\n0\n\n\nNeg-Ire\nNegro Bitu\nIrene\n2024-06-13\nU13F\n0\n\n\nTap-Ann\nTapparo\nAnna\n2024-06-13\nU13F\n1\n\n\nBer-Sil\nBergandi\nSilvia\n2024-06-13\nU13F\n1\n\n\nCir-Ade\nCireddu\nAdele\n2024-06-13\nU13F\n1\n\n\nBon-Isa\nBoni\nIsabella\n2024-06-13\nU13F\n1\n\n\nGoy-Bea\nGoy\nBeatrice\n2024-06-13\nU13F\n0\n\n\nGer-Val\nGerace\nValeria\n2024-06-13\nU13F\n1\n\n\nTor-Ari\nTorchia\nArianna\n2024-06-13\nU13F\n1\n\n\nChi-Mar\nChimienti\nMartina\n2024-06-13\nU13F\n1\n\n\nBud-Eri\nBudau\nErika\n2024-06-13\nU13F\n1\n\n\nAud-Gin\nAudrito\nGinevra\n2024-06-13\nU13F\n1\n\n\nLam-Gre\nLaMonaca\nGreta\n2024-06-13\nU13F\n1\n\n\nCel-Sar\nCelestra\nSara\n2024-06-13\nU13F\n0\n\n\nFra-Mat\nFragonas\nMatilde\n2024-06-13\nU13F\n0\n\n\nUrs-Ann\nUrsu\nAnna Maria\n2024-06-13\nU13F\n0\n\n\nAgu-Bia\nAguiari\nBianca\n2024-06-13\nU13F\n0\n\n\nMol-Gin\nMolinari\nGinevra\n2024-06-13\nU13F\n0\n\n\nFio-Mat\nFiorina\nMatilde\n2024-06-13\nU13F\n0\n\n\nCas-Giu\nCasula\nGiulia\n2024-06-13\nU13F\n0\n\n\nCol-Ann\nColapreso\nAnnalisa\n2024-06-13\nU13F\n0\n\n\nSer-Sof\nSerra\nSofia\n2024-06-13\nU13F\n0"
   }
 ]

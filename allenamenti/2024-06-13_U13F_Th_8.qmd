@@ -1,0 +1,26 @@
+---
+date: 2024-06-13
+categories: ['U13F', '2024-2025', 'Pre-season']
+params:
+  squadra: 'U13F'
+  n: '8'
+  allen: '2024-06-13_U13F_Th_8.pdf' 
+  commento: "Ultimo allenamento dell'anno. Molte ragazze erano già in vacanza. Fatto Congiunto con U13U."
+  palestra: 'Arè'
+  date: '2024-06-13'
+  allenamento: '8'
+  convocate: ['Per-Giu', 'Del-Aur', 'Gil-Ari', 'Pan-Mar', 'Neg-Ire', 'Tap-Ann', 'Ber-Sil', 'Cir-Ade', 'Bon-Isa', 'Goy-Bea', 'Ger-Val', 'Tor-Ari', 'Chi-Mar', 'Bud-Eri', 'Aud-Gin', 'Lam-Gre', 'Cel-Sar', 'Fra-Mat', 'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann', 'Ser-Sof']
+  assenti: ['Per-Giu', 'Del-Aur', 'Pan-Mar', 'Neg-Ire', 'Goy-Bea', 'Cel-Sar', 'Fra-Mat', 'Urs-Ann', 'Agu-Bia', 'Mol-Gin', 'Fio-Mat', 'Cas-Giu', 'Col-Ann', 'Ser-Sof']
+  vincitori: ['']
+  impegno: 0.8
+  obiettivo: 0.7
+  obiettivi: Esercizi coordinativi - Gioco
+  url: https://youtu.be/7fhtah3loPA
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Esercizi coordinativi - Gioco
+{{< include ../_contents/_allenamento.qmd >}}
