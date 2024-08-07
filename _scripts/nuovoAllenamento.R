@@ -26,6 +26,9 @@ obiettivo <- 0.7
 obiettivi <- "Esercizi coordinativi - Gioco"
 url <- "https://youtu.be/7fhtah3loPA"
 
+#######################################################################
+# DO NOT TOUCH AFTER THIS POINT
+#######################################################################
 # Prepare the folder
 dd <- lubridate::wday(date, label = TRUE)
 if(dd == "Mon"){
