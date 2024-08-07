@@ -13,7 +13,7 @@ page-layout: full
 
 ## Modulo
 
--   4-2
+-   6-2
 
 ## Tecnica
 
@@ -25,7 +25,7 @@ page-layout: full
     -   **Alzata**: palleggio rovesciato
     -   **Attacco**: attacco _forte_!
     -   **Difesa**: difesa di palla forte addosso
-    -   **Muro**: nuovo fondamentale
+    -   **Muro**: nuovo fondamentale, da inserire per tutti in allenamento. Vedere come usarlo in partita
 
 ## Tattica
 
@@ -45,7 +45,7 @@ page-layout: full
     -   Scout partite
 
 ## Preparazione atletica
-- Gymmy Sport
+- Trovato giovane da Giorgia
 
 
 ## Ruoli
