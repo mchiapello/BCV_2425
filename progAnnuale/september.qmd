@@ -1,6 +1,6 @@
 ---
 title: "Settembre 2024"
-date: 05/01/2024
+date: 09/01/2024
 date-modified: 09/01/2024
 categories: ['Squadre', 'Programmazione']
 params:
